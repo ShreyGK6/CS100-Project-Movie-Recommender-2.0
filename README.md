@@ -1,12 +1,6 @@
- > As you complete each section you **must** remove the prompt text. Every *turnin* of this project includes points for formatting of this README so keep it clean and keep it up to date. 
- > Prompt text is any lines beginning with "\>"
- > Replace anything between \<...\> with your project specifics and remove angle brackets. For example, you need to name your project and replace the header right below this line with that title (no angle brackets). 
 # \<Project title\>
- > Your author list below should include links to all members GitHub (remove existing author).
  
  > Authors: [Alana Yamauchi](https://github.com/ayama039) [Anokhee Shah](https://github.com/) [Shreya Mohan](https://github.com/shreyyaa123) [Shrey Kothari](https://github.com/ShreyGK6)
-
- > You will be forming a group of **FOUR** students and working on an interesting project. The project has 4 phases, each one with specific requirements. A list of proposed project ideas that have been successful in previous quarters is listed in the project specifications document on Canvas. You can select an idea from the list and start thinking about the features you will implement. If you want to propose your own original idea, you will have to contact your instructor to discuss the project and obtain written permission before you submit your project proposal (Phase 1). The project work should be divided almost equally among team members. You can of course help each other, but it needs to be clear who will be responsible for which features. Additionally, you are expected to follow Scrum patterns, specifically the use of a Scrum (Project) board, Sprints, and Scrum meetings.
 
  > ## Expectations
  > * The backend of your project should be implemented in C++. If you wish to choose anoher programming language (e.g. Java, Python), please discuss with your lab TA to obtain permission.
@@ -16,18 +10,12 @@
 > * All project phases are to be submitted to this GitHub repository. You should modify this README file to reflect the different phases of the project. In addition, you should regularly hold sprint meetings with your group. You will need to hold two to three scrum/check-in meetings with your lab TA/reader at different times in addition to the final demo.
 
 ## Project Description
- > Your project description should summarize the project you are proposing. Be sure to include:
- > * Why is it important or interesting to you?
- > * What languages/tools/technologies do you plan to use? (This list may change over the course of the project)
- > * What will be the input/output of your project?
- > * What are the features that the project provides?
- > This description should be in enough detail that the TA/instructor can determine the complexity of the project and if it is sufficient for the team members to complete in the time allotted. 
 
- > You also need to set up an empty project board using GitHub projects (board view). Make sure you add the board under your project repository. You should also have a Product Backlog and In testing columns added.
->
 For our project, we decided that we should do a movie recommender because all of us really like movies, but hate how long it takes to get a good movie recommendation. Thus, we decided that in C++, we would mandate that the user pick a set list of genres that they like to watch. In addition, we would give the user the option to choose the release year of movies. Finally, the user would either pick their top 3 movies from our data base or have the option to add their own movies that they liked if they don't see them already there. If they decide to add movies, our program would ask for name, genre(s), year (if applicable), rating, and synopsis. After, our program would output a top 5 recommended based off of genre (and year if applicable) and if it was well watched (for example, movies with the same generes and year would then be ranked by which one has been watched more, according to our data base). Then, we would have top 5 most watched from each genre/year. Finally, we would have a most watched list, consisting of the top 5 movies that people have watched the most. Each movie would come with a synopsis, rating, and how many people have watched the movie.
 
 NOTE: In order to build our initial data base, we would ask people to fill out a Google Form, asking the same questions that our users would get asked. We would then format these answers and then put them in a txt file or csv file. When new movies or information is added, our program would update the file.
+
+
  > ## Phase II
  > In addition to completing the "User Interface Specification" and "Class Diagram" sections below, you will need to:
  > * Create an "Epic" (note) for each feature. Place these epics in the `Product Backlog` column
