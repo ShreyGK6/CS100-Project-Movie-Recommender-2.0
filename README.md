@@ -4,7 +4,7 @@
 # \<Project title\>
  > Your author list below should include links to all members GitHub (remove existing author).
  
- Authors: \[Alana Yamauchi](https://github.com/ayama039)\
+ Authors: [Alana Yamauchi](https://github.com/ayama039)
           \[Anokhee ] ()\
           \[Shreya Mohan]()\
           \[Shrey ] ()\
