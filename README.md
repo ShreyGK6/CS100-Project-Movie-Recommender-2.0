@@ -4,7 +4,7 @@
 # \<Project title\>
  > Your author list below should include links to all members GitHub (remove existing author).
  
- Authors: [Alana Yamauchi](https://github.com/ayama039)
+ Authors: \[Alana Yamauchi](https://github.com/ayama039)\
           \[Anokhee ] ()\
           \[Shreya Mohan]()\
           \[Shrey ] ()\
@@ -27,6 +27,9 @@
  > This description should be in enough detail that the TA/instructor can determine the complexity of the project and if it is sufficient for the team members to complete in the time allotted. 
  > 
  > You also need to set up an empty project board using GitHub projects (board view). Make sure you add the board under your project repository. You should also have a Product Backlog and In testing columns added.
+For our project, we decided that we should do a movie recommender because all of us really like movies, but hate how long it takes to get a good movie recommendation. Thus, we decided that in C++, we would mandate that the user pick a set list of genres that they like to watch. In addition, we would give the user the option to choose the release year of movies. Finally, the user would either pick their top 3 movies from our data base or have the option to add their own movies that they liked if they don't see them already there. If they decide to add movies, our program would ask for name, genre(s), year (if applicable), rating, and synopsis. After, our program would output a top 5 recommended based off of genre (and year if applicable) and if it was well watched (for example, movies with the same generes and year would then be ranked by which one has been watched more, according to our data base). Then, we would have top 5 most watched from each genre/year. Finally, we would have a most watched list, consisting of the top 5 movies that people have watched the most. Each movie would come with a synopsis, rating, and how many people have watched the movie.
+
+NOTE: In order to build our initial data base, we would ask people to fill out a Google Form, asking the same questions that our users would get asked. We would then format these answers and then put them in a txt file or csv file. When new movies or information is added, our program would update the file.
  > ## Phase II
  > In addition to completing the "User Interface Specification" and "Class Diagram" sections below, you will need to:
  > * Create an "Epic" (note) for each feature. Place these epics in the `Product Backlog` column
