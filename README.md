@@ -1,4 +1,4 @@
-# \<Project title\>
+# Movie Recommender 2.0
  
  > Authors: [Alana Yamauchi](https://github.com/ayama039) [Anokhee Shah](https://github.com/) [Shreya Mohan](https://github.com/shreyyaa123) [Shrey Kothari](https://github.com/ShreyGK6)
 
@@ -10,6 +10,16 @@
 > * All project phases are to be submitted to this GitHub repository. You should modify this README file to reflect the different phases of the project. In addition, you should regularly hold sprint meetings with your group. You will need to hold two to three scrum/check-in meetings with your lab TA/reader at different times in addition to the final demo.
 
 ## Project Description
+Why is it important or interesting to you?
+-  We decided that we should do a movie recommender because all of us really like movies, but hate how long it takes to get a good movie recommendation. We wanted to create a system where movie recommendations were more personal than what most application offer right now. 
+What languages/tools/technologies do you plan to use?
+- C++
+- VS Code
+What will be the input/output of your project?
+Inputs:
+Output: 
+What are the features that the project provides?
+
 
 For our project, we decided that we should do a movie recommender because all of us really like movies, but hate how long it takes to get a good movie recommendation. Thus, we decided that in C++, we would mandate that the user pick a set list of genres that they like to watch. In addition, we would give the user the option to choose the release year of movies. Finally, the user would either pick their top 3 movies from our data base or have the option to add their own movies that they liked if they don't see them already there. If they decide to add movies, our program would ask for name, genre(s), year (if applicable), rating, and synopsis. After, our program would output a top 5 recommended based off of genre (and year if applicable) and if it was well watched (for example, movies with the same generes and year would then be ranked by which one has been watched more, according to our data base). Then, we would have top 5 most watched from each genre/year. Finally, we would have a most watched list, consisting of the top 5 movies that people have watched the most. Each movie would come with a synopsis, rating, and how many people have watched the movie.
 
