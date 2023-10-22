@@ -9,6 +9,7 @@ Purpose
 Languages/tools/technologies
 - C++
 - VS Code
+- Database from Kaggle: [IMDB Top 250 Movies](https://www.kaggle.com/datasets/karkavelrajaj/imdb-top-250-movies)
   
 Inputs
 - Username
