@@ -12,12 +12,13 @@
 Inputs:
 Output: 
  >  What are the features that the project provides?
-
-
-For our project, we decided that we should do a movie recommender because all of us really like movies, but hate how long it takes to get a good movie recommendation. Thus, we decided that in C++, we would mandate that the user pick a set list of genres that they like to watch. In addition, we would give the user the option to choose the release year of movies. Finally, the user would either pick their top 3 movies from our data base or have the option to add their own movies that they liked if they don't see them already there. If they decide to add movies, our program would ask for name, genre(s), year (if applicable), rating, and synopsis. After, our program would output a top 5 recommended based off of genre (and year if applicable) and if it was well watched (for example, movies with the same generes and year would then be ranked by which one has been watched more, according to our data base). Then, we would have top 5 most watched from each genre/year. Finally, we would have a most watched list, consisting of the top 5 movies that people have watched the most. Each movie would come with a synopsis, rating, and how many people have watched the movie.
-
-NOTE: In order to build our initial data base, we would ask people to fill out a Google Form, asking the same questions that our users would get asked. We would then format these answers and then put them in a txt file or csv file. When new movies or information is added, our program would update the file.
-
+- Asking for log in: username, password (if first time: user has to pick genress and maturity rating, but can optionally pick other things such as actor(esses), director(s), release year, etc or just skip the optional section)
+- Upon login there'll be a message about how to use the site (how to call for a menu, get to the search function, see your profile, or how to go back)
+- Menu: there'll be your recommendations based off of the choices you picked in the beginning (top 5 overall, top 5 for each for each preference, top 5 based off of searches)
+- Search: has menu for search parameters, which are the same as the ones in the profile set up. Also has sorting based on highest to lowest ranking, views, and year
+- Profile: can adjust username, password, and preferences
+- signout feature
+- Each movie contains: ratings, synopsis, views, cast, director(s), maturity rating, release year, genre, etc
 
  > ## Phase II
  > In addition to completing the "User Interface Specification" and "Class Diagram" sections below, you will need to:
