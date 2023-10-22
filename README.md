@@ -3,22 +3,37 @@
  > Authors: [Alana Yamauchi](https://github.com/ayama039) [Anokhee Shah](https://github.com/) [Shreya Mohan](https://github.com/shreyyaa123) [Shrey Kothari](https://github.com/ShreyGK6)
 
 ## Project Description
- > Why is it important or interesting to you?
+Purpose
 -  We decided that we should do a movie recommender because all of us really like movies, but hate how long it takes to get a good movie recommendation. We wanted to create a system where movie recommendations were more personal than what most application offer right now. 
- >  What languages/tools/technologies do you plan to use?
+languages/tools/technologies
 - C++
 - VS Code
- >  What will be the input/output of your project?
-Inputs:
-Output: 
- >  What are the features that the project provides?
-- Asking for log in: username, password (if first time: user has to pick genress and maturity rating, but can optionally pick other things such as actor(esses), director(s), release year, etc or just skip the optional section)
-- Upon login there'll be a message about how to use the site (how to call for a menu, get to the search function, see your profile, or how to go back)
-- Menu: there'll be your recommendations based off of the choices you picked in the beginning (top 5 overall, top 5 for each for each preference, top 5 based off of searches)
-- Search: has menu for search parameters, which are the same as the ones in the profile set up. Also has sorting based on highest to lowest ranking, views, and year
-- Profile: can adjust username, password, and preferences
+Inputs
+- Username
+- Password
+- Age
+- Genre
+- Favorite Actor
+- Favorite Director
+outputs
+- top 5 overall based on profile 
+- top 5 for each for each preference based on profile 
+- (if user searches instead) top 20 based off of searches
+- options to sort the search recommendations
+- back and skip "buttons"
+- reset profile "buttons"
+- login/logout "buttons"
+- intructions on how to use search feature, and navigate through our system
+Features
+- User log in: username, password
+- User Profile Set Up: User has to pick genress and maturity rating, but can optionally pick other things such as actor(esses), director(s), release year, etc or just skip the optional section)
+- Overview of system: After they set up their profile there'll be a message about how to use the site (how to call for a menu, get to the search function, see your profile, or how to go back)
+- Menu: Recommendations based off of the inputs from profile (top 5 overall, top 5 for each for each preference, top 5 based off of searches)
+- Search: has menu for search parameters, which are the same as the ones in the profile set up, this will output recommendations independently to the profile. Asks what they want to filter recommendations by (user picks one) and they type it into the terminal using given commands. They first select the category and then within the category the user types what they want to see. For example, if they pick a genre they would type comedy and then the system would recommend 20 comedy movies from our database. 
+- Sorting: Within the search fetaure the user can sort these recommendations based on highest to lowest ranking, views, and year
+- Reset/back/skip: at any point the user can adjust username, password, and profile preferences
 - signout feature
-- Each movie contains: ratings, synopsis, views, cast, director(s), maturity rating, release year, genre, etc
+- Each movie recommendation contains: ratings, synopsis, views, cast, director(s), maturity rating, release year, genre
 
  > ## Phase II
  > In addition to completing the "User Interface Specification" and "Class Diagram" sections below, you will need to:
