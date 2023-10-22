@@ -21,7 +21,7 @@ Inputs
   
 Outputs
 - top 5 overall based on profile 
-- top 5 for each for each preference based on profile 
+- top 5 for 3 of their preference based on profile 
 - (if user searches instead) top 20 based off of searches
 - options to sort the search recommendations
 - back and skip "buttons"
@@ -33,7 +33,7 @@ Features
 - User log in: username, password
 - User Profile Set Up: User has to pick genress and maturity rating, but can optionally pick other things such as actor(esses), director(s), release year, etc or just skip the optional section)
 - Overview of system: After they set up their profile there'll be a message about how to use the site (how to call for a menu, get to the search function, see your profile, or how to go back)
-- Menu: Recommendations based off of the inputs from profile (top 5 overall, top 5 for each for each preference, top 5 based off of searches)
+- Menu: Recommendations based off of the inputs from profile (top 5 overall, top 5 for 3 of their preference based on profile , top 20 based off of searches)
 - Search: has menu for search parameters, which are the same as the ones in the profile set up, this will output recommendations independently to the profile. Asks what they want to filter recommendations by (user picks one) and they type it into the terminal using given commands. They first select the category and then within the category the user types what they want to see. For example, if they pick a genre they would type comedy and then the system would recommend 20 comedy movies from our database. 
 - Sorting: Within the search fetaure the user can sort these recommendations based on highest to lowest ranking, views, and year
 - Reset/back/skip: at any point the user can adjust username, password, and profile preferences
