@@ -9,6 +9,7 @@ Purpose
 Languages/tools/technologies
 - C++
 - VS Code
+  
 Inputs
 - Username
 - Password
@@ -16,7 +17,8 @@ Inputs
 - Genre
 - Favorite Actor
 - Favorite Director
-outputs
+  
+Outputs
 - top 5 overall based on profile 
 - top 5 for each for each preference based on profile 
 - (if user searches instead) top 20 based off of searches
@@ -25,6 +27,7 @@ outputs
 - reset profile "buttons"
 - login/logout "buttons"
 - intructions on how to use search feature, and navigate through our system
+  
 Features
 - User log in: username, password
 - User Profile Set Up: User has to pick genress and maturity rating, but can optionally pick other things such as actor(esses), director(s), release year, etc or just skip the optional section)
