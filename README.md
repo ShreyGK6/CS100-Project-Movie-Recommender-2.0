@@ -4,8 +4,9 @@
 
 ## Project Description
 Purpose
--  We decided that we should do a movie recommender because all of us really like movies, but hate how long it takes to get a good movie recommendation. We wanted to create a system where movie recommendations were more personal than what most application offer right now. 
-languages/tools/technologies
+-  We decided that we should do a movie recommender because all of us really like movies, but hate how long it takes to get a good movie recommendation. We wanted to create a system where movie recommendations were more personal than what most application offer right now.
+  
+Languages/tools/technologies
 - C++
 - VS Code
 Inputs
