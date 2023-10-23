@@ -32,12 +32,12 @@ Outputs
 Features
 - User log in: username, password
 - User Profile Set Up: User has to pick genress and maturity rating, but can optionally pick other things such as actor(esses), director(s), release year, etc or just skip the optional section)
-- Overview of system: After they set up their profile there'll be a message about how to use the site (how to call for a menu, get to the search function, see your profile, or how to go back)
+- Overview of system: After they set up their profile there'll be a message about how to use the site (how to call for items in the menu, get to the search function, see your profile, or how to go back)
 - Menu: the user will be given options such as search, movie recommmendations, profile (takes back to profile), sign out 
-- Search: has menu for search parameters, which are the same as the ones in the profile set up, this will output recommendations independently to the profile. Asks what they want to filter recommendations by (user picks one) and they type it into the terminal using given commands. They first select the category and then within the category the user types what they want to see. For example, if they search by genre they would genre and then type comedy and then the system would recommend 20 comedy movies from our database. This is useful because when with other people you may want to get new recommendations not soley based off of your profile and so this is a more generic recommendation option. 
+- Search: has menu for search parameters, which are the same as the ones in the profile set up, this will output recommendations independently to the profile. Asks what they want to filter recommendations by (user picks one) and they type it into the terminal using given commands. They first select the category and then within the category the user types what they want to see. For example, if they search by genre they would then type comedy and then the system would recommend 20 comedy movies from our database. This is useful because when with other people you may want to get new recommendations not soley based off of your profile and so this is a more generic recommendation option. 
 - Sorting: Within the search fetaure the user can sort these recommendations based on highest to lowest ranking, views, and year
 - Reset/back/skip: at any point the user can adjust username, password, and profile preferences
-- signout feature
+- Signout feature
 - Each movie recommendation contains: ratings, synopsis, views, cast, director(s), maturity rating, release year, genre
 
  > ## Phase II
