@@ -30,11 +30,13 @@ Outputs
 - intructions on how to use search feature, and navigate through our system
   
 Features
-- User log in: username, password
+- Database: using an exisitng database from Kaggle
+- User sign up/log in: username, password
 - User Profile Set Up: User has to pick genress and maturity rating, but can optionally pick other things such as actor(esses), director(s), release year, etc or just skip the optional section)
 - Overview of system: After they set up their profile there'll be a message about how to use the site (how to call for items in the menu, get to the search function, see your profile, or how to go back)
-- Menu: the user will be given options such as search, movie recommmendations, profile (takes back to profile), sign out 
-- Search: has menu for search parameters, which are the same as the ones in the profile set up, this will output recommendations independently to the profile. Asks what they want to filter recommendations by (user picks one) and they type it into the terminal using given commands. They first select the category and then within the category the user types what they want to see. For example, if they search by genre they would then type comedy and then the system would recommend 20 comedy movies from our database. This is useful because when with other people you may want to get new recommendations not soley based off of your profile and so this is a more generic recommendation option. 
+- Menu: the user will be given options such as search, movie recommmendations, profile (takes back to profile), sign out
+- Movie Recommendation: if the user chooses this option, the screen will populate with movies based on inputs from their profile. Our system will the top five movies taking all their inputs into account, 5 movies based on the genre they inputed, 5 movies based on their appropriate maturity rating, and 5 movies based on their favorite actor/director if they choose to input that. At anytime if the user changes their profile inputs these recommendations will also be updated to match the new inputs. These recommendations will be based off of the dataset. 
+- Search: has menu for search parameters, which are the same as the ones in the profile set up, this will output recommendations independently to the profile. Asks what they want to filter recommendations by (user picks one) and they type it into the terminal using given commands. They first select the category and then within the category the user types what they want to see. For example, if they search by genre they would then type comedy and then the system would recommend 20 comedy movies from our database. This is useful because when with other people you may want to get new recommendations not soley based off of your profile and so this is a more generic recommendation option. These recommendations will be based off of the dataset.
 - Sorting: Within the search fetaure the user can sort these recommendations based on highest to lowest ranking, views, and year
 - Reset/back/skip: at any point the user can adjust username, password, and profile preferences
 - Signout feature
