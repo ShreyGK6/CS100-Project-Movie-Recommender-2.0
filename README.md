@@ -1,6 +1,6 @@
 # Movie Recommender 2.0
  
- > Authors: [Alana Yamauchi](https://github.com/ayama039) [Anokhee Shah](https://github.com/ashah174)) [Shreya Mohan](https://github.com/shreyyaa123) [Shrey Kothari](https://github.com/ShreyGK6)
+ > Authors: [Alana Yamauchi](https://github.com/ayama039) [Anokhee Shah](https://github.com/ashah174) [Shreya Mohan](https://github.com/shreyyaa123) [Shrey Kothari](https://github.com/ShreyGK6)
 
 ## Project Description
 Purpose
