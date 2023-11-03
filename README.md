@@ -59,6 +59,10 @@ Features
 ### Navigation Diagram
 > Draw a diagram illustrating how the user can navigate from one screen to another. Here is an [example](https://creately.com/diagram/example/ikfqudv82/user-navigation-diagram-classic?r=v). It can be useful to label each symbol that represents a screen so that you can reference the screens in the next section or the rest of the document if necessary. Give a brief description of what the diagram represents.
 
+![Diagram](https://github.com/cs100/final-project-smoha095-ashah174-ayama039-skoth011/assets/146229303/9480a3c5-65d2-4925-aa29-83b0fa2cc985)
+
+The diagram shows the path our movie recommender will follow. First comes the log-in page, where the user enters their username and password. Then the user will be navigated to the user profile setup, where he or she can add preferences, change preferences, or change username and/or password. A message will be displayed and the user is taken to the center of the software, the overview of the system. The user presses the menu button that takes them to the menu. The menu shows what you can do: either movie recommender or searching. To go to movie recommender, the user goes to the recommendation button. To go to search, the user presses the search button. In the search button, the user can also press the sort button to sort out the recommendations that pop up. The user can always go back to the menu from either search or movie recommendation. The user can always go back to the user profile setup from the menu and log out from the menu.
+
 ### Screen Layouts
 > Include the layout of each of your screens. The layout should describe the screen’s major components such as menus and prompts for user inputs, expected output, and buttons (if applicable). Explain what is on the layout, and the purpose of each menu item, button, etc. If many screens share the same layout, start by describing the general layout and then list the screens that will be using that layout and the differences between each of them.
 
