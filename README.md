@@ -43,38 +43,22 @@ Features
 - Each movie recommendation contains: ratings, synopsis, views, cast, director(s), maturity rating, release year, genre
 
  > ## Phase II
- > In addition to completing the "User Interface Specification" and "Class Diagram" sections below, you will need to:
- > * Create an "Epic" (note) for each feature. Place these epics in the `Product Backlog` column
- > * Complete your first *sprint planning* meeting to plan out the next 7 days of work.
- >   * Break down the "Epics" into smaller actionable user stories (i.e. smaller development tasks). Convert them into issues and assign them to team members. Place these in the `TODO` (aka Sprint Backlog) column.
- >   * These cards should represent roughly 7 days worth of development time for your team. Then, once the sprint is over you should be repeating these steps to plan a new sprint, taking you until your second scrum meeting with the reader in phase III.
- > * Schedule two check-ins using Calendly. You need to pick both time slots on Tuesday of week 6. The check-ins will occur on Zoom. Your entire team must be present for both check-ins.
- >   * The first check-in needs to be scheduled with your lab TA. During that meeting, you will discuss your project design/class diagram from phase II.
- >   * The second check-in should be scheduled with a reader. During that meeting you will discuss:
- >     * The tasks you are planning for the first sprint
- >     * How work will be divided between the team members
+
 ## User Interface Specification
- > Include a navigation diagram for your screens and the layout of each of those screens as desribed below. For all the layouts/diagrams, you can use any tool such as PowerPoint or a drawing program. (Specification requirement is adapted from [this template](https://redirect.cs.umbc.edu/~mgrass2/cmsc345/Template_UI.doc))
 
 ### Navigation Diagram
-> Draw a diagram illustrating how the user can navigate from one screen to another. Here is an [example](https://creately.com/diagram/example/ikfqudv82/user-navigation-diagram-classic?r=v). It can be useful to label each symbol that represents a screen so that you can reference the screens in the next section or the rest of the document if necessary. Give a brief description of what the diagram represents.
 
 ![Diagram](https://github.com/cs100/final-project-smoha095-ashah174-ayama039-skoth011/assets/146229303/9480a3c5-65d2-4925-aa29-83b0fa2cc985)
 
 The diagram shows the path our movie recommender will follow. First comes the log-in page, where the user enters their username and password. Then the user will be navigated to the user profile setup, where he or she can add preferences, change preferences, or change username and/or password. A message will be displayed and the user is taken to the center of the software, the overview of the system. The user presses the menu button that takes them to the menu. The menu shows what you can do: either movie recommender or searching. To go to movie recommender, the user goes to the recommendation button. To go to search, the user presses the search button. In the search button, the user can also press the sort button to sort out the recommendations that pop up. The user can always go back to the menu from either search or movie recommendation. The user can always go back to the user profile setup from the menu and log out from the menu.
 
 ### Screen Layouts
-> Include the layout of each of your screens. The layout should describe the screen’s major components such as menus and prompts for user inputs, expected output, and buttons (if applicable). Explain what is on the layout, and the purpose of each menu item, button, etc. If many screens share the same layout, start by describing the general layout and then list the screens that will be using that layout and the differences between each of them.
+
 ![screen laoyouts-1](https://github.com/cs100/final-project-smoha095-ashah174-ayama039-skoth011/assets/35586951/492e8a3d-0ebe-48ec-8edd-f98fe6e9f81a)
 
 The first screen is where the user will unput their Log In information such as their username and passwords. To log in they will type "L". If they are a first time user they will be promted to set up their preferces as well where they will enter two mandatory things: age and genre, and have the oprion to input favorite actor and director. If they are a returning user, the sign in page will only have them type their username & password. Then they will see the Overview page which shows how our program will work. After that they will type "M" to go to the Menu page where they will be presented with the different features that they can utilize in our program. If the user types "R" they will see movie recommendations based on thier profile. If the user types "S" they will be able to search for a specific genre, actor, or director. If the user types, "P", the program will take them back to the profile so they can edit their preferences. If the user types "Q" the program will sign them out of them system. Within the search feature the user will hvae the option to sort their searched by release date or rating. First we will prompt them with the question on whether they want to sort, if †hey type "Y" we will then proceed to ask how they want their movies sorted, "Y" for release data or "R" for rating. If they selected "N" when asking if they want to sort thier recommendation our system would take them back to their search recommendations. At anytime, the user can type "B" to go back to the menu. 
 ## Class Diagram
- > Include a **class diagram(s)** for your project and a **description** of the diagram(s). Your class diagram(s) should include all the main classes you plan for the project. This should be in sufficient detail that another group could pick up the project this point and successfully complete it. Use proper UML notation (as discussed in the course slides).
->
-## questions
-> how to input screen layout into readme
-> make sure epic is okay
-> get soft approval on uml
+>![image (4)](https://github.com/cs100/final-project-smoha095-ashah174-ayama039-skoth011/assets/147004548/58c00768-684e-40a3-9c64-36de26cb4c55)
  
  > ## Phase III
  > You will need to schedule a check-in for the second scrum meeting with the same reader you had your first scrum meeting with (using Calendly). Your entire team must be present. This meeting will occur on Zoom and should be conducted by Wednesday of week 8.
