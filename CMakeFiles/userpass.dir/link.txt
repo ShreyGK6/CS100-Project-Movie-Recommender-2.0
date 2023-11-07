@@ -1,0 +1,1 @@
+/usr/bin/c++ -rdynamic CMakeFiles/userpass.dir/settings.cpp.o CMakeFiles/userpass.dir/settingsmain.cpp.o -o userpass 
