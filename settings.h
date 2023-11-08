@@ -5,15 +5,25 @@
 #include <string>
 using namespace std;
 
-class Settings {
-    private:
+struct preferences {        //struct for nodes
+    int age;
+    string genre;
+    string director;
+    string actor;
     string user;
     string password;
+    preferences() : age(-1), genre(""), director(""), actor(""), user(""), password(""){}
+};
 
+class Settings {
+
+    private:
+    preferences person;
 
     public:
     void startup();
-    Settings();
+    // Settings();
+
 
 
     private:

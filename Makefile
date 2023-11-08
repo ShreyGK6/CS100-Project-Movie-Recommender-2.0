@@ -117,24 +117,24 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named userpass
+# Target rules for targets named full
 
 # Build rule for target.
-userpass: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 userpass
-.PHONY : userpass
+full: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 full
+.PHONY : full
 
 # fast build rule for target.
-userpass/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/userpass.dir/build.make CMakeFiles/userpass.dir/build
-.PHONY : userpass/fast
+full/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/full.dir/build.make CMakeFiles/full.dir/build
+.PHONY : full/fast
 
 settings.o: settings.cpp.o
 .PHONY : settings.o
 
 # target to build an object file
 settings.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/userpass.dir/build.make CMakeFiles/userpass.dir/settings.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/full.dir/build.make CMakeFiles/full.dir/settings.cpp.o
 .PHONY : settings.cpp.o
 
 settings.i: settings.cpp.i
@@ -142,7 +142,7 @@ settings.i: settings.cpp.i
 
 # target to preprocess a source file
 settings.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/userpass.dir/build.make CMakeFiles/userpass.dir/settings.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/full.dir/build.make CMakeFiles/full.dir/settings.cpp.i
 .PHONY : settings.cpp.i
 
 settings.s: settings.cpp.s
@@ -150,7 +150,7 @@ settings.s: settings.cpp.s
 
 # target to generate assembly for a file
 settings.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/userpass.dir/build.make CMakeFiles/userpass.dir/settings.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/full.dir/build.make CMakeFiles/full.dir/settings.cpp.s
 .PHONY : settings.cpp.s
 
 settingsmain.o: settingsmain.cpp.o
@@ -158,7 +158,7 @@ settingsmain.o: settingsmain.cpp.o
 
 # target to build an object file
 settingsmain.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/userpass.dir/build.make CMakeFiles/userpass.dir/settingsmain.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/full.dir/build.make CMakeFiles/full.dir/settingsmain.cpp.o
 .PHONY : settingsmain.cpp.o
 
 settingsmain.i: settingsmain.cpp.i
@@ -166,7 +166,7 @@ settingsmain.i: settingsmain.cpp.i
 
 # target to preprocess a source file
 settingsmain.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/userpass.dir/build.make CMakeFiles/userpass.dir/settingsmain.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/full.dir/build.make CMakeFiles/full.dir/settingsmain.cpp.i
 .PHONY : settingsmain.cpp.i
 
 settingsmain.s: settingsmain.cpp.s
@@ -174,7 +174,7 @@ settingsmain.s: settingsmain.cpp.s
 
 # target to generate assembly for a file
 settingsmain.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/userpass.dir/build.make CMakeFiles/userpass.dir/settingsmain.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/full.dir/build.make CMakeFiles/full.dir/settingsmain.cpp.s
 .PHONY : settingsmain.cpp.s
 
 # Help Target
@@ -185,7 +185,7 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... userpass"
+	@echo "... full"
 	@echo "... settings.o"
 	@echo "... settings.i"
 	@echo "... settings.s"

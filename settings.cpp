@@ -3,10 +3,7 @@
 #include <string>
 using namespace std;
 
-Settings::Settings() {
-    user = "";
-    password = "";
-}
+
 
 void Settings::startup() {
     char answer;
@@ -37,7 +34,7 @@ void Settings::checkuserandpass() {
     string ipass;
     int checker = 0;
 
-    if (user == "" || password == "") {
+    if (person.user == "" || person.password == "") {
         cout << "We do not have you in the database. Please make an account:" << endl;
         setuserandpass();
     }
@@ -51,7 +48,11 @@ void Settings::checkuserandpass() {
         cin.clear();
         getline(cin, ipass);
         cout << endl;
-        if (iuser == user && ipass==password) {
+        cout << "original: " << person.user << endl;
+        cout << "original: " << person.password << endl;
+        cout << "input: " << iuser << endl;
+        cout << "input: " << ipass << endl;  
+        if (iuser == person.user && ipass==person.password) {
             //call menu
             cout << "in menu" << endl;
             checker = 1;
@@ -70,13 +71,16 @@ void Settings::setuserandpass () {
     cin.ignore();
     cin.clear();
     getline(cin, iuser);
-    user = iuser;
+    person.user = iuser;
     cout << endl;
 
     cout << "Please input a password." << endl;
     cin.clear();
     getline (cin, ipass);
-    password = ipass;
+    person.password = ipass;
     cout << endl;
 
 }
+
+//preferences function to ask for preferences and stores them
+//STORE IN PUBLIC CLASS OF USER PREFERENCES
