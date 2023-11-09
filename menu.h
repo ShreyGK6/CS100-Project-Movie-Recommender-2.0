@@ -1,14 +1,14 @@
 #ifndef __MENU_H__
 #define __MENU_H__
-#include "setting.h"
 
 class menu
 {
-    private:
-
-    menu menuObject;
-
     public:
+
+    void display();
+    menu();
+
+    private:
 
     void callSettings();
     void callMovieRec();
