@@ -31,7 +31,7 @@ void menu::display()
         cout << "You have selected the movie recommendations. Going there..." << endl;  
         callMovieRec();  
     }
-    else if(userInput == 'r')
+    else if(userInput == 's')
     {
         cout << "You have selected the movie searcher. Going there..." << endl;  
         callSearch();
@@ -50,5 +50,10 @@ void menu::display()
     {
         cout << "You have selected to signout. Signing out..." << endl;  
         signOut();
+    }
+    else
+    {
+        cout << "You have entered an invalid input." << endl << endl;
+        display();
     }
 }
