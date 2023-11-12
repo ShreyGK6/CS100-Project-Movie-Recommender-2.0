@@ -1,3 +1,4 @@
+#include "setup.h"
 #include "settings.h"
 
 #include <iostream>
@@ -5,8 +6,10 @@
 using namespace std;
 
 int main () {
-    Settings setting;
-    setting.startup();
+    Setup setup;
+    setup.startup();
 
+    Settings profile;
+    profile.changeprefs();
     return 0;
 }

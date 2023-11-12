@@ -177,6 +177,30 @@ settingsmain.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/full.dir/build.make CMakeFiles/full.dir/settingsmain.cpp.s
 .PHONY : settingsmain.cpp.s
 
+setup.o: setup.cpp.o
+.PHONY : setup.o
+
+# target to build an object file
+setup.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/full.dir/build.make CMakeFiles/full.dir/setup.cpp.o
+.PHONY : setup.cpp.o
+
+setup.i: setup.cpp.i
+.PHONY : setup.i
+
+# target to preprocess a source file
+setup.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/full.dir/build.make CMakeFiles/full.dir/setup.cpp.i
+.PHONY : setup.cpp.i
+
+setup.s: setup.cpp.s
+.PHONY : setup.s
+
+# target to generate assembly for a file
+setup.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/full.dir/build.make CMakeFiles/full.dir/setup.cpp.s
+.PHONY : setup.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -192,6 +216,9 @@ help:
 	@echo "... settingsmain.o"
 	@echo "... settingsmain.i"
 	@echo "... settingsmain.s"
+	@echo "... setup.o"
+	@echo "... setup.i"
+	@echo "... setup.s"
 .PHONY : help
 
 

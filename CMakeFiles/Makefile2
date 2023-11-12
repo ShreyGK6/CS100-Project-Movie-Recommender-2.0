@@ -81,12 +81,12 @@ clean: CMakeFiles/full.dir/clean
 CMakeFiles/full.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/full.dir/build.make CMakeFiles/full.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/full.dir/build.make CMakeFiles/full.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/class/classes/ayama039/final-project-smoha095-ashah174-ayama039-skoth011/CMakeFiles --progress-num=1,2,3 "Built target full"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/class/classes/ayama039/final-project-smoha095-ashah174-ayama039-skoth011/CMakeFiles --progress-num=1,2,3,4 "Built target full"
 .PHONY : CMakeFiles/full.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/full.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /class/classes/ayama039/final-project-smoha095-ashah174-ayama039-skoth011/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /class/classes/ayama039/final-project-smoha095-ashah174-ayama039-skoth011/CMakeFiles 4
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/full.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /class/classes/ayama039/final-project-smoha095-ashah174-ayama039-skoth011/CMakeFiles 0
 .PHONY : CMakeFiles/full.dir/rule

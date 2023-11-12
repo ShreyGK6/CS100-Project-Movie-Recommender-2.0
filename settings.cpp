@@ -1,86 +1,62 @@
 #include "settings.h"
+#include "setup.h"
 #include <iostream>
 #include <string>
 using namespace std;
 
+// void Settings::ex() {
+//     cout << var << endl;
+// }
 
+// Settings::Settings ();
 
-void Settings::startup() {
+void Settings::changeprefs() {
     char answer;
-    int checker = 0;
-    cout << "Are you an existing user? (y/n)" << endl; 
-    cin >> answer;
-    cout << endl;
-    while (checker == 0) {
-        if (tolower(answer) == 'y') {
-            checkuserandpass();
-            checker = 1;
-        }
-        else if (tolower(answer) == 'n') {
-            setuserandpass();
-            checkuserandpass(); //kind of a useless function bc it doesn't save anyways
-                                //have a "q" in main in order to quit the program (for sake of demo) ?
-            checker = 1;
-        }
-        else {
-            cout << "That is not a valid response. Please input y or n." << endl;
-            cin >> answer;
-            cout << endl;
-        }
-    }
-}
-void Settings::checkuserandpass() {
-    string iuser;
-    string ipass;
-    int checker = 0;
 
-    if (person.user == "" || person.password == "") {
-        cout << "We do not have you in the database. Please make an account:" << endl;
-        setuserandpass();
-    }
-    
-    while (checker == 0){
-        cout << "Please input your username" << endl;
-        cin.clear();
-        getline (cin, iuser);
-        cout << endl;
-        cout << "Please input your password" << endl;
-        cin.clear();
-        getline(cin, ipass);
-        cout << endl;
-        cout << "original: " << person.user << endl;
-        cout << "original: " << person.password << endl;
-        cout << "input: " << iuser << endl;
-        cout << "input: " << ipass << endl;  
-        if (iuser == person.user && ipass==person.password) {
-            //call menu
-            cout << "in menu" << endl;
-            checker = 1;
+    cout << "Press q to quit or pick an option to change: " << endl;
+    cout << "genre (g) \t age (y) \t actor (a) \t director (d)" << endl;
+
+    do {
+        cin >> answer;
+        answer = tolower(answer);
+        if (answer == 'g'){
+            while (answer != 'r' || answer != 'e' || answer != 'b'){
+                cout << "Would you like to reset (r) or add on to the existing preference (e)? Or press b to go back." << endl;
+                // cout << person.genre << endl;
+                cout << "genre titles" << endl;
+                cin >> answer;
+                answer = tolower(answer);
+                if (answer == 'r') {
+                    // person.genre = "";
+                    cout << "reset" << endl;
+                    person.setgenre();
+                }
+                else if (answer == 'e') {
+                    person.setgenre();
+                }
+                else if (answer == 'b') {
+                    answer = 'f';
+                }
+                else {
+                    cout << "Please provide a valid input." << endl << endl;
+                }
+            }
+        }
+        else if (answer == 'y'){
+
+        }
+        else if (answer == 'a'){
+        
+        }
+        else if (answer == 'd'){
+
         }
         else {
-            cout << "Incorrect username or password was given. Please try again." << endl << endl;
+            cout << "Press q to quit or pick an option to change: " << endl;
+            cout << "genre (g) \t age (y) \t actor (a) \t director (d)" << endl;
         }
+
     }
-}
-
-void Settings::setuserandpass () {
-    string iuser;
-    string ipass;
-
-    cout << "Please input a username." << endl;
-    cin.ignore();
-    cin.clear();
-    getline(cin, iuser);
-    person.user = iuser;
-    cout << endl;
-
-    cout << "Please input a password." << endl;
-    cin.clear();
-    getline (cin, ipass);
-    person.password = ipass;
-    cout << endl;
+    while (answer = 'q');
 
 }
-
-//preferences function to ask for preferences and stores them
-//STORE IN PUBLIC CLASS OF USER PREFERENCES
