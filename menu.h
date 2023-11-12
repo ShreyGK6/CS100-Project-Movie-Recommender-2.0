@@ -5,8 +5,8 @@ class menu
 {
     public:
 
-    void display();
     menu();
+    void display();
 
     private:
 
