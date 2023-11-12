@@ -1,16 +1,16 @@
-#include "setup.h"
-#include "settings.h"
+// #include "settings.h"
 #include <iostream>
 #include <string>
 using namespace std;
 
-
+#include "setup.h"
 
 void Setup::startup() {
     char answer;
     int checker = 0;
     cout << "Are you an existing user? (y/n)" << endl; 
     cin >> answer;
+    cin.ignore();
     cout << endl;
     while (checker == 0) {
         if (tolower(answer) == 'y') {
@@ -18,7 +18,9 @@ void Setup::startup() {
             checker = 1;
         }
         else if (tolower(answer) == 'n') {
-            setuserandpass();
+            cout << "------------- CREATE ACCOUNT -----------" << endl;
+            setuser();
+            setpass();
             checkuserandpass(); //kind of a useless function bc it doesn't save anyways
                                 //have a "q" in main in order to quit the program (for sake of demo) ?
             setprefs();
@@ -38,8 +40,15 @@ void Setup::checkuserandpass() {
 
     if (person.user == "" || person.password == "") {
         cout << "We do not have you in the database. Please make an account:" << endl;
-        setuserandpass();
+        cout << endl;
+        cout << "------------- CREATE ACCOUNT -----------" << endl;
+        setuser();
+        setpass();
+        setprefs();
     }
+
+    cout << "---------- SIGN IN ---------" << endl;
+
     
     while (checker == 0){
         cout << "Please input your username" << endl;
@@ -61,24 +70,6 @@ void Setup::checkuserandpass() {
     }
 }
 
-void Setup::setuserandpass () {
-    string iuser;
-    string ipass;
-
-    cout << "Please input a username." << endl;
-    cin.ignore();
-    cin.clear();
-    getline(cin, iuser);
-    person.user = iuser;
-    cout << endl;
-
-    cout << "Please input a password." << endl;
-    cin.clear();
-    getline (cin, ipass);
-    person.password = ipass;
-    cout << endl;
-
-}
 
 void Setup::setprefs() { 
     char answer;
@@ -86,8 +77,9 @@ void Setup::setprefs() {
     setgenre();
     setage();
 
-    cout << "Please add additional preferences. If you are done, please enter q." << endl;
+    
     do {
+        cout << "Please add additional preferences. If you are done, please enter q." << endl;
         cout << "actor (a) \t director (d)" << endl;
         cin >> answer;
         answer = tolower(answer);
@@ -99,6 +91,7 @@ void Setup::setprefs() {
         }
     }
     while (answer != 'q');
+    cin.ignore();
     
 
 }
@@ -107,9 +100,9 @@ void Setup::setgenre() {
     char answer;
     cout << "Pick a faveorite genre: " << endl;
     cout << "comedy (c) \t drama (d) \t romance (r) \t action (a)" << endl;
+    cin >> answer;
     
     do {
-        cin >> answer;
         cin.clear();
         answer = tolower(answer);
         if (answer == 'c'){
@@ -147,14 +140,14 @@ void Setup::setgenre() {
         else if (answer == 'q' && person.genre == "") {
             answer = '!';
         }
-        else {
+        else if (answer != 'q') {
             cout << "not a valid response. Please give a valid response: " << endl;
         }
         cout << "Pick another genre! If are finished, please type q" << endl;
         cout << "comedy (c) \t drama (d) \t romance (r) \t action (a)" << endl;
+        cin >> answer;
     }
     while (answer != 'q');
-    cout << person.genre << endl;
 }
 
 void Setup::setage() {
@@ -167,33 +160,120 @@ void Setup::setage() {
 
 void Setup::setactor(){
     string answer;
+    int count = 0;
     
     do{
-        cout << "Please type in an actor(ess). Otherwise, type exit to go back." << endl;
+        cout << "Please type in an actor(ess). Otherwise, type quit to go back." << endl;
         cin.clear();
-        getline (cin, answer);
-        for (int i = 0; i < answer.length(); i++ ){
-            answer[i] = tolower(answer[i]);
+        if (count == 0) {
+            cin.ignore();
         }
-        person.actor = person.actor + answer + " ";
+        getline (cin, answer);
+        count = count + 1;
+        if (answer != "quit") {
+            for (int i = 0; i < answer.length(); i++ ){
+                answer[i] = tolower(answer[i]);
+            }
+            person.actor = person.actor + answer + " ";
+        }
     }
     while (answer != "quit");
 }
 
 void Setup::setdirector() {
      string answer;
+     int count = 0;
     
     do{
-        cout << "Please type in a director. Otherwise, type exit to go back." << endl;
+        cout << "Please type in a director. Otherwise, type quit to go back." << endl;
         cin.clear();
-        getline (cin, answer);
-        for (int i = 0; i < answer.length(); i++ ){
-            answer[i] = tolower(answer[i]);
+        if (count == 0) {
+            cin.ignore();
         }
-        person.director = person.director + answer + " ";
+        getline (cin, answer);
+        count = count + 1;
+        if (answer != "quit") {
+            for (int i = 0; i < answer.length(); i++ ){
+                answer[i] = tolower(answer[i]);
+            }
+            person.director = person.director + answer + " ";
+        }
     }
     while (answer != "quit");
 }
 
-//preferences function to ask for preferences and stores them
-//STORE IN PUBLIC CLASS OF USER PREFERENCES 
+void Setup::resetgenre() {
+    person.genre = "";
+}
+
+void Setup::resetage() {
+    person.age = -1;
+}
+
+void Setup::resetactor() {
+    person.actor = "";
+}
+
+void Setup::resetdirector() {
+    person.director = "";
+}
+
+void Setup::resetuser() {
+    person.user = "";
+}
+
+void Setup::resetpass() {
+    person.password = "";
+}
+
+void Setup::setuser() {
+    string iuser;
+
+    cout << "Please input a username." << endl;
+    cin.clear();
+    getline(cin, iuser);
+    person.user = iuser;
+    cout << endl;
+
+}
+
+void Setup::setpass() {
+    string ipass;
+
+    cout << "Please input a password." << endl;
+    cin.clear();
+    getline (cin, ipass);
+    person.password = ipass;
+    cout << endl;
+}
+
+void Setup::showgenre(){
+    cout << person.genre << endl;
+}
+
+void Setup::showage(){
+    cout << person.age << endl;
+}
+
+void Setup::showactor(){
+    cout << person.actor << endl;
+}
+
+void Setup::showdirector(){
+    cout << person.director << endl;
+}
+
+void Setup::showuser(){
+    cout << person.user << endl;
+}
+
+int Setup::showpass(){
+    string pass = person.password;
+    int count = 0;
+
+    for (int i = 0; i < pass.length(); i++) {
+        count = count + 1;
+    }
+
+    return count;
+}

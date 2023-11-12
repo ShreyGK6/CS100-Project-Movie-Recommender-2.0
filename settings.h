@@ -1,15 +1,17 @@
 #ifndef __SETTINGS_H__
 #define __SETTINGS_H__
-#include "setup.h"
 
-#include <iostream>
-#include <string>
-using namespace std;
+#include "setup.h"
+// #include <iostream>
+// #include <string>
+// using namespace std;
+
+class Setup;
 
 class Settings {
     public:
     // Settings();
-    void changeprefs();
+    void changeprefs(Setup &setup);
     // void ex();
 
 

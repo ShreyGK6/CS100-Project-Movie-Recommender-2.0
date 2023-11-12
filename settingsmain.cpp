@@ -9,7 +9,10 @@ int main () {
     Setup setup;
     setup.startup();
 
+    // cout << person.genre << endl;
+    // cout << var << endl;
+
     Settings profile;
-    profile.changeprefs();
+    profile.changeprefs(setup);
     return 0;
 }

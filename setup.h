@@ -3,7 +3,7 @@
 
 #include <iostream>
 #include <string>
-#include "settings.h"
+// #include "settings.h"
 using namespace std;
 
 struct preferences {        
@@ -17,22 +17,37 @@ struct preferences {
 };
 
 class Setup {
+    friend class Settings;
 
     public:
     void startup();
     preferences person;
+    
     // int var = 3;
 
 
     private:
     void checkuserandpass();
-    void setuserandpass();
     void setprefs();
-    void setgenre();
     void setage();
     void setactor();
     void setdirector();
-    friend class Settings;
+    void setgenre();
+    void resetgenre();
+    void resetactor();
+    void resetage();
+    void resetdirector();
+    void resetpass();
+    void resetuser();
+    void setuser();
+    void setpass();
+    void showgenre();
+    void showage();
+    void showactor();
+    void showdirector();
+    void showuser();
+    int showpass();
+    
 
     
 };
