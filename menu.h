@@ -15,6 +15,7 @@ class menu
     void callSearch();
     void callOverview();
     void signOut();
+    void options();
 };
 
 #endif

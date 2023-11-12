@@ -21,10 +21,20 @@ void menu::callSearch()
 void menu::signOut()
 {}
 
+void menu::options()
+{
+    cout << "- r for movie recommendation" << endl;
+    cout << "- s for movie searcher" << endl;
+    cout << "- p for profile settings" << endl;
+    cout << "- o for overview" << endl;
+    cout << "- q for signing out" << endl;
+}
+
 void menu::display()
 {
     char userInput;
-    cout << "Please select an option for menu options: " << endl;
+    cout << "Please select an option for menu options:" << endl;
+    options();
     cin >> userInput;
     if(userInput == 'r')
     {
