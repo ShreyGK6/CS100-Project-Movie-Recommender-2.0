@@ -1,12 +1,10 @@
-#ifndef __INSTRUCTIONSPAGE_H__
-#define __INSTRUCTIONSPAGE_H__
+#ifndef __INSTRUCTIONS_H__
+#define __INSTRUCTIONS_H__
 
 class instructions{
     public:
         instructions();
-    private:
         void display();
-        void keyOptions();
 
 };
 #endif
