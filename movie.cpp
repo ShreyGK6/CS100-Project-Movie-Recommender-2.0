@@ -1,6 +1,7 @@
 #include <iostream>
 #include "movie.h" 
 #include <vector>
+#include <sstream>
 using namespace std;
 
 Movie::Movie(string &title, int releaseDate, double rating, string &maturityRating, string &genre, string &actor, string &director)
@@ -25,39 +26,39 @@ void Movie::display()
     cout << "Director: " << director << endl;
 }
 
-// vector <string> splitStringByComma(string &input){
-//     vector <string> result;
-//     istringstream stream(input);
-//     string token;
-//     while (getline(stream, token, ",")){
-//         result.push_back(token);
-//     }
-//     return result; 
-// }
+vector <string> splitStringByComma(string &input){
+    vector <string> result;
+    istringstream stream(input);
+    string token;
+    while (getline(stream, token, ',')){
+        result.push_back(token);
+    }
+    return result; 
+}
 
-// vector <string> Movie::getGenre(){
-//     vector <string> genres = splitStringByComma(genre);
-//     return genres;
-// }
+vector <string> Movie::getGenre(){
+    vector <string> genres = splitStringByComma(genre);
+    return genres;
+}
 
-// vector <string> Movie::getActor(){
-//     vector <string> actors = splitStringByComma(actor);
-//     return actors;
-// }
+vector <string> Movie::getActor(){
+    vector <string> actors = splitStringByComma(actor);
+    return actors;
+}
 
-// vector <string> Movie::getDirector(){
-//     vector <string> directors = splitStringByComma(director);
-//     return directors;
-// }
+vector <string> Movie::getDirector(){
+    vector <string> directors = splitStringByComma(director);
+    return directors;
+}
 
-// vector <string> Movie::getMaturityRating(){
-//     return maturityRating;
-// }
+string Movie::getMaturityRating(){
+    return maturityRating;
+}
 
-// vector <string> Movie::getReleaseDate(){
-//     return releaseDate;
-// }
-// vector <string> Movie::getRating(){
-//     return rating;
-// }
+int Movie::getReleaseDate(){
+    return releaseDate;
+}
+double Movie::getRating(){
+    return rating;
+}
 

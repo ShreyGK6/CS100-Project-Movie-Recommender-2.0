@@ -2,6 +2,7 @@
 #define __DATABASE_H
 #include <vector>
 #include <string>
+#include <iostream>
 #include "movie.h"
 using namespace std;
 
@@ -11,12 +12,12 @@ class Database {
     public:
         void loadFromTSV(string &filename);
         void displayMovies();
-        // vector <Movie> getMoviesbyGenre(string genre);
-        // vector <Movie> getMoviesbyMaturityRating(string maturityRating);
-        // vector <Movie> getMoviesbyActor(string actor);
-        // vector <Movie> getMoviesbyDirector(string director);
-        // vector <Movie> getMoviesbyReleaseDate(string releaseDate);
-        // vector <Movie> getMoviesbyRating(string rating);
+        vector <Movie> getMoviesbyGenre(string genre);
+        vector <Movie> getMoviesbyActor(string actor);
+        vector <Movie> getMoviesbyDirector(string director);
+        vector <Movie> getMoviesbyMaturityRating(string maturityRating);
+        vector <Movie> getMoviesbyReleaseDate(int releaseDate);
+        vector <Movie> getMoviesbyRating(double rating);
 
 };
 
