@@ -7,6 +7,7 @@ class menu
 
     menu();
     void display();
+    void options();
 
     private:
 
@@ -15,7 +16,6 @@ class menu
     void callSearch();
     void callOverview();
     void signOut();
-    void options();
 };
 
 #endif
