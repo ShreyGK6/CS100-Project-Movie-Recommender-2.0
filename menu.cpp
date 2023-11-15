@@ -40,33 +40,38 @@ void menu::options()
     cout << "- q for signing out" << endl;
 }
 
-void menu::display()
+char menu::askingForInput()
 {
     char userInput;
     cout << "Please select an option for menu options:" << endl;
     options();
     cin >> userInput;
-    if(userInput == 'r')
+    return userInput;
+}
+
+void menu::display()
+{
+    if(askingForInput() == 'r')
     {
         cout << "You have selected the movie recommendations. Going there..." << endl;  
         callMovieRec();  
     }
-    else if(userInput == 's')
+    else if(askingForInput() == 's')
     {
         cout << "You have selected the movie searcher. Going there..." << endl;  
         callSearch();
     }
-    else if(userInput == 'p')
+    else if(askingForInput() == 'p')
     {
         cout << "You have selected the profile settings. Going there..." << endl;  
         callSettings();
     }
-    else if(userInput == 'o')
+    else if(askingForInput() == 'o')
     {
         cout << "You have selected the overview. Going there..." << endl;  
         callOverview();
     }
-    else if(userInput == 'q')
+    else if(askingForInput() == 'q')
     {
         cout << "You have selected to signout. Signing out..." << endl;  
         signOut();

@@ -13,6 +13,12 @@ TEST(functionsWorking, options)
     EXPECT_NO_THROW(menuObject.options());
 }
 
+TEST(functionsWorking, askingForInput)
+{
+    menu menuObject;
+    EXPECT_NO_THROW(menuObject.askingForInput());
+}
+
 TEST(functionsWorking, callSettings)
 {
     menu menuObject;
