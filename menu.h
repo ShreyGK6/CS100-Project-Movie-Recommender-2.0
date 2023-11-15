@@ -9,9 +9,7 @@ class menu
     void display();
     void options();
 
-    private:
-
-    void callSettings();
+    void callSettings();  //make all functions this and below private; public due to tests
     void callMovieRec();
     void callSearch();
     void callOverview();

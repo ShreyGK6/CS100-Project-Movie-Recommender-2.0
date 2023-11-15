@@ -7,19 +7,29 @@ menu::menu()
 {}
 
 void menu::callSettings()
-{}
+{
+    cout << "Calling settings..." << endl;
+}
 
 void menu::callMovieRec()
-{}
+{
+    cout << "Calling movie recommendator..." << endl;
+}
 
 void menu::callOverview()
-{}
+{
+    cout << "Calling overview..." << endl;
+}
 
 void menu::callSearch()
-{}
+{
+    cout << "Calling movie searcher..." << endl;
+}
 
 void menu::signOut()
-{}
+{
+    cout << "Signed out" << endl;
+}
 
 void menu::options()
 {
