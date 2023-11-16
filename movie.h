@@ -13,8 +13,8 @@ class Movie {
         int releaseDate;
         string title;
         double rating;
-
-        Movie(string &title, int releaseDate, double rating, string &maturityRating, string &genre,  string &actor, string &director );
+        Movie();
+        Movie(string title, int releaseDate, double rating, string maturityRating, string genre,  string actor, string director );
         void display();
         vector <string> getGenre();
         vector <string> getActor();

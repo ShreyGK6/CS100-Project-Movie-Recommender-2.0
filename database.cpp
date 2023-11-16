@@ -78,7 +78,7 @@ using namespace std;
         }
         return directorSpecificMovie;
     }
-   
+
     vector <Movie> Database::getMoviesbyMaturityRating(string maturityRating){
         vector <Movie> maturityRatingSpecificMovie;
         for (int i = 0; i < movies.size(); i++){
@@ -107,4 +107,8 @@ using namespace std;
             }
         }
         return ratingSpecificMovie;
+    }
+
+    void Database::insert(Movie movie){
+        movies.push_back(movie);
     }

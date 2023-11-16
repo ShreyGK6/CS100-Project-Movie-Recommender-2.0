@@ -18,7 +18,7 @@ class Database {
         vector <Movie> getMoviesbyMaturityRating(string maturityRating);
         vector <Movie> getMoviesbyReleaseDate(int releaseDate);
         vector <Movie> getMoviesbyRating(double rating);
-
+        void insert(Movie movie);
 };
 
 #endif
