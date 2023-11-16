@@ -1,6 +1,36 @@
 #include "gtest/gtest.h"
 #include "menu.cpp"
 
+TEST(functionsWorking, askingForInputR)
+{
+    menu menuObject;
+    EXPECT_EQ(menuObject.askingForInput(), 'r');
+}
+
+TEST(functionsWorking, askingForInputS)
+{
+    menu menuObject;
+    EXPECT_EQ(menuObject.askingForInput(), 's');
+}
+
+TEST(functionsWorking, askingForInputP)
+{
+    menu menuObject;
+    EXPECT_EQ(menuObject.askingForInput(), 'p');
+}
+
+TEST(functionsWorking, askingForInputO)
+{
+    menu menuObject;
+    EXPECT_EQ(menuObject.askingForInput(), 'o');
+}
+
+TEST(functionsWorking, askingForInputQ)
+{
+    menu menuObject;
+    EXPECT_EQ(menuObject.askingForInput(), 'q');
+}
+
 TEST(functionsWorking, display)
 {
     menu menuObject;
@@ -11,12 +41,6 @@ TEST(functionsWorking, options)
 {
     menu menuObject;
     EXPECT_NO_THROW(menuObject.options());
-}
-
-TEST(functionsWorking, askingForInput)
-{
-    menu menuObject;
-    EXPECT_NO_THROW(menuObject.askingForInput());
 }
 
 TEST(functionsWorking, callSettings)
