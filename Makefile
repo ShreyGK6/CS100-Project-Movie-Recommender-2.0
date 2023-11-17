@@ -162,17 +162,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named runInstrctionTests
+# Target rules for targets named runTest
 
 # Build rule for target.
-runInstrctionTests: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 runInstrctionTests
-.PHONY : runInstrctionTests
+runTest: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 runTest
+.PHONY : runTest
 
 # fast build rule for target.
-runInstrctionTests/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/runInstrctionTests.dir/build.make CMakeFiles/runInstrctionTests.dir/build
-.PHONY : runInstrctionTests/fast
+runTest/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/runTest.dir/build.make CMakeFiles/runTest.dir/build
+.PHONY : runTest/fast
 
 #=============================================================================
 # Target rules for targets named runAllTests
@@ -244,6 +244,7 @@ Instructions.o: Instructions.cpp.o
 
 # target to build an object file
 Instructions.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/runTest.dir/build.make CMakeFiles/runTest.dir/Instructions.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/runAllTests.dir/build.make CMakeFiles/runAllTests.dir/Instructions.cpp.o
 .PHONY : Instructions.cpp.o
 
@@ -252,6 +253,7 @@ Instructions.i: Instructions.cpp.i
 
 # target to preprocess a source file
 Instructions.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/runTest.dir/build.make CMakeFiles/runTest.dir/Instructions.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/runAllTests.dir/build.make CMakeFiles/runAllTests.dir/Instructions.cpp.i
 .PHONY : Instructions.cpp.i
 
@@ -260,6 +262,7 @@ Instructions.s: Instructions.cpp.s
 
 # target to generate assembly for a file
 Instructions.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/runTest.dir/build.make CMakeFiles/runTest.dir/Instructions.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/runAllTests.dir/build.make CMakeFiles/runAllTests.dir/Instructions.cpp.s
 .PHONY : Instructions.cpp.s
 
@@ -268,7 +271,7 @@ instructionMain.o: instructionMain.cpp.o
 
 # target to build an object file
 instructionMain.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/runAllTests.dir/build.make CMakeFiles/runAllTests.dir/instructionMain.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/runTest.dir/build.make CMakeFiles/runTest.dir/instructionMain.cpp.o
 .PHONY : instructionMain.cpp.o
 
 instructionMain.i: instructionMain.cpp.i
@@ -276,7 +279,7 @@ instructionMain.i: instructionMain.cpp.i
 
 # target to preprocess a source file
 instructionMain.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/runAllTests.dir/build.make CMakeFiles/runAllTests.dir/instructionMain.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/runTest.dir/build.make CMakeFiles/runTest.dir/instructionMain.cpp.i
 .PHONY : instructionMain.cpp.i
 
 instructionMain.s: instructionMain.cpp.s
@@ -284,7 +287,7 @@ instructionMain.s: instructionMain.cpp.s
 
 # target to generate assembly for a file
 instructionMain.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/runAllTests.dir/build.make CMakeFiles/runAllTests.dir/instructionMain.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/runTest.dir/build.make CMakeFiles/runTest.dir/instructionMain.cpp.s
 .PHONY : instructionMain.cpp.s
 
 instructiontest.o: instructiontest.cpp.o
@@ -292,7 +295,7 @@ instructiontest.o: instructiontest.cpp.o
 
 # target to build an object file
 instructiontest.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/runInstrctionTests.dir/build.make CMakeFiles/runInstrctionTests.dir/instructiontest.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/runAllTests.dir/build.make CMakeFiles/runAllTests.dir/instructiontest.cpp.o
 .PHONY : instructiontest.cpp.o
 
 instructiontest.i: instructiontest.cpp.i
@@ -300,7 +303,7 @@ instructiontest.i: instructiontest.cpp.i
 
 # target to preprocess a source file
 instructiontest.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/runInstrctionTests.dir/build.make CMakeFiles/runInstrctionTests.dir/instructiontest.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/runAllTests.dir/build.make CMakeFiles/runAllTests.dir/instructiontest.cpp.i
 .PHONY : instructiontest.cpp.i
 
 instructiontest.s: instructiontest.cpp.s
@@ -308,7 +311,7 @@ instructiontest.s: instructiontest.cpp.s
 
 # target to generate assembly for a file
 instructiontest.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/runInstrctionTests.dir/build.make CMakeFiles/runInstrctionTests.dir/instructiontest.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/runAllTests.dir/build.make CMakeFiles/runAllTests.dir/instructiontest.cpp.s
 .PHONY : instructiontest.cpp.s
 
 # Help Target
@@ -328,7 +331,7 @@ help:
 	@echo "... gtest"
 	@echo "... gtest_main"
 	@echo "... runAllTests"
-	@echo "... runInstrctionTests"
+	@echo "... runTest"
 	@echo "... Instructions.o"
 	@echo "... Instructions.i"
 	@echo "... Instructions.s"
