@@ -1,13 +1,13 @@
 CMAKE_MINIMUM_REQUIRED(VERSION 3.2)
 add_subdirectory(googletest)
 
-ADD_EXECUTABLE(runTests
+ADD_EXECUTABLE(runInstructions
     instructionMain.cpp
     Instructions.cpp 
 
 )
 
-ADD_EXECUTABLE(runAllTests
+ADD_EXECUTABLE(runInstructionTests
     instructiontest.cpp 
     Instructions.cpp
 )
