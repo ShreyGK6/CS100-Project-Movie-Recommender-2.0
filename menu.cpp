@@ -51,27 +51,28 @@ char menu::askingForInput()
 
 void menu::display()
 {
-    if(askingForInput() == 'r')
+    char input = askingForInput();
+    if(input == 'r')
     {
         cout << "You have selected the movie recommendations. Going there..." << endl;  
         callMovieRec();  
     }
-    else if(askingForInput() == 's')
+    else if(input == 's')
     {
         cout << "You have selected the movie searcher. Going there..." << endl;  
         callSearch();
     }
-    else if(askingForInput() == 'p')
+    else if(input == 'p')
     {
         cout << "You have selected the profile settings. Going there..." << endl;  
         callSettings();
     }
-    else if(askingForInput() == 'o')
+    else if(input == 'o')
     {
         cout << "You have selected the overview. Going there..." << endl;  
         callOverview();
     }
-    else if(askingForInput() == 'q')
+    else if(input == 'q')
     {
         cout << "You have selected to signout. Signing out..." << endl;  
         signOut();
