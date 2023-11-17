@@ -8,11 +8,11 @@ ADD_EXECUTABLE(full
     settings.cpp
 )
 
-ADD_EXECUTABLE (runTests
+ADD_EXECUTABLE (settingTests
     test/test.cpp
     start.cpp
     settings.cpp
 )
 
-TARGET_LINK_LIBRARIES(runTests gtest)
-TARGET_COMPILE_DEFINITIONS(runTests PRIVATE gtest_disable_pthreads=ON)
+TARGET_LINK_LIBRARIES(settingTests gtest)
+TARGET_COMPILE_DEFINITIONS(settingTests PRIVATE gtest_disable_pthreads=ON)
