@@ -12,5 +12,5 @@ ADD_EXECUTABLE(runInstructionTests
     Instructions.cpp
 )
 
-TARGET_LINK_LIBRARIES(runAllTests gtest)
-TARGET_COMPILE_DEFINITIONS(runAllTests PRIVATE gtest_disable_pthreads=ON)
+TARGET_LINK_LIBRARIES(runInstructionTest gtest)
+TARGET_COMPILE_DEFINITIONS(runInstructionTests PRIVATE gtest_disable_pthreads=ON)
