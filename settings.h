@@ -1,7 +1,7 @@
 #ifndef __SETTINGS_H__
 #define __SETTINGS_H__
 
-#include "setup.h"
+#include "start.h"
 // #include <iostream>
 // #include <string>
 // using namespace std;
@@ -11,7 +11,7 @@ class Setup;
 class Settings {
     public:
     // Settings();
-    void changeprefs(Setup &setup);
+    void changeprefs(start &setup);
     // void ex();
 
 

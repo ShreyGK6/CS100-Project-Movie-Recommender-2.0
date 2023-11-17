@@ -1,4 +1,4 @@
-#include "setup.h"
+#include "start.h"
 #include "settings.h"
 
 #include <iostream>
@@ -6,7 +6,7 @@
 using namespace std;
 
 int main () {
-    Setup setup;
+    start setup;
     setup.startup();
 
     // cout << person.genre << endl;

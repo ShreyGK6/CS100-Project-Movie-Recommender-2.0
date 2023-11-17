@@ -3,7 +3,7 @@
 using namespace std;
 
 #include "settings.h"
-#include "setup.h"
+#include "start.h"
 
 // void Settings::ex() {
 //     cout << var << endl;
@@ -11,7 +11,7 @@ using namespace std;
 
 // Settings::Settings ();
 
-void Settings::changeprefs(Setup &setup) {
+void Settings::changeprefs(start &setup) {
     char answer;
 
     cout << "----------- PROFILE PAGE ------------" << endl;

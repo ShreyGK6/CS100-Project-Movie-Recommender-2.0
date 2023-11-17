@@ -3,9 +3,9 @@
 #include <string>
 using namespace std;
 
-#include "setup.h"
+#include "start.h"
 
-void Setup::startup() {
+void start::startup() {
     char answer;
     int checker = 0;
     cout << "Are you an existing user? (y/n)" << endl; 
@@ -33,7 +33,7 @@ void Setup::startup() {
         }
     }
 }
-void Setup::checkuserandpass() {
+void start::checkuserandpass() {
     string iuser;
     string ipass;
     int checker = 0;
@@ -71,7 +71,7 @@ void Setup::checkuserandpass() {
 }
 
 
-void Setup::setprefs() { 
+void start::setprefs() { 
     char answer;
 
     setgenre();
@@ -96,7 +96,7 @@ void Setup::setprefs() {
 
 }
 
-void Setup::setgenre() {
+void start::setgenre() {
     char answer;
     cout << "Pick a faveorite genre: " << endl;
     cout << "comedy (c) \t drama (d) \t romance (r) \t action (a)" << endl;
@@ -150,7 +150,7 @@ void Setup::setgenre() {
     while (answer != 'q');
 }
 
-void Setup::setage() {
+void start::setage() {
     int answer;
     
     cout << "Input age: " << endl;
@@ -158,7 +158,7 @@ void Setup::setage() {
     person.age = answer;
 }
 
-void Setup::setactor(){
+void start::setactor(){
     string answer;
     int count = 0;
     
@@ -180,7 +180,7 @@ void Setup::setactor(){
     while (answer != "quit");
 }
 
-void Setup::setdirector() {
+void start::setdirector() {
      string answer;
      int count = 0;
     
@@ -202,31 +202,31 @@ void Setup::setdirector() {
     while (answer != "quit");
 }
 
-void Setup::resetgenre() {
+void start::resetgenre() {
     person.genre = "";
 }
 
-void Setup::resetage() {
+void start::resetage() {
     person.age = -1;
 }
 
-void Setup::resetactor() {
+void start::resetactor() {
     person.actor = "";
 }
 
-void Setup::resetdirector() {
+void start::resetdirector() {
     person.director = "";
 }
 
-void Setup::resetuser() {
+void start::resetuser() {
     person.user = "";
 }
 
-void Setup::resetpass() {
+void start::resetpass() {
     person.password = "";
 }
 
-void Setup::setuser() {
+void start::setuser() {
     string iuser;
 
     cout << "Please input a username." << endl;
@@ -237,7 +237,7 @@ void Setup::setuser() {
 
 }
 
-void Setup::setpass() {
+void start::setpass() {
     string ipass;
 
     cout << "Please input a password." << endl;
@@ -247,27 +247,27 @@ void Setup::setpass() {
     cout << endl;
 }
 
-void Setup::showgenre(){
+void start::showgenre(){
     cout << person.genre << endl;
 }
 
-void Setup::showage(){
+void start::showage(){
     cout << person.age << endl;
 }
 
-void Setup::showactor(){
+void start::showactor(){
     cout << person.actor << endl;
 }
 
-void Setup::showdirector(){
+void start::showdirector(){
     cout << person.director << endl;
 }
 
-void Setup::showuser(){
+void start::showuser(){
     cout << person.user << endl;
 }
 
-int Setup::showpass(){
+int start::showpass(){
     string pass = person.password;
     int count = 0;
 

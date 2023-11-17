@@ -1,5 +1,5 @@
-#ifndef __SETUP_H__
-#define __SETUP_H__
+#ifndef __START_H__
+#define __START_H__
 
 #include <iostream>
 #include <string>
@@ -16,10 +16,11 @@ struct preferences {
     preferences() : age(-1), genre(""), director(""), actor(""), user(""), password(""){}
 };
 
-class Setup {
+class start {
     friend class Settings;
 
     public:
+    start() {}
     void startup();
     preferences person;
     
