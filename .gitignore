@@ -1,5 +1,6 @@
 userpass
 full
+runTests
 userpasstest.cpp
 
 CMakeCache.txt
@@ -7,3 +8,5 @@ cmake_intall.cmake
 CMakeFiles/
 cmake_install.cmake
 Makefile
+lib/
+bin/
