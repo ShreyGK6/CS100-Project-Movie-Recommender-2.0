@@ -2,14 +2,14 @@ CMAKE_MINIMUM_REQUIRED(VERSION 3.2)
 ADD_SUBDIRECTORY(googletest)
 
 ADD_EXECUTABLE(runDatabase
-    databaseMain.cpp
+    databaseSRC/databaseMain.cpp
     database.cpp
     movie.cpp
 )
 
 ADD_EXECUTABLE(runTest
     databasetest.cpp
-    movie.cpp    
+    databaseSRC/movie.cpp    
     database.cpp
 )
 
