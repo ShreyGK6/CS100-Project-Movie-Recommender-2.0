@@ -1,7 +1,24 @@
-CMAKE_MINIMUM_REQUIRED(VERSION 3.2)
+CMAKE_MINIMUM_REQUIRED(VERSION 2.8)
+
+add_subdirectory(googletest)
+
+ADD_EXECUTABLE(full
+    start.cpp
+    settingsmain.cpp
+    settings.cpp
+)
+
+ADD_EXECUTABLE (settingTests
+    test/test.cpp
+    start.cpp
+    settings.cpp
+)
+
+TARGET_LINK_LIBRARIES(settingTests gtest)
+TARGET_COMPILE_DEFINITIONS(settingTests PRIVATE gtest_disable_pthreads=ON)
 
 PROJECT(MENU)
-add_subdirectory(googletest)
+
 
 add_library(simpleLibrary
   menu.cpp
@@ -54,3 +71,4 @@ ADD_EXECUTABLE(runDatabaseTest
 
 TARGET_LINK_LIBRARIES(runTest gtest)
 TARGET_COMPILE_DEFINITIONS(runTest PRIVATE gtest_disable_pthreads=ON)
+
