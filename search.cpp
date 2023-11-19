@@ -31,7 +31,9 @@ char searchMovie::askingForOption()
 vector<Movie> searchMovie::searchMain()
 {
     vector<Movie> possibleSelections;
+    string filename = "/home/csmajs/skoth011/final-project-smoha095-ashah174-ayama039-skoth011/ movies.tsv";
     Database database;
+    database.loadFromTSV(filename);
     char filterLetter = askingForOption();
     if(filterLetter == 'g')
     {
