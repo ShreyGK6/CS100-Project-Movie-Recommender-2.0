@@ -1,4 +1,5 @@
 #include "menu.h"
+#include "search.h"
 #include <iostream>
 #include <string>
 using namespace std;
