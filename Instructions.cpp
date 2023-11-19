@@ -20,9 +20,9 @@ void instructions::display(){
     cout << "Type M to go to menu and get movie recommendations!" << endl;
     
 
-    // Menu is here. Will be added once merges happenn
+    //Menu is here. Will be added once merges happenn
     //cin >> userkey;
-    //if (userkey == M)
+    //if (userkey == M);
     
 
 
