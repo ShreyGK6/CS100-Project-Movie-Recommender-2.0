@@ -4,8 +4,8 @@
 #include <string>
 using namespace std;
 
-searchMovie::searchMovie()
-{}
+searchMovie::searchMovie(){
+}
 
 void searchMovie::displayOptions()
 {

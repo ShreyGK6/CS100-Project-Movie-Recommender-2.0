@@ -7,8 +7,6 @@ using namespace std;
 
 class searchMovie
 {
-    private:
-
     public:
     searchMovie();
     void displayOptions();
