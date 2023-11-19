@@ -28,7 +28,7 @@ char searchMovie::askingForOption()
     return userInput;
 }
 
-vector<Movie> searchMovie::searchMain()
+void searchMovie::searchMain()
 {
     vector<Movie> possibleSelections;
     string filename = "/home/csmajs/skoth011/final-project-smoha095-ashah174-ayama039-skoth011/ movies.tsv";
@@ -41,6 +41,9 @@ vector<Movie> searchMovie::searchMain()
         cout << "You have decided to find movies by genre. Please type in the genre you wish to have movies on:" << endl;
         cin >> genreSelection;
         possibleSelections = database.getMoviesbyGenre(genreSelection);
+        for(int i = 0; i < 20; i++)
+        {
+            possibleSelections[i].display();
+        }
     }
-    return possibleSelections;
 }

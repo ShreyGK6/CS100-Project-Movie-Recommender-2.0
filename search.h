@@ -11,7 +11,7 @@ class searchMovie
     public:
     searchMovie();
     void displayOptions();
-    vector<Movie> searchMain();
+    void searchMain();
     char askingForOption();
 };
 
