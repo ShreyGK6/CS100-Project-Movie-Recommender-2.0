@@ -4,7 +4,6 @@
 #include "movie.h"
 #include <string>
 #include <vector>
-#include <ostream>
 using namespace std;
 
 searchMovie::searchMovie()
@@ -29,21 +28,17 @@ char searchMovie::askingForOption()
     return userInput;
 }
 
-void searchMovie::searchMain()
+vector<Movie> searchMovie::searchMain()
 {
-    char filterLetter = askingForOption();
     vector<Movie> possibleSelections;
     Database database;
+    char filterLetter = askingForOption();
     if(filterLetter == 'g')
     {
         string genreSelection;
         cout << "You have decided to find movies by genre. Please type in the genre you wish to have movies on:" << endl;
         cin >> genreSelection;
         possibleSelections = database.getMoviesbyGenre(genreSelection);
-        for(const auto& movie : possibleSelections) 
-        {
-            movie.display();
-            cout << endl; 
-        }
+        return possibleSelections;
     }
 }

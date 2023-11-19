@@ -3,6 +3,7 @@
 #include <string>
 #include <iostream>
 #include "database.h"
+#include "movie.h"
 using namespace std;
 
 class searchMovie
@@ -10,7 +11,7 @@ class searchMovie
     public:
     searchMovie();
     void displayOptions();
-    void searchMain();
+    vector<Movie> searchMain();
     char askingForOption();
 };
 
