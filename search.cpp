@@ -1,11 +1,12 @@
 #include <iostream>
 #include "database.h" 
 #include "search.h"
+#include "movie.h"
 #include <string>
 using namespace std;
 
-searchMovie::searchMovie(){
-}
+searchMovie::searchMovie()
+{}
 
 void searchMovie::displayOptions()
 {
@@ -28,5 +29,14 @@ char searchMovie::askingForOption()
 
 void searchMovie::searchMain()
 {
-    char filter = askingForOption();
+    char filterLetter = askingForOption();
+    vector<Movie> possibleSelections;
+    Database database;
+    if(filterLetter == 'g')
+    {
+        string genreSelection;
+        cout << "You have decided to find movies by genre. Please type in the genre you wish to have movies on:" << endl;
+        cin >> genreSelection;
+        possibleSelections = database.getMoviesbyGenre(genreSelection);
+    }
 }
