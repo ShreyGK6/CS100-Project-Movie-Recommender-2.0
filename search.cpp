@@ -39,6 +39,6 @@ vector<Movie> searchMovie::searchMain()
         cout << "You have decided to find movies by genre. Please type in the genre you wish to have movies on:" << endl;
         cin >> genreSelection;
         possibleSelections = database.getMoviesbyGenre(genreSelection);
-        return possibleSelections;
     }
+    return possibleSelections;
 }
