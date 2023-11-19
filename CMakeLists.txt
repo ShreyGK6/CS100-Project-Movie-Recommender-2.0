@@ -14,6 +14,13 @@ ADD_EXECUTABLE(runMenu
     menu.cpp
 )
 
+ADD_EXECUTABLE(runSearch
+    searchMain.cpp
+    search.cpp
+    database.cpp
+    movie.cpp
+)
+
 ADD_EXECUTABLE(runInstructions
     instructionMain.cpp
     Instructions.cpp 

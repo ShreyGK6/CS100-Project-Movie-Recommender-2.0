@@ -15,7 +15,7 @@ class Movie {
         double rating;
         Movie();
         Movie(string title, int releaseDate, double rating, string maturityRating, string genre,  string actor, string director );
-        void display();
+        void display() const;
         vector <string> getGenre();
         vector <string> getActor();
         vector <string> getDirector(); 

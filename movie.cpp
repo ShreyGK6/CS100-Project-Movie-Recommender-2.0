@@ -16,7 +16,7 @@ Movie::Movie(string title, int releaseDate, double rating, string maturityRating
     this->rating = rating;
 }
 
-void Movie::display()
+void Movie::display() const
 {
     cout << "Title:" << title << endl; 
     cout << "Release Date: " << releaseDate << endl;
