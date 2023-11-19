@@ -2,7 +2,6 @@
 #include <iostream>
 #include <string>
 using namespace std;
-
 #include "start.h"
 
 void start::startup() {

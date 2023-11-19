@@ -24,6 +24,7 @@ ADD_EXECUTABLE(runDatabase
     databaseMain.cpp
     database.cpp
     movie.cpp
+    movierec.cpp
 )
 
 ADD_EXECUTABLE(runAllTests

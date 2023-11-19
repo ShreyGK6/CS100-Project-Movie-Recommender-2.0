@@ -22,7 +22,8 @@ class Movie {
         string getMaturityRating();
         int getReleaseDate();
         double getRating();
-
+        bool isValidForAge(int age);
+        bool operator <(Movie other);
 };
 
 #endif

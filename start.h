@@ -48,9 +48,6 @@ class start {
     void showdirector();
     void showuser();
     int showpass();
-    
-
-    
 };
 
 
