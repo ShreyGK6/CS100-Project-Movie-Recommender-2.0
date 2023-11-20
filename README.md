@@ -42,8 +42,6 @@ Features
 - Signout feature
 - Each movie recommendation contains: ratings, synopsis, views, cast, director(s), maturity rating, release year, genre
 
- > ## Phase II
-
 ## User Interface Specification
 
 ### Navigation Diagram
@@ -60,7 +58,6 @@ The first screen is where the user will unput their Log In information such as t
 ## Class Diagram
 ![Blank diagram](https://github.com/cs100/final-project-smoha095-ashah174-ayama039-skoth011/assets/35586951/ade9bb45-0602-42e5-98ad-55ace76256dd)
 
- > ## Phase III
  > You will need to schedule a check-in for the second scrum meeting with the same reader you had your first scrum meeting with (using Calendly). Your entire team must be present. This meeting will occur on Zoom and should be conducted by Wednesday of week 8.
  
  > BEFORE the meeting you should do the following:
@@ -79,7 +76,9 @@ The first screen is where the user will unput their Log In information such as t
  > * Any tasks that did not get completed last sprint, and how you took them into consideration for this sprint
  > * Any bugs you've identified and created issues for during the sprint. Do you plan on fixing them in the next sprint or are they lower priority?
  > * What tasks you are planning for this next sprint.
-
+![screen laoyouts-1](https://github.com/cs100/final-project-smoha095-ashah174-ayama039-skoth011/assets/35586951/4d431e91-a25b-401c-9ddc-78729c57c0d3)
+![screen laoyouts-2](https://github.com/cs100/final-project-smoha095-ashah174-ayama039-skoth011/assets/35586951/6519bef2-1ed1-4201-98d5-d396c7a9d225)
+We updated our screen layouts to match the exact outputs of the features we have coded so far. Everything has stayed the same conceptually as our last screen layout. 
  
  > ## Final deliverable
  > All group members will give a demo to the reader during lab time. ou should schedule your demo on Calendly with the same reader who took your second scrum meeting. The reader will check the demo and the project GitHub repository and ask a few questions to all the team members. 
