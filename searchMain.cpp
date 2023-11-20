@@ -3,7 +3,7 @@
 #include "search.h"
 using namespace std;
 
-int main()
+int main()  //going to delete soon and place below code in menu.cpp
 {
     searchMovie searching;
     searching.searchMain();
