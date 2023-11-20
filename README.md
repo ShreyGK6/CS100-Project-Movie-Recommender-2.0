@@ -56,7 +56,8 @@ The diagram shows the path our movie recommender will follow. First comes the lo
 
 The first screen is where the user will unput their Log In information such as their username and passwords. To log in they will type "L". If they are a first time user they will be prompted to set up their preferences where they will enter two mandatory things: age and genre, and have the option to input favorite actor and director. If they are a returning user, the sign in page will only have them type their username & password. Then they will see the Overview page which shows how our program will work. After that they will type "M" to go to the Menu page where they will be presented with the different features that they can utilize in our program. If the user types "R" they will see movie recommendations based on thier profile. If the user types "S" they will be able to search for a specific genre, actor, or director. If the user types, "P", the program will take them back to the profile so they can edit their preferences. If the user types "Q" the program will sign them out of them system. Within the search feature the user will hvae the option to sort their searched by release date or rating. First we will prompt them with the question on whether they want to sort, if †hey type "Y" we will then proceed to ask how they want their movies sorted, "Y" for release data or "R" for rating. If they selected "N" when asking if they want to sort thier recommendation our system would take them back to their search recommendations. At anytime, the user can type "B" to go back to the menu. 
 ## Class Diagram
-![CS 100 Project UML.pdf](https://github.com/cs100/final-project-smoha095-ashah174-ayama039-skoth011/files/13407230/CS.100.Project.UML.pdf)
+
+![UML Diagram](https://github.com/cs100/final-project-smoha095-ashah174-ayama039-skoth011/assets/147004478/5c44d42e-f9e8-43f4-8ffa-b2eb1f763e4d)
 
 
 Phase 3
