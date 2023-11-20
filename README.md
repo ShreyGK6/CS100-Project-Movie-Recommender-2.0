@@ -58,6 +58,7 @@ The first screen is where the user will unput their Log In information such as t
 ## Class Diagram
 ![Blank diagram](https://github.com/cs100/final-project-smoha095-ashah174-ayama039-skoth011/assets/35586951/ade9bb45-0602-42e5-98ad-55ace76256dd)
 
+Phase 3
  > You will need to schedule a check-in for the second scrum meeting with the same reader you had your first scrum meeting with (using Calendly). Your entire team must be present. This meeting will occur on Zoom and should be conducted by Wednesday of week 8.
  
  > BEFORE the meeting you should do the following:
