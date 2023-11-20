@@ -71,7 +71,8 @@ Phase 3
  >     * How did this change help you write better code?
  > * Perform a new sprint plan like you did in Phase II.
  > * You should also make sure that your README file (and Project board) are up-to-date reflecting the current status of your project and the most recent class diagram. Previous versions of the README file should still be visible through your commit history.
- 
+ ![Blank diagram-2](https://github.com/cs100/final-project-smoha095-ashah174-ayama039-skoth011/files/13406758/CS.100.Project.UML.pdf)
+
 > During the meeting with your reader you will discuss: 
  > * How effective your last sprint was (each member should talk about what they did)
  > * Any tasks that did not get completed last sprint, and how you took them into consideration for this sprint
