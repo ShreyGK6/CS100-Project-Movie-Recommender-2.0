@@ -8,6 +8,7 @@ ADD_EXECUTABLE(runSearchTest
     search.cpp
     database.cpp
     movie.cpp
+    menu.cpp
 )
 
 ADD_EXECUTABLE(runSearcher
@@ -15,6 +16,7 @@ ADD_EXECUTABLE(runSearcher
     database.cpp
     movie.cpp
     search.cpp
+    menu.cpp
 )
 
 TARGET_LINK_LIBRARIES(runSearchTest gtest)

@@ -13,6 +13,7 @@ class searchMovie
     void displayOptions();
     void searchMain();
     char askingForOption();
+    void otherPathways();
 };
 
 #endif
