@@ -78,6 +78,7 @@ The first screen is where the user will unput their Log In information such as t
  > * What tasks you are planning for this next sprint.
 ![screen laoyouts-1](https://github.com/cs100/final-project-smoha095-ashah174-ayama039-skoth011/assets/35586951/4d431e91-a25b-401c-9ddc-78729c57c0d3)
 ![screen laoyouts-2](https://github.com/cs100/final-project-smoha095-ashah174-ayama039-skoth011/assets/35586951/6519bef2-1ed1-4201-98d5-d396c7a9d225)
+
 We updated our screen layouts to match the exact outputs of the features we have coded so far. Everything has stayed the same conceptually as our last screen layout. 
  
  > ## Final deliverable
