@@ -127,4 +127,22 @@ void searchMovie::searchMain()
             }
         }
     }
+    else if(filterLetter == 'd')
+    {
+        string directorSelection;
+        cout << "You have decided to find movies by director. Please type in the director you wish to see movies on:" << endl;
+        getline(cin, directorSelection);
+        possibleSelections = database.getMoviesbyDirector(directorSelection);
+        if(possibleSelections.empty())
+        {
+            cout << "Could not get any movies by that search." << endl;
+        }
+        else
+        {
+            for(int i = 0; i < possibleSelections.size(); i++)
+            {
+                possibleSelections[i].display();
+            }
+        }
+    }
 }
