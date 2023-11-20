@@ -9,7 +9,8 @@ menu::menu()
 
 void menu::callSettings()
 {
-    cout << "Calling settings..." << endl;
+    searchMovie searching;
+    searching.searchMain();
 }
 
 void menu::callMovieRec()
