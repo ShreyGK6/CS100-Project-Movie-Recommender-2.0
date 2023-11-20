@@ -7,10 +7,12 @@
 #include <string>
 using namespace std;
 
-class MovieRec {
-    public: 
-        void movieRecommendationOverall(struct preferences preference);
-        void movieRecByGenre(string genre);
+class MovieRec
+{
+public:
+    const int maxMovieShown = 5;
+    void movieRecommendationOverall(struct preferences preference);
+    void movieRecByGenre(string genre);
 };
 
 #endif

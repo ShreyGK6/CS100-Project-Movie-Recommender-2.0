@@ -14,10 +14,13 @@ int main()
   //   ageMovies[i].display();
   // }
   struct preferences preference;
-    preference.actor = "Morgan Freeman";
-    preference.genre = "Drama";
-    preference.age = 19;
-    preference.director = "Frank Darabont";
+  preference.actor = "Cillian Murphy";
+  preference.genre = "Action";
+  preference.age = 19;
+  preference.director = "Christopher Nolan";
   MovieRec mr;
+  string genre = "Comedy";
   mr.movieRecommendationOverall(preference);
+  // mr.movieRecByGenre(genre);
+
 }

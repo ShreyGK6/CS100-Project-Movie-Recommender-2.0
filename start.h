@@ -18,15 +18,13 @@ struct preferences {
 
 class start {
     friend class Settings;
-
     public:
     start() {}
     void startup();
     preferences person;
     
     // int var = 3;
-
-
+    
     private:
     void checkuserandpass();
     void setprefs();

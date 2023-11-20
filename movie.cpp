@@ -26,13 +26,17 @@ void Movie::display()
     cout << "Genre: " << genre << endl;
     cout << "Actor: " << actor << endl;
     cout << "Director: " << director << endl;
+    cout << endl;
 }
 
-void trimString(string &str){
-    while (str.size() > 0 && isspace(str.front())){
+void trimString(string &str)
+{
+    while (str.size() > 0 && isspace(str.front()))
+    {
         str.erase(str.begin());
     }
-    while (str.size() > 0 && isspace(str.back())){
+    while (str.size() > 0 && isspace(str.back()))
+    {
         str.erase(--str.end());
     }
 }
@@ -112,6 +116,7 @@ bool Movie::isValidForAge(int age)
     return false;
 }
 
-    bool Movie::operator <(Movie other){
-        return rating < other.rating;
-    }
+bool Movie::operator<(Movie other)
+{
+    return rating < other.rating;
+}
