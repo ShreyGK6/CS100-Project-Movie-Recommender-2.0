@@ -28,13 +28,14 @@ ADD_EXECUTABLE(runDatabase
 )
 
 ADD_EXECUTABLE(runAllTests
-    tests.cpp
+    movierecTests.cpp
     movie.cpp
     database.cpp
     Instructions.cpp
     start.cpp
     menu.cpp
     settings.cpp
+    movierec.cpp
 )
 
 TARGET_LINK_LIBRARIES(runAllTests gtest)

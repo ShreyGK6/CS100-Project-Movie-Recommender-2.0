@@ -21,6 +21,5 @@ int main()
   MovieRec mr;
   string genre = "Comedy";
   mr.movieRecommendationOverall(preference);
-  // mr.movieRecByGenre(genre);
-
+  mr.movieRecByGenre(genre);
 }

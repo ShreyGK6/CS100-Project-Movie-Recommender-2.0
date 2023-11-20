@@ -20,10 +20,10 @@ void MovieRec::movieRecommendationOverall(struct preferences preference)
     db.loadFromTSV(filename);
     vector<Movie> filteredMovies = db.filter(genre, age, actor, director);
     sort(filteredMovies.rbegin(), filteredMovies.rend());
-    for (int i = 0; i < min((int)filteredMovies.size(),maxMovieShown); i++)
+    for (int i = 0; i < min((int)filteredMovies.size(), maxMovieShown); i++)
     {
         filteredMovies[i].display();
-    }   
+    }
 }
 
 void MovieRec::movieRecByGenre(string genre)
@@ -31,9 +31,9 @@ void MovieRec::movieRecByGenre(string genre)
     Database db;
     string filename = "/home/csmajs/smoha095/final-project-smoha095-ashah174-ayama039-skoth011/ movies.tsv";
     db.loadFromTSV(filename);
-    vector <Movie> genreFilteredMovies = db.getMoviesbyGenre(genre);
-    for (int i = 0; i < min((int)genreFilteredMovies.size(),maxMovieShown); i++)
+    vector<Movie> genreFilteredMovies = db.getMoviesbyGenre(genre);
+    for (int i = 0; i < min((int)genreFilteredMovies.size(), maxMovieShown); i++)
     {
         genreFilteredMovies[i].display();
-    }   
+    }
 }
