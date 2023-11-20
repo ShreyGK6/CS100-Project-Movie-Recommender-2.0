@@ -3,46 +3,19 @@ CMAKE_MINIMUM_REQUIRED(VERSION 3.2)
 add_subdirectory(googletest)
 PROJECT(MENU)
 
-ADD_EXECUTABLE(runSetting
-    start.cpp
-    settingsmain.cpp
-    settings.cpp
-)
-
-ADD_EXECUTABLE(runMenu
-    menuMain.cpp
-    menu.cpp
-)
-
-ADD_EXECUTABLE(runSearch
-    searchMain.cpp
+ADD_EXECUTABLE(runSearchTest
+    searchTests.cpp
     search.cpp
     database.cpp
     movie.cpp
 )
 
-ADD_EXECUTABLE(runInstructions
-    instructionMain.cpp
-    Instructions.cpp 
-
-)
-
-ADD_EXECUTABLE(runDatabase
-    databaseMain.cpp
+ADD_EXECUTABLE(runSearcher
+    searchMain.cpp
     database.cpp
     movie.cpp
+    search.cpp
 )
 
-ADD_EXECUTABLE(runAllTests
-    tests.cpp
-    movie.cpp
-    database.cpp
-    Instructions.cpp
-    start.cpp
-    menu.cpp
-    settings.cpp
-)
-
-TARGET_LINK_LIBRARIES(runAllTests gtest)
-TARGET_COMPILE_DEFINITIONS(runAllTests PRIVATE gtest_disable_pthreads=ON)
-
+TARGET_LINK_LIBRARIES(runSearchTest gtest)
+TARGET_COMPILE_DEFINITIONS(runSearchTest PRIVATE gtest_disable_pthreads=ON)

@@ -6,11 +6,6 @@ cmake_install.cmake
 Makefile
 lib/
 bin/
-runSetting
-runMenu
-runInstructions
-runDatabase
-runAllTests
-runSearch
-
+runSearchTest
+runSearcher
 
