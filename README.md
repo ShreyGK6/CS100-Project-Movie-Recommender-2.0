@@ -71,13 +71,20 @@ The first screen is where the user will unput their Log In information such as t
  >     * How did this change help you write better code?
  > * Perform a new sprint plan like you did in Phase II.
  > * You should also make sure that your README file (and Project board) are up-to-date reflecting the current status of your project and the most recent class diagram. Previous versions of the README file should still be visible through your commit history.
+### Navigation Diagram
 ![Diagram](https://github.com/cs100/final-project-smoha095-ashah174-ayama039-skoth011/assets/146229303/9480a3c5-65d2-4925-aa29-83b0fa2cc985)
+
+### Screen Layouts
 ![screen laoyouts-1](https://github.com/cs100/final-project-smoha095-ashah174-ayama039-skoth011/assets/35586951/4d431e91-a25b-401c-9ddc-78729c57c0d3)
 ![screen laoyouts-2](https://github.com/cs100/final-project-smoha095-ashah174-ayama039-skoth011/assets/35586951/6519bef2-1ed1-4201-98d5-d396c7a9d225)
 
 We updated our screen layouts to match the exact outputs of the features we have coded so far. Everything has stayed the same conceptually as our last screen layout. 
 
+## Class Diagram
 ![UML Diagram](https://github.com/cs100/final-project-smoha095-ashah174-ayama039-skoth011/assets/147004478/5c44d42e-f9e8-43f4-8ffa-b2eb1f763e4d)
+
+## SOLID Principles
+
 
 > During the meeting with your reader you will discuss: 
  > * How effective your last sprint was (each member should talk about what they did)
