@@ -25,8 +25,8 @@ void searchMovie::displayOptions()
 void searchMovie::otherPathways()
 {
     cout << "Do you want to search again or go back to menu?" << endl;
-    cout << "-s for movie searcher" << endl;
-    cout << "-m for menu" << endl;
+    cout << "- s for movie searcher" << endl;
+    cout << "- m for menu" << endl;
     char input;
     cin >> input;
     if(input == 's')
@@ -155,7 +155,7 @@ void searchMovie::searchMain()
     {
         string directorSelection;
         cout << endl << "You have decided to find movies by director. Please type in the director you wish to see movies on:" << endl;
-        cin >> directorSelection;
+        getline(cin, directorSelection);
         possibleSelections = database.getMoviesbyDirector(directorSelection);
         if(possibleSelections.empty())
         {
@@ -175,5 +175,5 @@ void searchMovie::searchMain()
         searchMain();
     }
     cout << endl;
-    //otherPathways();
+    otherPathways();
 }

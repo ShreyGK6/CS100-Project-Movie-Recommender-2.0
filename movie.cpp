@@ -27,11 +27,24 @@ void Movie::display() const
     cout << "Director: " << director << endl;
 }
 
+void trimString(string &str)
+{
+    while(str.size() > 0 && isspace(str.front()))
+    {
+        str.erase(str.begin());
+    }
+    while(str.size() > 0 && isspace(str.back()))
+    {
+        str.erase(--str.end());
+    }
+}
+
 vector <string> splitStringByComma(string &input){
     vector <string> result;
     istringstream stream(input);
     string token;
     while (getline(stream, token, ',')){
+        trimString(token);
         result.push_back(token);
     }
     return result; 

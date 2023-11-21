@@ -22,7 +22,7 @@ class Movie {
         string getMaturityRating();
         int getReleaseDate();
         double getRating();
-
+        void trimString(string &str);
 };
 
 #endif
