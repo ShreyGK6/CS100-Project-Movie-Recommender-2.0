@@ -70,7 +70,7 @@ The first screen is where the user will unput their Log In information such as t
 We updated our screen layouts to match the exact outputs of the features we have coded so far. Everything has stayed the same conceptually as our last screen layout. 
 
 ## Class Diagram
-![CS 100 Project UML](https://github.com/cs100/final-project-smoha095-ashah174-ayama039-skoth011/assets/35586951/9af138a4-cb49-496a-b220-fab2af46706b)
+![CS 100 Project UML](https://github.com/cs100/final-project-smoha095-ashah174-ayama039-skoth011/assets/35586951/7ecf0299-1646-45d4-b12a-c02f2b1f4d60)
 
 This UML diagram outlines a comprehensive movie recommendation system, offering a detailed depiction of classes, their associations, and the relationships governing them. The diagram exhibits several instances of associations, both in terms of composition and aggregation. The Movie class, representing individual films, demonstrates composition with attributes like genre, maturity rating, director, actor, title, rating, and releaseDate. Moreover Database class utilizes aggregation, associating with a vector of Movie objects. This composition and aggregation emphasize the structural relationships between classes.
 
