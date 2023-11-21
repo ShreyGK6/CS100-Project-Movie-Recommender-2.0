@@ -12,11 +12,11 @@ ADD_EXECUTABLE(runSearchTest
 )
 
 ADD_EXECUTABLE(runSearcher
-    searchMain.cpp
     database.cpp
     movie.cpp
     search.cpp
     menu.cpp
+    searchMain.cpp
 )
 
 TARGET_LINK_LIBRARIES(runSearchTest gtest)

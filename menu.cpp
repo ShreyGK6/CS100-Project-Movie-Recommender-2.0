@@ -9,8 +9,7 @@ menu::menu()
 
 void menu::callSettings()
 {
-    searchMovie searching;
-    searching.searchMain();
+    cout << "Calling profile settings..." << endl;
 }
 
 void menu::callMovieRec()
@@ -25,7 +24,8 @@ void menu::callOverview()
 
 void menu::callSearch()
 {
-    cout << "Calling movie searcher..." << endl;
+    searchMovie searching;
+    searching.searchMain();
 }
 
 void menu::signOut()
