@@ -30,6 +30,13 @@ TEST(testingFunctions, otherPathways)
     EXPECT_NO_THROW(movie.otherPathways());
 }
 
+TEST(testingFunctions, outputOrError)
+{
+    searchMovie movie;
+    vector<Movie> possibleSelections;
+    EXPECT_NO_THROW(movie.outputOrError(possibleSelections));
+}
+
 int main(int argc, char **argv) {
     ::testing::InitGoogleTest(&argc, argv);
      return RUN_ALL_TESTS();

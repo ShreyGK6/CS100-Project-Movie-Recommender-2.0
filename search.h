@@ -14,6 +14,7 @@ class searchMovie
     void searchMain();
     char askingForOption();
     void otherPathways();
+    void outputOrError(vector<Movie> possibleSelections);
 };
 
 #endif

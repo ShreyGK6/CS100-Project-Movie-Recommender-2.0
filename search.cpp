@@ -11,6 +11,21 @@ using namespace std;
 searchMovie::searchMovie()
 {}
 
+void searchMovie::outputOrError(vector<Movie> possibleSelections)
+{
+    if(possibleSelections.empty())
+    {
+        cout << endl << "Could not get any movies by that search." << endl;
+    }
+    else
+    {
+        for(int i = 0; i < possibleSelections.size(); i++)
+        {
+            possibleSelections[i].display();
+        }
+    }
+}
+
 void searchMovie::displayOptions()
 {
     cout << "How do you want to search moves by? Here are the following options:" << endl;
@@ -67,17 +82,7 @@ void searchMovie::searchMain()
         cout << endl << "You have decided to find movies by genre. Please type in the genre you wish to have movies on:" << endl;
         cin >> genreSelection;
         possibleSelections = database.getMoviesbyGenre(genreSelection);
-        if(possibleSelections.empty())
-        {
-            cout << endl << "Could not get any movies by that search." << endl;
-        }
-        else
-        {
-            for(int i = 0; i < possibleSelections.size(); i++)
-            {
-                possibleSelections[i].display();
-            }
-        }
+        outputOrError(possibleSelections);
     }
     else if(filterLetter  == 'm')
     {
@@ -85,17 +90,7 @@ void searchMovie::searchMain()
         cout << endl << "You have decided to find movies by maturity rating. Please type in the maturity rating you wish to have movies on:" << endl;
         cin >> maturitySelection;
         possibleSelections = database.getMoviesbyMaturityRating(maturitySelection);
-        if(possibleSelections.empty())
-        {
-            cout << endl << "Could not get any movies by that search." << endl;
-        }
-        else
-        {
-            for(int i = 0; i < possibleSelections.size(); i++)
-            {
-                possibleSelections[i].display();
-            }
-        }
+        outputOrError(possibleSelections);
     }
     else if(filterLetter == 'a')
     {
@@ -103,17 +98,7 @@ void searchMovie::searchMain()
         cout << "You have decided to find movies by actor. Please type in the actor you wish to have movies on:" << endl;
         getline(cin, actorSelection);
         possibleSelections = database.getMoviesbyActor(actorSelection);
-        if(possibleSelections.empty())
-        {
-            cout << endl << "Could not get any movies by that search." << endl;
-        }
-        else
-        {
-            for(int i = 0; i < possibleSelections.size(); i++)
-            {
-                possibleSelections[i].display();
-            }
-        }
+        outputOrError(possibleSelections);
     }
     else if(filterLetter == 'n')
     {
@@ -121,17 +106,7 @@ void searchMovie::searchMain()
         cout << endl << "You have decided to find movies by movie rating. Please type in the rating you wish to see movies on:" << endl;
         cin >> movieRating;
         possibleSelections = database.getMoviesbyRating(movieRating);
-        if(possibleSelections.empty())
-        {
-            cout << endl << "Could not get any movies by that search." << endl;
-        }
-        else
-        {
-            for(int i = 0; i < possibleSelections.size(); i++)
-            {
-                possibleSelections[i].display();
-            }
-        }
+        outputOrError(possibleSelections);
     }
     else if(filterLetter == 'r')
     {
@@ -139,17 +114,7 @@ void searchMovie::searchMain()
         cout << endl <<  "You have decided to find movies by release date. Please type in the rating you wish to see movies on:" << endl;
         cin >> releaseDate;
         possibleSelections = database.getMoviesbyReleaseDate(releaseDate);
-        if(possibleSelections.empty())
-        {
-            cout << "Could not get any movies by that search." << endl;
-        }
-        else
-        {
-            for(int i = 0; i < possibleSelections.size(); i++)
-            {
-                possibleSelections[i].display();
-            }
-        }
+        outputOrError(possibleSelections);
     }
     else if(filterLetter == 'd')
     {
@@ -157,17 +122,7 @@ void searchMovie::searchMain()
         cout << endl << "You have decided to find movies by director. Please type in the director you wish to see movies on:" << endl;
         getline(cin, directorSelection);
         possibleSelections = database.getMoviesbyDirector(directorSelection);
-        if(possibleSelections.empty())
-        {
-            cout << endl << "Could not get any movies by that search." << endl;
-        }
-        else
-        {
-            for(int i = 0; i < possibleSelections.size(); i++)
-            {
-                possibleSelections[i].display();
-            }
-        }
+        outputOrError(possibleSelections);
     }
     else
     {
