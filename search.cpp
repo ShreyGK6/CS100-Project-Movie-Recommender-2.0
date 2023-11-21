@@ -11,6 +11,36 @@ using namespace std;
 searchMovie::searchMovie()
 {}
 
+void searchMovie::getGenre()
+{
+    cout << movie.genre << endl;
+}
+
+void searchMovie::getMaturityRating()
+{
+    cout << movie.maturityRating << endl;
+}
+
+void searchMovie::getActor()
+{
+    cout << movie.actor << endl;
+}
+
+void searchMovie::getDirector()
+{
+    cout << movie.director << endl;
+}
+
+void searchMovie::getDate()
+{
+    cout << movie.releaseDate << endl;
+}
+
+void searchMovie::getRating()
+{
+    cout << movie.rating << endl;
+}
+
 void searchMovie::outputOrError(vector<Movie> possibleSelections)
 {
     if(possibleSelections.empty())

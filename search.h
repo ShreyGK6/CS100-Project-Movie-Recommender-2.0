@@ -6,15 +6,35 @@
 #include "movie.h"
 using namespace std;
 
+struct searching
+{
+    string genre;
+    string maturityRating;
+    string actor;
+    string director;
+    int releaseDate;
+    double rating;
+    searching() : genre(""), maturityRating(""), actor(""), director(""), releaseDate(0), rating(0.0){}
+};
+
 class searchMovie
 {
     public:
+    searching movie;
     searchMovie();
     void displayOptions();
     void searchMain();
     char askingForOption();
     void otherPathways();
     void outputOrError(vector<Movie> possibleSelections);
+
+    private:
+    void getGenre();
+    void getMaturityRating();
+    void getActor();
+    void getDirector();
+    void getDate();
+    void getRating();
 };
 
 #endif
