@@ -73,7 +73,7 @@ void searchMovie::searchMain()
         }
         else
         {
-            for(int i = 0; i < 5; i++)
+            for(int i = 0; i < possibleSelections.size(); i++)
             {
                 possibleSelections[i].display();
             }
@@ -91,7 +91,7 @@ void searchMovie::searchMain()
         }
         else
         {
-            for(int i = 0; i < 5; i++)
+            for(int i = 0; i < possibleSelections.size(); i++)
             {
                 possibleSelections[i].display();
             }
