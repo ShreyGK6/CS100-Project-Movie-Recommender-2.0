@@ -3,20 +3,20 @@ CMAKE_MINIMUM_REQUIRED(VERSION 3.2)
 add_subdirectory(googletest)
 PROJECT(MENU)
 
+ADD_EXECUTABLE(runSearchMenuOption
+    menu.cpp
+    search.cpp
+    menuMain.cpp
+    database.cpp
+    movie.cpp
+)
+
 ADD_EXECUTABLE(runSearchTest
     searchTests.cpp
     search.cpp
     database.cpp
     movie.cpp
     menu.cpp
-)
-
-ADD_EXECUTABLE(runSearcher
-    database.cpp
-    movie.cpp
-    search.cpp
-    menu.cpp
-    searchMain.cpp
 )
 
 TARGET_LINK_LIBRARIES(runSearchTest gtest)

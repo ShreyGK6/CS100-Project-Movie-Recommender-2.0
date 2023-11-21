@@ -7,5 +7,5 @@ Makefile
 lib/
 bin/
 runSearchTest
-runSearcher
+runSearchMenuOption
 
