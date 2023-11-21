@@ -86,7 +86,11 @@ We updated our screen layouts to match the exact outputs of the features we have
 This UML diagram outlines a comprehensive movie recommendation system, offering a detailed depiction of classes, their associations, and the relationships governing them. The diagram exhibits several instances of associations, both in terms of composition and aggregation. The Movie class, representing individual films, demonstrates composition with attributes like genre, maturity rating, director, actor, title, rating, and releaseDate. Moreover Database class utilizes aggregation, associating with a vector of Movie objects. This composition and aggregation emphasize the structural relationships between classes.
 
 ## SOLID Principles
+Single Responsibility Principle has been applied to the userpass class and the preferences class because it separates the username and password functions from the rest of the preferences. Not only does this make for cleaner code, but it also makes it easier for other classes to access what they need and keeps the things that they don’t need out of their reach.
 
+Next the Open/Closed Principle has been applied to the start() function where this initiates the sign-in process. You would be able to add more preferences easily, for example by release year. If the sign-in process evolves or new features are added, adhering to the OCP means you can extend the class without modifying existing code. It makes the class more maintainable and extensible. Future changes or additions to the sign-in process won't require modifying existing code.
+
+The Interface Segregation Principle has been applied to the preferences function, setactor() and setdirector(). If the user doesn’t want to input these preferences in, then they won’t get recommendations from these categories. This follows ISP because the set functions also don’t inhibit any other code and doesn’t cause detriment to the program.
 
 > During the meeting with your reader you will discuss: 
  > * How effective your last sprint was (each member should talk about what they did)
