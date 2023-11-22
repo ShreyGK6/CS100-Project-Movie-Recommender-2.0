@@ -25,6 +25,7 @@ void Movie::display() const
     cout << "Genre: " << genre << endl;
     cout << "Actor: " <<actor << endl;
     cout << "Director: " << director << endl;
+    cout << endl;
 }
 
 void trimString(string &str)
