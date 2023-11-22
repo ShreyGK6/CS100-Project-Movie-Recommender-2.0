@@ -29,12 +29,12 @@ class searchMovie
     void outputOrError(vector<Movie> possibleSelections);
 
     private:
-    void getGenre();
-    void getMaturityRating();
-    void getActor();
-    void getDirector();
-    void getDate();
-    void getRating();
+    string getGenre();
+    string getMaturityRating();
+    string getActor();
+    string getDirector();
+    int getDate();
+    double getRating();
 };
 
 #endif

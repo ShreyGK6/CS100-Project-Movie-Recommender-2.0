@@ -11,34 +11,34 @@ using namespace std;
 searchMovie::searchMovie()
 {}
 
-void searchMovie::getGenre()
+string searchMovie::getGenre()
 {
-    cout << movie.genre << endl;
+    return movie.genre;
 }
 
-void searchMovie::getMaturityRating()
+string searchMovie::getMaturityRating()
 {
-    cout << movie.maturityRating << endl;
+    return movie.maturityRating;
 }
 
-void searchMovie::getActor()
+string searchMovie::getActor()
 {
-    cout << movie.actor << endl;
+    return movie.actor;
 }
 
-void searchMovie::getDirector()
+string searchMovie::getDirector()
 {
-    cout << movie.director << endl;
+    return movie.director;
 }
 
-void searchMovie::getDate()
+int searchMovie::getDate()
 {
-    cout << movie.releaseDate << endl;
+    return movie.releaseDate;
 }
 
-void searchMovie::getRating()
+double searchMovie::getRating()
 {
-    cout << movie.rating << endl;
+    return movie.rating;
 }
 
 void searchMovie::outputOrError(vector<Movie> possibleSelections)
