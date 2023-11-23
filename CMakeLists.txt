@@ -12,6 +12,10 @@ ADD_EXECUTABLE(runSetting
 ADD_EXECUTABLE(runMenu
     menuMain.cpp
     menu.cpp
+    start.cpp
+    database.cpp
+    movie.cpp
+    movierec.cpp
 )
 
 ADD_EXECUTABLE(runInstructions
@@ -25,6 +29,7 @@ ADD_EXECUTABLE(runDatabase
     database.cpp
     movie.cpp
     movierec.cpp
+    menu.cpp
 )
 
 ADD_EXECUTABLE(runAllTests

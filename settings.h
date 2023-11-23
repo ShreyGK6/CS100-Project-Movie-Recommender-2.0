@@ -8,12 +8,11 @@
 
 class Setup;
 
-class Settings {
-    public:
+class Settings
+{
+public:
     // Settings();
     void changeprefs(start &setup);
     // void ex();
-
-
 };
 #endif // __SETTINGS_H__

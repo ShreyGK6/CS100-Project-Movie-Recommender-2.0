@@ -14,12 +14,12 @@ int main()
   //   ageMovies[i].display();
   // }
   struct preferences preference;
-  preference.actor = "Cillian Murphy";
-  preference.genre = "Action";
-  preference.age = 19;
-  preference.director = "Christopher Nolan";
+  preference.actor = "Timothée Chalamet";
+  preference.genre = "Drama";
+  preference.age = 42;
+  preference.director = "Martin Scorsese";
   MovieRec mr;
   string genre = "Comedy";
   mr.movieRecommendationOverall(preference);
-  mr.movieRecByGenre(genre);
+  // mr.movieRecByGenre(genre);
 }

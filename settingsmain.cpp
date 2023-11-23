@@ -5,7 +5,8 @@
 
 using namespace std;
 
-int main () {
+int main()
+{
     start setup;
     setup.startup();
 

@@ -3,6 +3,7 @@
 #include "database.h"
 #include "settings.h"
 #include "start.h"
+#include "menu.h"
 #include <vector>
 #include <string>
 #include <algorithm>
@@ -35,5 +36,30 @@ void MovieRec::movieRecByGenre(string genre)
     for (int i = 0; i < min((int)genreFilteredMovies.size(), maxMovieShown); i++)
     {
         genreFilteredMovies[i].display();
+    }
+}
+
+void MovieRec::backToMenu()
+{
+    cout << "Do you want to go back to menu?" << endl;
+    cout << "- m for menu" << endl;
+    char input;
+    cin >> input;
+    if(input == 'r')
+    {
+        struct preferences preference; 
+        movieRecommendationOverall(preference);
+        string genre; 
+        movieRecByGenre(genre);
+    }
+    else if(input == 'm')
+    {
+        menu menuObject;
+        menuObject.display();
+    }
+    else
+    {
+        cout << endl << "You have selected an invalid input. Please select again." << endl;
+        backToMenu();
     }
 }
