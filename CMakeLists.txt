@@ -2,6 +2,7 @@ CMAKE_MINIMUM_REQUIRED(VERSION 3.2)
 
 add_subdirectory(googletest)
 
+PROJECT(MENU)
 
 ADD_EXECUTABLE(run
     preferences.cpp
@@ -10,15 +11,9 @@ ADD_EXECUTABLE(run
     settings.cpp
 )
 
-ADD_EXECUTABLE(test
-    preferences.cpp
-    userpass.cpp
-    tester.cpp
-    settings.cpp
-)
 
-ADD_EXECUTABLE(final
-    main.cpp
+ADD_EXECUTABLE(runAllTests
+    tests.cpp
     movie.cpp
     database.cpp
     Instructions.cpp
@@ -27,5 +22,6 @@ ADD_EXECUTABLE(final
     menu.cpp
     settings.cpp
 )
-TARGET_LINK_LIBRARIES(test gtest)
-TARGET_COMPILE_DEFINITIONS(test PRIVATE gtest_disable_pthreads=ON)
+
+TARGET_LINK_LIBRARIES(runAllTests gtest)
+TARGET_COMPILE_DEFINITIONS(runAllTests PRIVATE gtest_disable_pthreads=ON)

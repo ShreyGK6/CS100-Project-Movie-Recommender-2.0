@@ -163,7 +163,9 @@ TEST(functionsWorking, askingForInputQ)
 TEST(functionsWorking, display)
 {
     menu menuObject;
-    EXPECT_NO_THROW(menuObject.display());
+    userpass setup;
+    prefs options;
+    EXPECT_NO_THROW(menuObject.display(setup, options));
 }
 
 TEST(functionsWorking, options)
@@ -175,7 +177,9 @@ TEST(functionsWorking, options)
 TEST(functionsWorking, callSettings)
 {
     menu menuObject;
-    EXPECT_NO_THROW(menuObject.callSettings());
+    userpass setup;
+    prefs options;
+    EXPECT_NO_THROW(menuObject.callSettings(setup, options));
 }
 
 TEST(functionsWorking, callMovieRec)
