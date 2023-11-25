@@ -2,15 +2,15 @@
 #define __PREFERENCES_H__
 
 #include <iostream>
-#include <string>
+#include <vector>
 using namespace std;
 
 struct preferences {        
     int age;
-    string genre;
-    string director;
-    string actor;
-    preferences() : age(-1), genre(""), director(""), actor(""){}
+    vector<string> genre;
+    vector<string> director;
+    vector<string> actor;
+    preferences() : age(-1){}
 };
 
 class prefs {
@@ -24,15 +24,15 @@ class prefs {
     void setage();
     void setactor();
     void setdirector();
-    void setgenre();
+    void setgenre(int num);
     void resetgenre();
     void resetactor();
     void resetage();
     void resetdirector();
-    string getgenre();
+    void getgenre(vector<string> &newgenre);
     int getage();
-    string getactor();
-    string getdirector();
+    void getactor(vector<string> &newactor);
+    void getdirector(vector<string> &newdirector);
     
 };
 

@@ -21,16 +21,20 @@ void Settings::changeprefs(userpass &setup, prefs &options) {
             while (answer != 'b'){
                 cout << "Would you like to reset (r) or add on to the existing preference (e)? Or press b to go back." << endl;
                 cout << "Current Genre Titles: ";
-                cout << options.getgenre() << endl;
+                vector<string> newgenre;
+                options.getgenre(newgenre);
+                for (int i = 0; i < newgenre.size(); i ++) {
+                    cout << newgenre.at(i) << " ";
+                }
+                cout << endl;
                 cin >> answer;
                 cout << endl;
                 answer = tolower(answer);
                 if (answer == 'r') {
-                    options.resetgenre();
-                    options.setgenre();
+                    options.setgenre(2);
                 }
                 else if (answer == 'e') {
-                    options.setgenre();
+                    options.setgenre(3);
                 }
                 else if (answer != 'b') {
                     cout << "Please provide a valid input." << endl << endl;
@@ -59,12 +63,16 @@ void Settings::changeprefs(userpass &setup, prefs &options) {
             while (answer != 'b'){
                 cout << "Would you like to reset (r) or add on to the existing preference (e)? Or press b to go back." << endl;
                 cout << "Current Actor/Actresses: ";
-                cout << options.getactor() << endl;
+                vector<string> newactor;
+                options.getactor(newactor);
+                for (int i = 0; i < newactor.size(); i ++) {
+                    cout << newactor.at(i) << " ";
+                }
+                cout << endl;
                 cin >> answer;
                 answer = tolower(answer);
                 cout << endl;
                 if (answer == 'r') {
-                    options.resetactor();
                     options.setactor();
                 }
                 else if (answer == 'e') {
@@ -80,12 +88,16 @@ void Settings::changeprefs(userpass &setup, prefs &options) {
             while (answer != 'b'){
                 cout << "Would you like to reset (r) or add on to the existing preference (e)? Or press b to go back." << endl;
                 cout << "Current Directors: ";
-                cout << options.getdirector() << endl;
+                vector<string> newdirector;
+                options.getdirector(newdirector);
+                for (int i = 0; i < newdirector.size(); i ++) {
+                    cout << newdirector.at(i) << " ";
+                }
+                cout << endl;
                 cin >> answer;
                 answer = tolower(answer);
                 cout << endl;
                 if (answer == 'r') {
-                    options.resetdirector();
                     options.setdirector();
                 }
                 else if (answer == 'e') {

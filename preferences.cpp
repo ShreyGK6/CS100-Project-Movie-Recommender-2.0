@@ -1,6 +1,6 @@
 // #include "settings.h"
 #include <iostream>
-#include <string>
+#include <vector>
 using namespace std;
 
 #include "preferences.h"
@@ -10,9 +10,10 @@ using namespace std;
 void prefs::setprefs() { 
     char answer;
 
-    setgenre();
+    setgenre(1);
+    cout << endl;
     setage();
-
+    cout << endl;
     
     do {
         cout << "Please add additional preferences. If you are done, please enter q." << endl;
@@ -20,70 +21,134 @@ void prefs::setprefs() {
         cin >> answer;
         answer = tolower(answer);
         if (answer == 'a') {
+            cout << endl;
             setactor();
         }
         else if (answer == 'd'){
+            cout << endl;
             setdirector();
         }
     }
     while (answer != 'q');
     cin.ignore();
-    
 
 }
 
-void prefs::setgenre() {
+void prefs::setgenre(int num) {
     char answer;
-    cout << "Pick a faveorite genre: " << endl;
-    cout << "comedy (c) \t drama (d) \t romance (r) \t action (a)" << endl;
-    cin >> answer;
+    int count = 2;
+    int checker = 0;
+    int message = 0;
+    if (num == 1) {
+        cout << "Pick a faveorite genre: " << endl;
+        cout << "comedy (c) \t drama (d) \t romance (r) \t action (a)" << endl;
+    }
+    if (num == 2 || num == 3) {
+        cout << "Pick a genre! If you are finished, please type q" << endl;
+        cout << "comedy (c) \t drama (d) \t romance (r) \t action (a)" << endl; 
+        count = 1;
+        cin >> answer;
+        cout << endl;
+        if (answer == 'q') {
+            checker = 2;
+        }
+    }
     
-    do {
+    while (answer != 'q' || checker != 2) {
+        if (count > 1) {
+            cin >> answer;
+            cout << endl;
+        }
+        if (num == 3) {
+            count = 3;
+        }
         cin.clear();
         answer = tolower(answer);
         if (answer == 'c'){
-            if (person.genre.find("comedy ") == string::npos){
-                person.genre = person.genre + "comedy ";
+            string name = "";
+            if (count == 1) {
+                resetgenre();
             }
-            else {
-                cout << "Already inputted!" << endl;
+            for (int i = 0; i < person.genre.size(); i++){
+                if (person.genre.at(i) == "comedy"){
+                    cout << "Already inputted!" << endl;
+                    cout << endl;
+                    name = person.genre.at(i);
+                }
             }
+            if (name == ""){
+                person.genre.push_back("comedy");
+            }
+            count = count + 1;
         }
         else if (answer == 'd'){
-            if (person.genre.find("drama ") == string::npos){
-                person.genre = person.genre + "drama ";
+            string name = "";
+            if (count == 1) {
+                resetgenre();
             }
-            else {
-                cout << "Already inputted!" << endl;
+            for (int i = 0; i < person.genre.size(); i++){
+                if (person.genre.at(i) == "drama"){
+                    cout << "Already inputted!" << endl;
+                    cout << endl;
+                    name = person.genre.at(i);
+                }
             }
+            if (name == ""){
+                person.genre.push_back("drama");
+            }
+            count = count + 1;
         }
         else if (answer == 'r'){
-            if (person.genre.find("romance ") == string::npos){
-                person.genre = person.genre + "romance ";
+            string name = "";
+            if (count == 1) {
+                resetgenre();
             }
-            else {
-                cout << "Already inputted!" << endl;
+            for (int i = 0; i < person.genre.size(); i++){
+                if (person.genre.at(i) == "romance"){
+                    cout << "Already inputted!" << endl;
+                    cout << endl;
+                    name = person.genre.at(i);
+                }
             }
+            if (name == ""){
+                person.genre.push_back("romance");
+            }
+            count = count + 1;
         }
         else if (answer == 'a') {
-            if (person.genre.find("action ") == string::npos){
-                person.genre = person.genre + "action ";
+            string name = "";
+            if (count == 1) {
+                resetgenre();
             }
-            else {
-                cout << "Already inputted!" << endl;
+            for (int i = 0; i < person.genre.size(); i++){
+                if (person.genre.at(i) == "action"){
+                    cout << "Already inputted!" << endl;
+                    cout << endl;
+                    name = person.genre.at(i);
+                }
             }
+            if (name == ""){
+                person.genre.push_back("action");
+            }
+            count = count + 1;
         }
-        else if (answer == 'q' && person.genre == "") {
+        else if (answer == 'q' && person.genre.empty() == true) {
             answer = '!';
+            checker = 0;
         }
         else if (answer != 'q') {
             cout << "not a valid response. Please give a valid response: " << endl;
+            cout << endl;
         }
-        cout << "Pick another genre! If are finished, please type q" << endl;
-        cout << "comedy (c) \t drama (d) \t romance (r) \t action (a)" << endl;
-        cin >> answer;
+        else if (answer == 'q') {
+                checker = 2;
+                message = 1;
+        }
+        if (message != 1) {
+            cout << "Pick another genre! If you are finished, please type q" << endl;
+            cout << "comedy (c) \t drama (d) \t romance (r) \t action (a)" << endl;
+        }
     }
-    while (answer != 'q');
 }
 
 void prefs::setage() {
@@ -106,12 +171,16 @@ void prefs::setactor(){
         }
         getline (cin, answer);
         count = count + 1;
+        if (count == 1 && answer != "quit") {
+            resetactor();
+        }
         if (answer != "quit") {
             for (int i = 0; i < answer.length(); i++ ){
                 answer[i] = tolower(answer[i]);
             }
-            person.actor = person.actor + answer + " ";
+            person.actor.push_back(answer);
         }
+        cout << endl;
     }
     while (answer != "quit");
 }
@@ -128,18 +197,22 @@ void prefs::setdirector() {
         }
         getline (cin, answer);
         count = count + 1;
+        if (count == 1 && answer != "quit") {
+            resetdirector();
+        }
         if (answer != "quit") {
             for (int i = 0; i < answer.length(); i++ ){
                 answer[i] = tolower(answer[i]);
             }
-            person.director = person.director + answer + " ";
+            person.director.push_back(answer);
         }
+        cout << endl;
     }
     while (answer != "quit");
 }
 
 void prefs::resetgenre() {
-    person.genre = "";
+    person.genre.resize(0);
 }
 
 void prefs::resetage() {
@@ -147,26 +220,32 @@ void prefs::resetage() {
 }
 
 void prefs::resetactor() {
-    person.actor = "";
+    person.actor.resize(0);
 }
 
 void prefs::resetdirector() {
-    person.director = "";
+    person.director.resize(0);
 }
 
-string prefs::getgenre(){
-    return person.genre;
+void prefs::getgenre(vector<string> &newgenre){
+    for (int i = 0; i < person.genre.size(); i++) {
+        newgenre.push_back(person.genre.at(i));
+    }
 }
 
 int prefs::getage(){
     return person.age;
 }
 
-string prefs::getactor(){
-    return person.actor;
+void prefs::getactor(vector<string> &newactor){
+    for (int i = 0; i < person.actor.size(); i++) {
+        newactor.push_back(person.actor.at(i));
+    }
 }
 
-string prefs::getdirector(){
-    return person.director;
+void prefs::getdirector(vector<string> &newdirector){
+    for (int i = 0; i < person.director.size(); i++) {
+        newdirector.push_back(person.director.at(i));
+    }
 }
 
