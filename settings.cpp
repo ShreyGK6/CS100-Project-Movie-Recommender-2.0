@@ -3,15 +3,10 @@
 using namespace std;
 
 #include "settings.h"
-#include "start.h"
+#include "preferences.h"
+#include "userpass.h"
 
-// void Settings::ex() {
-//     cout << var << endl;
-// }
-
-// Settings::Settings ();
-
-void Settings::changeprefs(start &setup) {
+void Settings::changeprefs(userpass &setup, prefs &options) {
     char answer;
 
     cout << "----------- PROFILE PAGE ------------" << endl;
@@ -25,15 +20,15 @@ void Settings::changeprefs(start &setup) {
             while (answer != 'b'){
                 cout << "Would you like to reset (r) or add on to the existing preference (e)? Or press b to go back." << endl;
                 cout << "Current Genre Titles: ";
-                setup.showgenre();
+                cout << options.getgenre() << endl;
                 cin >> answer;
                 answer = tolower(answer);
                 if (answer == 'r') {
-                    setup.resetgenre();
-                    setup.setgenre();
+                    options.resetgenre();
+                    options.setgenre();
                 }
                 else if (answer == 'e') {
-                    setup.setgenre();
+                    options.setgenre();
                 }
                 else if (answer != 'b') {
                     cout << "Please provide a valid input." << endl << endl;
@@ -44,12 +39,12 @@ void Settings::changeprefs(start &setup) {
             while (answer != 'b'){
                 cout << "Would you like to change your age (r)? Or press b to go back." << endl;
                 cout << "Current Age: ";
-                setup.showage();
+                cout << options.getage() << endl;
                 cin >> answer;
                 answer = tolower(answer);
                 if (answer == 'r') {
-                    setup.resetage();
-                    setup.setage();
+                    options.resetage();
+                    options.setage();
                 }
                 else if (answer != 'b') {
                     cout << "Please provide a valid input." << endl << endl;
@@ -61,15 +56,15 @@ void Settings::changeprefs(start &setup) {
             while (answer != 'b'){
                 cout << "Would you like to reset (r) or add on to the existing preference (e)? Or press b to go back." << endl;
                 cout << "Current Actor/Actresses: ";
-                setup.showactor();
+                cout << options.getactor() << endl;
                 cin >> answer;
                 answer = tolower(answer);
                 if (answer == 'r') {
-                    setup.resetactor();
-                    setup.setactor();
+                    options.resetactor();
+                    options.setactor();
                 }
                 else if (answer == 'e') {
-                    setup.setactor();
+                    options.setactor();
                 }
                 else if (answer != 'b') {
                     cout << "Please provide a valid input." << endl << endl;
@@ -81,15 +76,15 @@ void Settings::changeprefs(start &setup) {
             while (answer != 'b'){
                 cout << "Would you like to reset (r) or add on to the existing preference (e)? Or press b to go back." << endl;
                 cout << "Current Directors: ";
-                setup.showdirector();
+                cout << options.getdirector() << endl;
                 cin >> answer;
                 answer = tolower(answer);
                 if (answer == 'r') {
-                    setup.resetdirector();
-                    setup.setdirector();
+                    options.resetdirector();
+                    options.setdirector();
                 }
                 else if (answer == 'e') {
-                    setup.setdirector();
+                    options.setdirector();
                 }
                 else if (answer != 'b') {
                     cout << "Please provide a valid input." << endl << endl;
@@ -101,7 +96,7 @@ void Settings::changeprefs(start &setup) {
             while (answer != 'b'){
                 cout << "Would you like to reset (r), change only the username (u), or only change password (p)? Or press b to go back." << endl;
                 cout << "Current Username: ";
-                setup.showuser();
+                cout << setup.getuser() << endl;
                 cout << "Current Password: ";
                 int num = setup.showpass();
                 for (int i = 0; i < num; i++) {

@@ -17,16 +17,10 @@ class prefs {
     friend class Settings;
 
     public:
-    // start() {}
-    // void startup();
     preferences person;
     void setprefs();
-    
-    // int var = 3;
-
 
     private:
-    // void checkuserandpass();
     void setage();
     void setactor();
     void setdirector();
@@ -35,23 +29,11 @@ class prefs {
     void resetactor();
     void resetage();
     void resetdirector();
-    // void resetpass();
-    // void resetuser();
-    // void setuser();
-    // void setpass();
-    void showgenre();
-    void showage();
-    void showactor();
-    void showdirector();
-    // void showuser();
-    // int showpass();
-    
-
+    string getgenre();
+    int getage();
+    string getactor();
+    string getdirector();
     
 };
-
-
-
-
 
 #endif // __SETUP_H__

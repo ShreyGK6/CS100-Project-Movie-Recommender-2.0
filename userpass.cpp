@@ -3,8 +3,9 @@
 using namespace std;
 
 #include "userpass.h"
+#include "preferences.h"
 
-void userpass::startup() {
+void userpass::startup(prefs &pref) {
     char answer;
     int checker = 0;
     cout << "Are you an existing user? (y/n)" << endl; 
@@ -13,16 +14,16 @@ void userpass::startup() {
     cout << endl;
     while (checker == 0) {
         if (tolower(answer) == 'y') {
-            checkuserandpass();
+            checkuserandpass(pref);
             checker = 1;
         }
         else if (tolower(answer) == 'n') {
             cout << "------------- CREATE ACCOUNT -----------" << endl;
             setuser();
             setpass();
-            checkuserandpass(); //kind of a useless function bc it doesn't save anyways
+            checkuserandpass(pref); //kind of a useless function bc it doesn't save anyways
                                 //have a "q" in main in order to quit the program (for sake of demo) ?
-            setprefs();
+            pref.setprefs();
             checker = 1;
         }
         else {
@@ -32,7 +33,7 @@ void userpass::startup() {
         }
     }
 }
-void userpass::checkuserandpass() {
+void userpass::checkuserandpass(prefs &pref) {
     string iuser;
     string ipass;
     int checker = 0;
@@ -43,7 +44,7 @@ void userpass::checkuserandpass() {
         cout << "------------- CREATE ACCOUNT -----------" << endl;
         setuser();
         setpass();
-        setprefs();
+        pref.setprefs();
     }
 
     cout << "---------- SIGN IN ---------" << endl;
@@ -98,12 +99,12 @@ void userpass::setpass() {
     cout << endl;
 }
 
-void userpass::showuser(){
-    cout << person.user << endl;
+string userpass::getuser(){
+    return user;
 }
 
 int userpass::showpass(){
-    string pass = person.password;
+    string pass = password;
     int count = 0;
 
     for (int i = 0; i < pass.length(); i++) {

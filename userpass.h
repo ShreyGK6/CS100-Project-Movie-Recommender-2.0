@@ -1,6 +1,7 @@
 #ifndef __USERPASS_H__
 #define __USERPASS_H__
 
+#include "preferences.h"
 #include <iostream>
 #include <string>
 using namespace std;
@@ -10,43 +11,24 @@ class userpass {
     friend class Settings;
 
     public:
-    // start() {}
-    void startup();
+    void startup(prefs &pref);
     preferences person;
-    // void setprefs();
     
-    // int var = 3;
 
 
     private:
-    void checkuserandpass();
+    void checkuserandpass(prefs &pref);
     string user = "";
     string password = "";
-    // void setage();
-    // void setactor();
-    // void setdirector();
-    // void setgenre();
-    // void resetgenre();
-    // void resetactor();
-    // void resetage();
-    // void resetdirector();
     void resetpass();
     void resetuser();
     void setuser();
     void setpass();
-    // void showgenre();
-    // void showage();
-    // void showactor();
-    // void showdirector();
-    void showuser();
+    string getuser();
     int showpass();
     
 
     
 };
-
-
-
-
 
 #endif // __SETUP_H__

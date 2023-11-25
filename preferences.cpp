@@ -154,19 +154,19 @@ void prefs::resetdirector() {
     person.director = "";
 }
 
-void prefs::showgenre(){
-    cout << person.genre << endl;
+string prefs::getgenre(){
+    return person.genre;
 }
 
-void prefs::showage(){
-    cout << person.age << endl;
+int prefs::getage(){
+    return person.age;
 }
 
-void prefs::showactor(){
-    cout << person.actor << endl;
+string prefs::getactor(){
+    return person.actor;
 }
 
-void prefs::showdirector(){
-    cout << person.director << endl;
+string prefs::getdirector(){
+    return person.director;
 }
 
