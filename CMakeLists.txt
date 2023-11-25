@@ -23,5 +23,17 @@ ADD_EXECUTABLE(runAllTests
     settings.cpp
 )
 
+ADD_EXECUTABLE(runMovieRecSystem
+    movie.cpp
+    database.cpp
+    Instructions.cpp
+    userpass.cpp
+    preferences.cpp
+    menu.cpp
+    settings.cpp
+    main.cpp
+)
+
+
 TARGET_LINK_LIBRARIES(runAllTests gtest)
 TARGET_COMPILE_DEFINITIONS(runAllTests PRIVATE gtest_disable_pthreads=ON)
