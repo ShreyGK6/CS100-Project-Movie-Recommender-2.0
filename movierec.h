@@ -2,7 +2,7 @@
 #define __MOVIEREC_H
 #include "database.h"
 #include "settings.h"
-#include "start.h"
+#include "preferences.h"
 #include "menu.h"
 #include <vector>
 #include <string>
