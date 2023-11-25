@@ -6,6 +6,7 @@ cmake_install.cmake
 Makefile
 lib/
 bin/
+
 runSetting
 runMenu
 runInstructions
@@ -13,7 +14,6 @@ runDatabase
 runAllTests
 run 
 test
-final
-
+runMovieRecSystem
 
 
