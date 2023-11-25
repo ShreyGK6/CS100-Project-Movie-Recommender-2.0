@@ -1,4 +1,6 @@
 #include "menu.h"
+#include "settings.h"
+#include "Instructions.h"
 #include <iostream>
 #include <string>
 using namespace std;
@@ -6,9 +8,11 @@ using namespace std;
 menu::menu()
 {}
 
-void menu::callSettings()
+void menu::callSettings(userpass &setup, prefs &options)
 {
-    cout << "Calling settings..." << endl;
+    Settings profile;
+    profile.changeprefs(setup, options);
+    display(setup, options);
 }
 
 void menu::callMovieRec()
@@ -18,7 +22,8 @@ void menu::callMovieRec()
 
 void menu::callOverview()
 {
-    cout << "Calling overview..." << endl;
+    instructions instructionsPage;
+    instructionsPage.display();
 }
 
 void menu::callSearch()
@@ -49,7 +54,7 @@ char menu::askingForInput()
     return userInput;
 }
 
-void menu::display()
+void menu::display(userpass &setup, prefs &options)
 {
     char input = askingForInput();
     if(input == 'r')
@@ -65,7 +70,7 @@ void menu::display()
     else if(input == 'p')
     {
         cout << "You have selected the profile settings. Going there..." << endl;  
-        callSettings();
+        callSettings(setup, options);
     }
     else if(input == 'o')
     {
@@ -80,6 +85,6 @@ void menu::display()
     else
     {
         cout << "You have entered an invalid input." << endl << endl;
-        display();
+        display(setup, options);
     }
 }

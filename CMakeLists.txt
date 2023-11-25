@@ -16,5 +16,16 @@ ADD_EXECUTABLE(test
     tester.cpp
     settings.cpp
 )
+
+ADD_EXECUTABLE(final
+    main.cpp
+    movie.cpp
+    database.cpp
+    Instructions.cpp
+    userpass.cpp
+    preferences.cpp
+    menu.cpp
+    settings.cpp
+)
 TARGET_LINK_LIBRARIES(test gtest)
 TARGET_COMPILE_DEFINITIONS(test PRIVATE gtest_disable_pthreads=ON)

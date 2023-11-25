@@ -10,18 +10,20 @@ void Settings::changeprefs(userpass &setup, prefs &options) {
     char answer;
 
     cout << "----------- PROFILE PAGE ------------" << endl;
-    cout << "Press q to quit or pick an option to change: " << endl;
+    cout << "Press m to got to menu or pick an option to change: " << endl;
     cout << "genre (g) \t age (y) \t actor (a) \t director (d) \t username and password (u)" << endl;
 
     do {
         cin >> answer;
         answer = tolower(answer);
+        cout << endl;
         if (answer == 'g'){
             while (answer != 'b'){
                 cout << "Would you like to reset (r) or add on to the existing preference (e)? Or press b to go back." << endl;
                 cout << "Current Genre Titles: ";
                 cout << options.getgenre() << endl;
                 cin >> answer;
+                cout << endl;
                 answer = tolower(answer);
                 if (answer == 'r') {
                     options.resetgenre();
@@ -42,6 +44,7 @@ void Settings::changeprefs(userpass &setup, prefs &options) {
                 cout << options.getage() << endl;
                 cin >> answer;
                 answer = tolower(answer);
+                cout << endl;
                 if (answer == 'r') {
                     options.resetage();
                     options.setage();
@@ -59,6 +62,7 @@ void Settings::changeprefs(userpass &setup, prefs &options) {
                 cout << options.getactor() << endl;
                 cin >> answer;
                 answer = tolower(answer);
+                cout << endl;
                 if (answer == 'r') {
                     options.resetactor();
                     options.setactor();
@@ -79,6 +83,7 @@ void Settings::changeprefs(userpass &setup, prefs &options) {
                 cout << options.getdirector() << endl;
                 cin >> answer;
                 answer = tolower(answer);
+                cout << endl;
                 if (answer == 'r') {
                     options.resetdirector();
                     options.setdirector();
@@ -106,6 +111,7 @@ void Settings::changeprefs(userpass &setup, prefs &options) {
                 cin >> answer;
                 cin.ignore();
                 answer = tolower(answer);
+                cout << endl;
                 if (answer == 'r') {
                     setup.resetpass();
                     setup.resetuser();
@@ -127,10 +133,10 @@ void Settings::changeprefs(userpass &setup, prefs &options) {
 
         }
         cout << "----------- PROFILE PAGE ------------" << endl;
-        cout << "Press q to quit or pick an option to change: " << endl;
+        cout << "Press m to got to menu or pick an option to change: " << endl;
         cout << "genre (g) \t age (y) \t actor (a) \t director (d) \t username and password (u)" << endl;
 
     }
-    while (answer != 'q');
+    while (answer != 'm');
 
 }

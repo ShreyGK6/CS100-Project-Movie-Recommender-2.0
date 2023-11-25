@@ -59,9 +59,7 @@ void userpass::checkuserandpass(prefs &pref) {
         cin.clear();
         getline(cin, ipass);
         cout << endl;  
-        if (iuser == user && ipass==password) {
-            //call menu
-            cout << "in menu" << endl;
+        if (iuser == user && ipass == password) {
             checker = 1;
         }
         else {
