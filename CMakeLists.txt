@@ -12,7 +12,6 @@ ADD_EXECUTABLE(run
 
 ADD_EXECUTABLE(test
     preferences.cpp
-    settingsmain.cpp
     userpass.cpp
     tester.cpp
     settings.cpp

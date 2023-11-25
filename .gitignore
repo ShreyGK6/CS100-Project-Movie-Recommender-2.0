@@ -11,6 +11,8 @@ runMenu
 runInstructions
 runDatabase
 runAllTests
+run 
+test
 
 
 
