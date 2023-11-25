@@ -23,6 +23,7 @@ void menu::callMovieRec()
     string filename = "/home/csmajs/smoha095/final-project-smoha095-ashah174-ayama039-skoth011/ movies.tsv";
     db.loadFromTSV(filename);
     cout << "Calling movie recommendator..." << endl;
+    cout << endl;
     struct preferences preference;
     preference.actor = "Morgan Freeman";
     preference.genre = "Comedy";
@@ -30,7 +31,12 @@ void menu::callMovieRec()
     preference.director = "Martin Scorsese";
     string genre = "Action";
     MovieRec movierec;
+    cout << "Top Movies Based on Your Profile Selections: " << endl;
+    cout << endl;
     movierec.movieRecommendationOverall(preference);
+    cout << endl;
+    cout << "Top Movies Based on Your Selected Genre: " << endl;
+    cout << endl;
     movierec.movieRecByGenre(genre);
     movierec.backToMenu();
 }
