@@ -3,6 +3,7 @@
 #include "movie.h"
 #include <fstream>
 #include <sstream>
+#include <algorithm>
 #include <vector>
 using namespace std;
 
@@ -141,7 +142,7 @@ void Database::insert(Movie movie)
     movies.push_back(movie);
 }
 
-vector<Movie> Database::filter(string genre, int age, string actor, string director)
+vector<Movie> Database::filter(vector <string> genre, int age, vector <string> actor, vector <string> director)
 {
     vector<Movie> filteredMovies;
     for (int i = 0; i < movies.size(); i++)
@@ -154,7 +155,8 @@ vector<Movie> Database::filter(string genre, int age, string actor, string direc
         vector<string> genres = movies[i].getGenre();
         for (string eachGenre : genres)
         {
-            if (eachGenre == genre)
+            // if (eachGenre == genre)
+            if (find(genre.begin(), genre.end(), eachGenre) != genre.end())
             {
                 matched++;
             }
@@ -162,7 +164,8 @@ vector<Movie> Database::filter(string genre, int age, string actor, string direc
         vector<string> actors = movies[i].getActor();
         for (string eachActor : actors)
         {
-            if (eachActor == actor)
+            // if (eachActor == actor)
+            if (find(actor.begin(), actor.end(), eachActor) != actor.end())
             {
                 matched++;
             }
@@ -171,7 +174,8 @@ vector<Movie> Database::filter(string genre, int age, string actor, string direc
         vector<string> directors = movies[i].getDirector();
         for (string eachDirector : directors)
         {
-            if (eachDirector == director)
+            // if (eachDirector == director)
+            if (find(director.begin(), director.end(), eachDirector) != director.end())
             {
                 matched++;
             }

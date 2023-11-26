@@ -21,7 +21,7 @@ public:
     vector<Movie> getMoviesbyReleaseDate(int releaseDate);
     vector<Movie> getMoviesbyRating(double rating);
     void insert(Movie movie);
-    vector<Movie> filter(string genre, int age, string actor, string director);
+    vector<Movie> filter(vector <string> genre, int age, vector <string> actor, vector <string> director);
 };
 
 #endif
