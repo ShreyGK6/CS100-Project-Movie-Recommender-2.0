@@ -47,7 +47,7 @@ void Database::displayMovies()
     }
 }
 
-vector<Movie> Database::getMoviesbyGenre(string genre)
+vector<Movie> Database::getMoviesbyGenre(vector<string> genre)
 {
     vector<Movie> genreSpecificMovie;
     for (int i = 0; i < movies.size(); i++)
@@ -55,7 +55,7 @@ vector<Movie> Database::getMoviesbyGenre(string genre)
         vector<string> genres = movies[i].getGenre();
         for (string eachGenre : genres)
         {
-            if (eachGenre == genre)
+            if (find(genre.begin(), genre.end(), eachGenre) != genre.end())
             {
                 genreSpecificMovie.push_back(movies[i]);
             }
@@ -64,7 +64,7 @@ vector<Movie> Database::getMoviesbyGenre(string genre)
     return genreSpecificMovie;
 }
 
-vector<Movie> Database::getMoviesbyActor(string actor)
+vector<Movie> Database::getMoviesbyActor(vector<string> actor)
 {
     vector<Movie> actorSpecificMovie;
     for (int i = 0; i < movies.size(); i++)
@@ -72,7 +72,7 @@ vector<Movie> Database::getMoviesbyActor(string actor)
         vector<string> actors = movies[i].getActor();
         for (string eachActor : actors)
         {
-            if (eachActor == actor)
+            if (find(actor.begin(), actor.end(), eachGenre) != actor.end())
             {
                 actorSpecificMovie.push_back(movies[i]);
             }
@@ -81,7 +81,7 @@ vector<Movie> Database::getMoviesbyActor(string actor)
     return actorSpecificMovie;
 }
 
-vector<Movie> Database::getMoviesbyDirector(string director)
+vector<Movie> Database::getMoviesbyDirector(vector<string> director)
 {
     vector<Movie> directorSpecificMovie;
     for (int i = 0; i < movies.size(); i++)
@@ -89,7 +89,7 @@ vector<Movie> Database::getMoviesbyDirector(string director)
         vector<string> directors = movies[i].getDirector();
         for (string eachDirector : directors)
         {
-            if (eachDirector == director)
+            if (find(director.begin(), director.end(), eachGenre) != director.end())
             {
                 directorSpecificMovie.push_back(movies[i]);
             }

@@ -1,10 +1,10 @@
 #include <iostream>
 #include <string>
-using namespace std;
-
 #include "settings.h"
 #include "preferences.h"
 #include "userpass.h"
+using namespace std;
+
 
 void Settings::changeprefs(userpass &setup, prefs &options) {
     char answer;

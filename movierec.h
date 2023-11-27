@@ -13,7 +13,7 @@ class MovieRec
 public:
     const int maxMovieShown = 5;
     void movieRecommendationOverall(prefs pref);
-    void movieRecByGenre(string genre);
+    void movieRecByGenre(prefs pref);
     void backToMenu();
 };
 

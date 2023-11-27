@@ -14,7 +14,7 @@ class menu
     char askingForInput();
 
     void callSettings(userpass &setup, prefs &options);  //make all functions this line and below private; public due to tests
-    void callMovieRec();
+    void callMovieRec(prefs options);
     void callSearch();
     void callOverview();
     void signOut();

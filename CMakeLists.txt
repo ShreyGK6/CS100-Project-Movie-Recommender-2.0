@@ -21,6 +21,7 @@ ADD_EXECUTABLE(runAllTests
     menu.cpp
     settings.cpp
     movierec.cpp
+    main.cpp
 )
 
 ADD_EXECUTABLE(runMovieRecSystem

@@ -10,15 +10,19 @@
 #include <cmath>
 using namespace std;
 
-void MovieRec::movieRecommendationOverall(prefs pref)
+void MovieRec::movieRecommendationOverall(prefs options)
 {
-    vector<string> genre = pref.getgenre(vector<string> genre);
-    int age = pref.getage();
-    vector<string> actor = pref.getactor(vector<string> actor);
-    vector<string> director = pref.getdirector(vector<string> director);
+    vector<string> genre;
+    options.getgenre(genre);
+    int age = options.getage();
+    vector<string> actor;
+    options.getactor(actor);
+    vector<string> director;
+    options.getdirector(director);
     Database db;
     string filename = "/home/csmajs/smoha095/final-project-smoha095-ashah174-ayama039-skoth011/ movies.tsv";
     db.loadFromTSV(filename);
+    // cout << "read from db" << endl;
     vector<Movie> filteredMovies = db.filter(genre, age, actor, director);
     sort(filteredMovies.rbegin(), filteredMovies.rend());
     for (int i = 0; i < min((int)filteredMovies.size(), maxMovieShown); i++)
@@ -27,17 +31,20 @@ void MovieRec::movieRecommendationOverall(prefs pref)
     }
 }
 
-// void MovieRec::movieRecByGenre(prefs pref)
-// {
-    // Database db;
-    // string filename = "/home/csmajs/smoha095/final-project-smoha095-ashah174-ayama039-skoth011/ movies.tsv";
-    // db.loadFromTSV(filename);
-    // vector<Movie> genreFilteredMovies = db.getMoviesbyGenre(genre);
-    // for (int i = 0; i < min((int)genreFilteredMovies.size(), maxMovieShown); i++)
-    // {
-    //     genreFilteredMovies[i].display();
-    // }
-// }
+void MovieRec::movieRecByGenre(prefs options)
+{
+    vector <string> genre;
+    options.getgenre(genre);
+    Database db;
+    string filename = "/home/csmajs/smoha095/final-project-smoha095-ashah174-ayama039-skoth011/ movies.tsv";
+    db.loadFromTSV(filename);
+    vector<Movie> genreFilteredMovies = db.getMoviesbyGenre(genre);
+    sort(genreFilteredMovies.rbegin(), genreFilteredMovies.rend());
+    for (int i = 0; i < min((int)genreFilteredMovies.size(), maxMovieShown); i++)
+    {
+        genreFilteredMovies[i].display();
+    }
+}
 
 void MovieRec::backToMenu()
 {

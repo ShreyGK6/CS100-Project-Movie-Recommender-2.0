@@ -22,28 +22,28 @@ void menu::callSettings(userpass &setup, prefs &options)
     display(setup, options);
 }
 
-void menu::callMovieRec()
+void menu::callMovieRec(prefs options)
 {
-    // Database db;
-    // string filename = "/home/csmajs/smoha095/final-project-smoha095-ashah174-ayama039-skoth011/ movies.tsv";
-    // db.loadFromTSV(filename);
-    // cout << "Calling movie recommendator..." << endl;
-    // cout << endl;
-    // // struct preferences preference;
-    // // preference.actor = "Morgan Freeman";
-    // // preference.genre = "Comedy";
-    // // preference.age = 55;
-    // // preference.director = "Martin Scorsese";
-    // // string genre = "Action";
-    // MovieRec movierec;
-    // cout << "Top Movies Based on Your Profile Selections: " << endl;
-    // cout << endl;
-    // // movierec.movieRecommendationOverall(preference);
-    // cout << endl;
-    // cout << "Top Movies Based on Your Selected Genre: " << endl;
-    // cout << endl;
-    // // movierec.movieRecByGenre(genre);
-    // movierec.backToMenu();
+    Database db;
+    string filename = "/home/csmajs/smoha095/final-project-smoha095-ashah174-ayama039-skoth011/ movies.tsv";
+    db.loadFromTSV(filename);
+    cout << "Calling movie recommendator..." << endl;
+    cout << endl;
+
+    MovieRec movierec;
+    cout << "Top Movies Based on Your Profile Selections: " << endl;
+    cout << endl;
+    movierec.movieRecommendationOverall(options);
+    cout << endl;
+    cout << endl;
+    cout << endl;
+    cout << endl;
+    cout << "Top Movies Based on Your Selected Genre: " << endl;
+    cout << endl;
+    movierec.movieRecByGenre(options);
+    cout << "press -m to go back to menu" << endl;
+    cout << endl;
+    movierec.backToMenu();
 }
 
 void menu::callOverview()
@@ -86,7 +86,7 @@ void menu::display(userpass &setup, prefs &options)
     if (input == 'r')
     {
         cout << "You have selected the movie recommendations. Going there..." << endl;
-        callMovieRec();
+        callMovieRec(options);
     }
     else if (input == 's')
     {

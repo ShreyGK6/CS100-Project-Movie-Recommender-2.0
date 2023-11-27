@@ -26,9 +26,6 @@ int main () {
     menu menuObject;
     menuObject.display(setup, options);
 
-    MovieRec movierec;
-    movierec.movieRecommendationOverall(options);
-    // movierec.movieRecommendationByGenre()
-
+    
     return 0;
 }
