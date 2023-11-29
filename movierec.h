@@ -14,7 +14,7 @@ public:
     const int maxMovieShown = 5;
     void movieRecommendationOverall(prefs pref);
     void movieRecByGenre(prefs pref);
-    void backToMenu();
+    // void backToMenu();
 };
 
 #endif

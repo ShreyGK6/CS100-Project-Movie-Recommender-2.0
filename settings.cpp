@@ -168,5 +168,4 @@ void Settings::changeprefs(userpass &setup, prefs &options) {
 
     }
     while (answer != 'm');
-
 }

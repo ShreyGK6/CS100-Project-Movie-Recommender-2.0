@@ -29,21 +29,19 @@ void menu::callMovieRec(prefs options)
     db.loadFromTSV(filename);
     cout << "Calling movie recommendator..." << endl;
     cout << endl;
-
     MovieRec movierec;
     cout << "Top Movies Based on Your Profile Selections: " << endl;
     cout << endl;
     movierec.movieRecommendationOverall(options);
     cout << endl;
     cout << endl;
-    cout << endl;
-    cout << endl;
+    cout << "-----------------------------------------------------------------------------" << endl;
     cout << "Top Movies Based on Your Selected Genre: " << endl;
     cout << endl;
     movierec.movieRecByGenre(options);
+
     cout << "press -m to go back to menu" << endl;
     cout << endl;
-    movierec.backToMenu();
 }
 
 void menu::callOverview()

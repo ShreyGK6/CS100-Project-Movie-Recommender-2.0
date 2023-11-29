@@ -20,12 +20,12 @@ Movie::Movie(string title, int releaseDate, double rating, string maturityRating
 void Movie::display()
 {
     cout << "Title: " << title << endl;
-    cout << "Release Date: " << releaseDate << endl;
-    cout << "Rating: " << rating << endl;
-    cout << "Maturity Rating: " << maturityRating << endl;
-    cout << "Genre: " << genre << endl;
-    cout << "Actor: " << actor << endl;
-    cout << "Director: " << director << endl;
+    cout << "\t Release Date: " << releaseDate << endl;
+    cout << "\t Rating: " << rating << endl;
+    cout << "\t Maturity Rating: " << maturityRating << endl;
+    cout << "\t Genre: " << genre << endl;
+    cout << "\t Actor: " << actor << endl;
+    cout << "\t Director: " << director << endl;
     cout << endl;
 }
 

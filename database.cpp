@@ -72,7 +72,7 @@ vector<Movie> Database::getMoviesbyActor(vector<string> actor)
         vector<string> actors = movies[i].getActor();
         for (string eachActor : actors)
         {
-            if (find(actor.begin(), actor.end(), eachGenre) != actor.end())
+            if (find(actor.begin(), actor.end(), eachActor) != actor.end())
             {
                 actorSpecificMovie.push_back(movies[i]);
             }
@@ -89,7 +89,7 @@ vector<Movie> Database::getMoviesbyDirector(vector<string> director)
         vector<string> directors = movies[i].getDirector();
         for (string eachDirector : directors)
         {
-            if (find(director.begin(), director.end(), eachGenre) != director.end())
+            if (find(director.begin(), director.end(), eachDirector) != director.end())
             {
                 directorSpecificMovie.push_back(movies[i]);
             }
