@@ -238,9 +238,7 @@ int prefs::getage(){
 }
 
 void prefs::getactor(vector<string> &newactor){
-    cout << "inside getactor: " << endl;
     for (int i = 0; i < person.actor.size(); i++) {
-        cout << "inside getactor: " << person.actor.at(i) << endl;
         newactor.push_back(person.actor.at(i));
     }
 }
