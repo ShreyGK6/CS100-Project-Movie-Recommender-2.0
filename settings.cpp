@@ -3,37 +3,38 @@
 using namespace std;
 
 #include "settings.h"
-#include "start.h"
+#include "preferences.h"
+#include "userpass.h"
 
-// void Settings::ex() {
-//     cout << var << endl;
-// }
-
-// Settings::Settings ();
-
-void Settings::changeprefs(start &setup) {
+void Settings::changeprefs(userpass &setup, prefs &options) {
     char answer;
 
     cout << "----------- PROFILE PAGE ------------" << endl;
-    cout << "Press q to quit or pick an option to change: " << endl;
+    cout << "Press m to got to menu or pick an option to change: " << endl;
     cout << "genre (g) \t age (y) \t actor (a) \t director (d) \t username and password (u)" << endl;
 
     do {
         cin >> answer;
         answer = tolower(answer);
+        cout << endl;
         if (answer == 'g'){
             while (answer != 'b'){
                 cout << "Would you like to reset (r) or add on to the existing preference (e)? Or press b to go back." << endl;
                 cout << "Current Genre Titles: ";
-                setup.showgenre();
+                vector<string> newgenre;
+                options.getgenre(newgenre);
+                for (int i = 0; i < newgenre.size(); i ++) {
+                    cout << newgenre.at(i) << " ";
+                }
+                cout << endl;
                 cin >> answer;
+                cout << endl;
                 answer = tolower(answer);
                 if (answer == 'r') {
-                    setup.resetgenre();
-                    setup.setgenre();
+                    options.setgenre(2);
                 }
                 else if (answer == 'e') {
-                    setup.setgenre();
+                    options.setgenre(3);
                 }
                 else if (answer != 'b') {
                     cout << "Please provide a valid input." << endl << endl;
@@ -44,12 +45,13 @@ void Settings::changeprefs(start &setup) {
             while (answer != 'b'){
                 cout << "Would you like to change your age (r)? Or press b to go back." << endl;
                 cout << "Current Age: ";
-                setup.showage();
+                cout << options.getage() << endl;
                 cin >> answer;
                 answer = tolower(answer);
+                cout << endl;
                 if (answer == 'r') {
-                    setup.resetage();
-                    setup.setage();
+                    options.resetage();
+                    options.setage();
                 }
                 else if (answer != 'b') {
                     cout << "Please provide a valid input." << endl << endl;
@@ -61,15 +63,20 @@ void Settings::changeprefs(start &setup) {
             while (answer != 'b'){
                 cout << "Would you like to reset (r) or add on to the existing preference (e)? Or press b to go back." << endl;
                 cout << "Current Actor/Actresses: ";
-                setup.showactor();
+                vector<string> newactor;
+                options.getactor(newactor);
+                for (int i = 0; i < newactor.size(); i ++) {
+                    cout << newactor.at(i) << " ";
+                }
+                cout << endl;
                 cin >> answer;
                 answer = tolower(answer);
+                cout << endl;
                 if (answer == 'r') {
-                    setup.resetactor();
-                    setup.setactor();
+                    options.setactor();
                 }
                 else if (answer == 'e') {
-                    setup.setactor();
+                    options.setactor();
                 }
                 else if (answer != 'b') {
                     cout << "Please provide a valid input." << endl << endl;
@@ -81,15 +88,20 @@ void Settings::changeprefs(start &setup) {
             while (answer != 'b'){
                 cout << "Would you like to reset (r) or add on to the existing preference (e)? Or press b to go back." << endl;
                 cout << "Current Directors: ";
-                setup.showdirector();
+                vector<string> newdirector;
+                options.getdirector(newdirector);
+                for (int i = 0; i < newdirector.size(); i ++) {
+                    cout << newdirector.at(i) << " ";
+                }
+                cout << endl;
                 cin >> answer;
                 answer = tolower(answer);
+                cout << endl;
                 if (answer == 'r') {
-                    setup.resetdirector();
-                    setup.setdirector();
+                    options.setdirector();
                 }
                 else if (answer == 'e') {
-                    setup.setdirector();
+                    options.setdirector();
                 }
                 else if (answer != 'b') {
                     cout << "Please provide a valid input." << endl << endl;
@@ -101,7 +113,7 @@ void Settings::changeprefs(start &setup) {
             while (answer != 'b'){
                 cout << "Would you like to reset (r), change only the username (u), or only change password (p)? Or press b to go back." << endl;
                 cout << "Current Username: ";
-                setup.showuser();
+                cout << setup.getuser() << endl;
                 cout << "Current Password: ";
                 int num = setup.showpass();
                 for (int i = 0; i < num; i++) {
@@ -111,6 +123,7 @@ void Settings::changeprefs(start &setup) {
                 cin >> answer;
                 cin.ignore();
                 answer = tolower(answer);
+                cout << endl;
                 if (answer == 'r') {
                     setup.resetpass();
                     setup.resetuser();
@@ -132,10 +145,10 @@ void Settings::changeprefs(start &setup) {
 
         }
         cout << "----------- PROFILE PAGE ------------" << endl;
-        cout << "Press q to quit or pick an option to change: " << endl;
+        cout << "Press m to got to menu or pick an option to change: " << endl;
         cout << "genre (g) \t age (y) \t actor (a) \t director (d) \t username and password (u)" << endl;
 
     }
-    while (answer != 'q');
+    while (answer != 'm');
 
 }

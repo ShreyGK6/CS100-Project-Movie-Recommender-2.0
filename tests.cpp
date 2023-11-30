@@ -1,6 +1,7 @@
 #include "gtest/gtest.h"
 #include "settings.h"
-#include "start.h"
+#include "preferences.h"
+#include "userpass.h"
 #include "database.h"
 #include "movie.h"
 #include "menu.h"
@@ -10,14 +11,16 @@
 using namespace std; 
 
 TEST (setup2, startup2){
-    start setup1;
-    EXPECT_NO_THROW(setup1.startup());
+    userpass setup;
+    prefs options;
+    EXPECT_NO_THROW(setup.startup(options));
 }
 
 TEST (settings, changeprefs){
-    start setup1;
+    userpass setup;
+    prefs options;
     Settings profile;
-    EXPECT_NO_THROW(profile.changeprefs(setup1));
+    EXPECT_NO_THROW(profile.changeprefs(setup, options));
 }
 
 class DatabaseTest : public ::testing::Test {
@@ -160,7 +163,9 @@ TEST(functionsWorking, askingForInputQ)
 TEST(functionsWorking, display)
 {
     menu menuObject;
-    EXPECT_NO_THROW(menuObject.display());
+    userpass setup;
+    prefs options;
+    EXPECT_NO_THROW(menuObject.display(setup, options));
 }
 
 TEST(functionsWorking, options)
@@ -172,7 +177,9 @@ TEST(functionsWorking, options)
 TEST(functionsWorking, callSettings)
 {
     menu menuObject;
-    EXPECT_NO_THROW(menuObject.callSettings());
+    userpass setup;
+    prefs options;
+    EXPECT_NO_THROW(menuObject.callSettings(setup, options));
 }
 
 TEST(functionsWorking, callMovieRec)
