@@ -12,7 +12,7 @@ ADD_EXECUTABLE(run
 )
 
 ADD_EXECUTABLE(runAllTests
-    movierecTests.cpp
+    tests.cpp
     movie.cpp
     database.cpp
     Instructions.cpp
@@ -21,7 +21,7 @@ ADD_EXECUTABLE(runAllTests
     menu.cpp
     settings.cpp
     movierec.cpp
-    main.cpp
+    # main.cpp
 )
 
 ADD_EXECUTABLE(runMovieRecSystem

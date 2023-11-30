@@ -26,6 +26,5 @@ int main () {
     menu menuObject;
     menuObject.display(setup, options);
 
-    
     return 0;
 }
