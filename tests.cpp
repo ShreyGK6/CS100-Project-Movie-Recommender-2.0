@@ -11,18 +11,18 @@
 #include <string>
 using namespace std;
 
-// TEST (setup2, startup2){
-//     userpass setup;
-//     prefs options;
-//     EXPECT_NO_THROW(setup.startup(options));
-// }
+TEST (setup2, startup2){
+    userpass setup;
+    prefs options;
+    EXPECT_NO_THROW(setup.startup(options));
+}
 
-// TEST (settings, changeprefs){
-//     userpass setup;
-//     prefs options;
-//     Settings profile;
-//     EXPECT_NO_THROW(profile.changeprefs(setup, options));
-// }
+TEST (settings, changeprefs){
+    userpass setup;
+    prefs options;
+    Settings profile;
+    EXPECT_NO_THROW(profile.changeprefs(setup, options));
+}
 
 class DatabaseTest : public ::testing::Test
 {
@@ -159,88 +159,88 @@ TEST_F(MovieTest, getRating)
     ASSERT_EQ(movie.getRating(), 7.8);
 }
 
-// TEST(functionsWorking, askingForInputR)
-// {
-//     menu menuObject;
-//     EXPECT_EQ(menuObject.askingForInput(), 'r');
-// }
+TEST(functionsWorking, askingForInputR)
+{
+    menu menuObject;
+    EXPECT_EQ(menuObject.askingForInput(), 'r');
+}
 
-// TEST(functionsWorking, askingForInputS)
-// {
-//     menu menuObject;
-//     EXPECT_EQ(menuObject.askingForInput(), 's');
-// }
+TEST(functionsWorking, askingForInputS)
+{
+    menu menuObject;
+    EXPECT_EQ(menuObject.askingForInput(), 's');
+}
 
-// TEST(functionsWorking, askingForInputP)
-// {
-//     menu menuObject;
-//     EXPECT_EQ(menuObject.askingForInput(), 'p');
-// }
+TEST(functionsWorking, askingForInputP)
+{
+    menu menuObject;
+    EXPECT_EQ(menuObject.askingForInput(), 'p');
+}
 
-// TEST(functionsWorking, askingForInputO)
-// {
-//     menu menuObject;
-//     EXPECT_EQ(menuObject.askingForInput(), 'o');
-// }
+TEST(functionsWorking, askingForInputO)
+{
+    menu menuObject;
+    EXPECT_EQ(menuObject.askingForInput(), 'o');
+}
 
-// TEST(functionsWorking, askingForInputQ)
-// {
-//     menu menuObject;
-//     EXPECT_EQ(menuObject.askingForInput(), 'q');
-// }
+TEST(functionsWorking, askingForInputQ)
+{
+    menu menuObject;
+    EXPECT_EQ(menuObject.askingForInput(), 'q');
+}
 
-// TEST(functionsWorking, display)
-// {
-//     menu menuObject;
-//     userpass setup;
-//     prefs options;
-//     EXPECT_NO_THROW(menuObject.display(setup, options));
-// }
+TEST(functionsWorking, display)
+{
+    menu menuObject;
+    userpass setup;
+    prefs options;
+    EXPECT_NO_THROW(menuObject.display(setup, options));
+}
 
-// TEST(functionsWorking, options)
-// {
-//     menu menuObject;
-//     EXPECT_NO_THROW(menuObject.options());
-// }
+TEST(functionsWorking, options)
+{
+    menu menuObject;
+    EXPECT_NO_THROW(menuObject.options());
+}
 
-// TEST(functionsWorking, callSettings)
-// {
-//     menu menuObject;
-//     userpass setup;
-//     prefs options;
-//     EXPECT_NO_THROW(menuObject.callSettings(setup, options));
-// }
+TEST(functionsWorking, callSettings)
+{
+    menu menuObject;
+    userpass setup;
+    prefs options;
+    EXPECT_NO_THROW(menuObject.callSettings(setup, options));
+}
 
-// TEST(functionsWorking, callMovieRec)
-// {
-//     menu menuObject;
-//     prefs options;
-//     EXPECT_NO_THROW(menuObject.callMovieRec(options));
-// }
+TEST(functionsWorking, callMovieRec)
+{
+    menu menuObject;
+    prefs options;
+    EXPECT_NO_THROW(menuObject.callMovieRec(options));
+}
 
-// TEST(functionsWorking, callOverview)
-// {
-//     menu menuObject;
-//     EXPECT_NO_THROW(menuObject.callOverview());
-// }
+TEST(functionsWorking, callOverview)
+{
+    menu menuObject;
+    EXPECT_NO_THROW(menuObject.callOverview());
+}
 
-// TEST(functionsWorking, callSearch)
-// {
-//     menu menuObject;
-//     EXPECT_NO_THROW(menuObject.callSearch());
-// }
+TEST(functionsWorking, callSearch)
+{
+    menu menuObject;
+    EXPECT_NO_THROW(menuObject.callSearch());
+}
 
-// TEST(functionsWorking, signOut)
-// {
-//     menu menuObject;
-//     EXPECT_NO_THROW(menuObject.signOut());
-// }
+TEST(functionsWorking, signOut)
+{
+    menu menuObject;
+    EXPECT_NO_THROW(menuObject.signOut());
+}
 
-// TEST(workingFunction, searchDisplay)
-// {
-//     instructions instructionsPage;
-//     EXPECT_NO_THROW(instructionsPage.display());
-// }
+TEST(workingFunction, searchDisplay)
+{
+    instructions instructionsPage;
+    EXPECT_NO_THROW(instructionsPage.display());
+}
 
 
 
