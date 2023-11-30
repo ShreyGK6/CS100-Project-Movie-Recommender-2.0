@@ -10,12 +10,11 @@
 class userpass;
 class prefs;
 
-class Settings {
-    public:
+class Settings
+{
+public:
     // Settings();
     void changeprefs(userpass &setup, prefs &options);
     // void ex();
-
-
 };
 #endif // __SETTINGS_H__

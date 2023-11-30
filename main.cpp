@@ -5,6 +5,7 @@
 #include "movie.h"
 #include "menu.h"
 #include "Instructions.h"
+#include "movierec.h"
 #include <vector>
 #include <string>
 using namespace std;
@@ -24,8 +25,6 @@ int main () {
 
     menu menuObject;
     menuObject.display(setup, options);
-
-
 
     return 0;
 }

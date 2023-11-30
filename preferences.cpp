@@ -70,14 +70,14 @@ void prefs::setgenre(int num) {
                 resetgenre();
             }
             for (int i = 0; i < person.genre.size(); i++){
-                if (person.genre.at(i) == "comedy"){
+                if (person.genre.at(i) == "Comedy"){
                     cout << "Already inputted!" << endl;
                     cout << endl;
                     name = person.genre.at(i);
                 }
             }
             if (name == ""){
-                person.genre.push_back("comedy");
+                person.genre.push_back("Comedy");
             }
             count = count + 1;
         }
@@ -87,14 +87,14 @@ void prefs::setgenre(int num) {
                 resetgenre();
             }
             for (int i = 0; i < person.genre.size(); i++){
-                if (person.genre.at(i) == "drama"){
+                if (person.genre.at(i) == "Drama"){
                     cout << "Already inputted!" << endl;
                     cout << endl;
                     name = person.genre.at(i);
                 }
             }
             if (name == ""){
-                person.genre.push_back("drama");
+                person.genre.push_back("Drama");
             }
             count = count + 1;
         }
@@ -104,14 +104,14 @@ void prefs::setgenre(int num) {
                 resetgenre();
             }
             for (int i = 0; i < person.genre.size(); i++){
-                if (person.genre.at(i) == "romance"){
+                if (person.genre.at(i) == "Romance"){
                     cout << "Already inputted!" << endl;
                     cout << endl;
                     name = person.genre.at(i);
                 }
             }
             if (name == ""){
-                person.genre.push_back("romance");
+                person.genre.push_back("Romance");
             }
             count = count + 1;
         }
@@ -121,14 +121,14 @@ void prefs::setgenre(int num) {
                 resetgenre();
             }
             for (int i = 0; i < person.genre.size(); i++){
-                if (person.genre.at(i) == "action"){
+                if (person.genre.at(i) == "Action"){
                     cout << "Already inputted!" << endl;
                     cout << endl;
                     name = person.genre.at(i);
                 }
             }
             if (name == ""){
-                person.genre.push_back("action");
+                person.genre.push_back("Action");
             }
             count = count + 1;
         }
@@ -176,7 +176,7 @@ void prefs::setactor(){
         }
         if (answer != "quit") {
             for (int i = 0; i < answer.length(); i++ ){
-                answer[i] = tolower(answer[i]);
+                // answer[i] = tolower(answer[i]);
             }
             person.actor.push_back(answer);
         }
@@ -202,7 +202,7 @@ void prefs::setdirector() {
         }
         if (answer != "quit") {
             for (int i = 0; i < answer.length(); i++ ){
-                answer[i] = tolower(answer[i]);
+                // answer[i] = tolower(answer[i]);
             }
             person.director.push_back(answer);
         }
