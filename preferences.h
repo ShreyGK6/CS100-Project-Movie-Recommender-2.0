@@ -15,7 +15,9 @@ struct preferences {
 
 class prefs {
     friend class Settings;
-
+    friend class MovieRec;
+    friend class menu;
+    
     public:
     preferences person;
     void setprefs();

@@ -6,7 +6,6 @@ add_subdirectory(googletest)
 PROJECT(MENU)
 
 
-
 ADD_EXECUTABLE(runAllTests
     tests.cpp
     movie.cpp
@@ -16,6 +15,8 @@ ADD_EXECUTABLE(runAllTests
     preferences.cpp
     menu.cpp
     settings.cpp
+    movierec.cpp
+    # main.cpp
 )
 
 ADD_EXECUTABLE(runMovieRecSystem
@@ -27,6 +28,7 @@ ADD_EXECUTABLE(runMovieRecSystem
     menu.cpp
     settings.cpp
     main.cpp
+    movierec.cpp
 )
 
 
