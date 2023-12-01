@@ -8,18 +8,19 @@ using namespace std;
 
 struct searching
 {
-    string genre;
+    vector<string> genre;
     string maturityRating;
-    string actor;
-    string director;
+    vector<string> actor;
+    vector<string> director;
     int releaseDate;
     double rating;
-    searching() : genre(""), maturityRating(""), actor(""), director(""), releaseDate(0), rating(0.0){}
+    searching() :maturityRating(""), releaseDate(0), rating(0.0){}
 };
 
 class searchMovie
 {
     public:
+    friend class MovieRec;
     searching movie;
     searchMovie();
     void displayOptions();
@@ -29,10 +30,10 @@ class searchMovie
     void outputOrError(vector<Movie> possibleSelections);
 
     private:
-    string getGenre();
+    void getGenre(vector<string> &newgenre);
     string getMaturityRating();
-    string getActor();
-    string getDirector();
+    void getActor(vector<string> &newactor);
+    void getDirector(vector<string> &newdirector);
     int getDate();
     double getRating();
 };
