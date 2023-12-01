@@ -42,8 +42,6 @@ Features
 - Signout feature
 - Each movie recommendation contains: ratings, synopsis, views, cast, director(s), maturity rating, release year, genre
 
- > ## Phase II
-
 ## User Interface Specification
 
 ### Navigation Diagram
@@ -61,25 +59,27 @@ The first screen is where the user will unput their Log In information such as t
 ![Blank diagram](https://github.com/cs100/final-project-smoha095-ashah174-ayama039-skoth011/assets/35586951/ade9bb45-0602-42e5-98ad-55ace76256dd)
 
  > ## Phase III
- > You will need to schedule a check-in for the second scrum meeting with the same reader you had your first scrum meeting with (using Calendly). Your entire team must be present. This meeting will occur on Zoom and should be conducted by Wednesday of week 8.
- 
- > BEFORE the meeting you should do the following:
- > * Update your class diagram from Phase II to include any feedback you received from your TA/grader.
- > * Considering the SOLID design principles, reflect back on your class diagram and think about how you can use the SOLID principles to improve your design. You should then update the README.md file by adding the following:
- >   * A new class diagram incorporating your changes after considering the SOLID principles.
- >   * For each update in your class diagram, you must explain in 3-4 sentences:
- >     * What SOLID principle(s) did you apply?
- >     * How did you apply it? i.e. describe the change.
- >     * How did this change help you write better code?
- > * Perform a new sprint plan like you did in Phase II.
- > * You should also make sure that your README file (and Project board) are up-to-date reflecting the current status of your project and the most recent class diagram. Previous versions of the README file should still be visible through your commit history.
- 
-> During the meeting with your reader you will discuss: 
- > * How effective your last sprint was (each member should talk about what they did)
- > * Any tasks that did not get completed last sprint, and how you took them into consideration for this sprint
- > * Any bugs you've identified and created issues for during the sprint. Do you plan on fixing them in the next sprint or are they lower priority?
- > * What tasks you are planning for this next sprint.
 
+### Navigation Diagram
+![Diagram](https://github.com/cs100/final-project-smoha095-ashah174-ayama039-skoth011/assets/146229303/9480a3c5-65d2-4925-aa29-83b0fa2cc985)
+
+### Screen Layouts
+![screen laoyouts-1](https://github.com/cs100/final-project-smoha095-ashah174-ayama039-skoth011/assets/35586951/4d431e91-a25b-401c-9ddc-78729c57c0d3)
+![screen laoyouts-2](https://github.com/cs100/final-project-smoha095-ashah174-ayama039-skoth011/assets/35586951/6519bef2-1ed1-4201-98d5-d396c7a9d225)
+
+We updated our screen layouts to match the exact outputs of the features we have coded so far. Everything has stayed the same conceptually as our last screen layout. 
+
+## Class Diagram
+![CS 100 Project UML](https://github.com/cs100/final-project-smoha095-ashah174-ayama039-skoth011/assets/35586951/7ecf0299-1646-45d4-b12a-c02f2b1f4d60)
+
+This UML diagram outlines a comprehensive movie recommendation system, offering a detailed depiction of classes, their associations, and the relationships governing them. The diagram exhibits several instances of associations, both in terms of composition and aggregation. The Movie class, representing individual films, demonstrates composition with attributes like genre, maturity rating, director, actor, title, rating, and releaseDate. Moreover Database class utilizes aggregation, associating with a vector of Movie objects. This composition and aggregation emphasize the structural relationships between classes.
+
+## SOLID Principles
+Single Responsibility Principle has been applied to the userpass class and the preferences class because it separates the username and password functions from the rest of the preferences. Not only does this make for cleaner code, but it also makes it easier for other classes to access what they need and keeps the things that they don’t need out of their reach. This helped us realized that we needed to split up the original start.h file and this helped us split up our code (as seen in the alana/SOLID branch).
+
+Next the Open/Closed Principle has been applied to the start() function where this initiates the sign-in process. You would be able to add more preferences easily, for example by release year. If the sign-in process evolves or new features are added, adhering to the OCP means you can extend the class without modifying existing code. It makes the class more maintainable and extensible. Future changes or additions to the sign-in process won't require modifying existing code. This helped us add setters and getters in the start() function in order to code this next sprint.
+
+The Interface Segregation Principle has been applied to the preferences function, setactor() and setdirector(). If the user doesn’t want to input these preferences in, then they won’t get recommendations from these categories. This follows ISP because the set functions also don’t inhibit any other code and doesn’t cause detriment to the program. This helped us become better coders because this helped us think about giving the users more options over their preferences.
  
  > ## Final deliverable
  > All group members will give a demo to the reader during lab time. ou should schedule your demo on Calendly with the same reader who took your second scrum meeting. The reader will check the demo and the project GitHub repository and ask a few questions to all the team members. 
@@ -91,7 +91,6 @@ The first screen is where the user will unput their Log In information such as t
  ## Screenshots
  > Screenshots of the input/output after running your application
  ## Installation/Usage
- > Instructions on installing and running your application
+To install our movie recommendation program, the user should clone this repository in their favorite IDE, preferably VS Code. Once they have cloned it the user should run cmake . and make which will create the executable. The executable name will be ./runMovieRecSystem. Once that executable is run, the user will be prompted a series of questions to create and account, sign in, create their profile. The a menu page will show where the user will type certain commands to go to pages they would like such as the movie recommendation, search, and settings. When the user wants to quit out of the system they will type "q" and the program will log them out. This program commands are based on keyboard inputs as it is terminal based. 
  ## Testing
- > How was your project tested/validated? If you used CI, you should have a "build passing" badge in this README.
- 
+Our project was tested using the Google Test Suite. We created unit tests for each function in each of our classes. We made sure everything passed before merging anything so we knew we are not merging broken code. Furthermore, we tested integration by running the programming and simulating what it would look like from the user's end to edit the user interface. We did not use continuous integration becuase we did not have enough time, but it would be helpful next time to make sure integration works whenever making a change to the code rather than only when we merge. We used Valgrind, however, we had no pointers in our code so running Valgrind is not necessary since aren't allocating any new memory. 
