@@ -1,9 +1,8 @@
 #include <iostream>
 #include "movierec.h"
 #include "database.h"
-#include "settings.h"
 #include "preferences.h"
-#include "menu.h"
+#include "movie.h"
 #include <vector>
 #include <string>
 #include <algorithm>
@@ -45,6 +44,57 @@ void MovieRec::movieRecByGenre(prefs options)
         genreFilteredMovies[i].display();
     }
 }
+
+void MovieRec::movieRecommendationMaturityRating(prefs options) {
+    int age = options.getage();
+    Movie movie;
+    bool valid = movie.isValidForAge(age);
+    string maturityrating= movie.getMaturityRating();
+    if (valid == true){
+        Database db;
+        string filename = "/home/csmajs/smoha095/final-project-smoha095-ashah174-ayama039-skoth011/ movies.tsv";
+        db.loadFromTSV(filename);
+        vector<Movie> maturity = db.getMoviesbyMaturityRating(maturityrating);
+        sort(maturity.rbegin(), maturity.rend());
+        for (int i = 0; i < min((int)maturity.size(), maxMovieShown); i++)
+    {
+        maturity[i].display();
+    }
+    }
+    else {
+        cout << "We couldn't find any movies for your age range." << endl;
+    }
+}
+
+void MovieRec::movieRecommendationoutput(){
+    Database db;
+    string filename = "/home/csmajs/smoha095/final-project-smoha095-ashah174-ayama039-skoth011/ movies.tsv";
+    db.loadFromTSV(filename);
+
+    char answer;
+    prefs options;
+    int checker = 0;
+
+    do {
+        movieRecommendationOverall(options);
+        movieRecByGenre(options);
+        movieRecommendationMaturityRating(options);
+        cout << endl;
+        cout << "If you would like to go back to the menu, please press m." << endl;
+        if (answer != 'm' && checker >= 1) {
+            cout << "Please input a valid response." << endl;
+        }
+        checker = checker + 1;
+        cin >> answer;
+    }
+    while (answer != 'm');
+
+
+
+
+}
+
+
 
 // void MovieRec::backToMenu()
 // {

@@ -31,6 +31,14 @@ ADD_EXECUTABLE(runMovieRecSystem
     movierec.cpp
 )
 
+ADD_EXECUTABLE(run
+movierec.cpp
+database.cpp
+preferences.cpp
+movierecmain.cpp
+movie.cpp
+)
+
 
 TARGET_LINK_LIBRARIES(runAllTests gtest)
 TARGET_COMPILE_DEFINITIONS(runAllTests PRIVATE gtest_disable_pthreads=ON)
