@@ -91,7 +91,6 @@ The Interface Segregation Principle has been applied to the preferences function
  ## Screenshots
  > Screenshots of the input/output after running your application
  ## Installation/Usage
- > Instructions on installing and running your application
+To install our movie recommendation program, the user should clone this repository in their favorite IDE, preferably VS Code. Once they have cloned it the user should run cmake . and make which will create the executable. The executable name will be ./runMovieRecSystem. Once that executable is run, the user will be prompted a series of questions to create and account, sign in, create their profile. The a menu page will show where the user will type certain commands to go to pages they would like such as the movie recommendation, search, and settings. When the user wants to quit out of the system they will type "q" and the program will log them out. This program commands are based on keyboard inputs as it is terminal based. 
  ## Testing
- > How was your project tested/validated? If you used CI, you should have a "build passing" badge in this README.
- 
+Our project was tested using the Google Test Suite. We created unit tests for each function in each of our classes. We made sure everything passed before merging anything so we knew we are not merging broken code. Furthermore, we tested integration by running the programming and simulating what it would look like from the user's end to edit the user interface. We did not use continuous integration becuase we did not have enough time, but it would be helpful next time to make sure integration works whenever making a change to the code rather than only when we merge. We used Valgrind, however, we had no pointers in our code so running Valgrind is not necessary since aren't allocating any new memory. 
