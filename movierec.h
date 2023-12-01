@@ -2,6 +2,7 @@
 #define __MOVIEREC_H
 #include "database.h"
 #include "preferences.h"
+#include "search.h"
 #include "movie.h"
 #include <vector>
 #include <string>
@@ -15,6 +16,7 @@ public:
     void movieRecommendationOverall(prefs pref);
     void movieRecByGenre(prefs pref);
     void movieRecommendationMaturityRating(prefs pref);
+    void movieRecommendationsearch(searchMovie search, prefs pref);
     // void backToMenu();
 };
 

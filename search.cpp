@@ -11,9 +11,11 @@ using namespace std;
 searchMovie::searchMovie()
 {}
 
-string searchMovie::getGenre()
+void searchMovie::getGenre(vector<string> &newgenre)
 {
-    return movie.genre;
+    for (int i = 0; i < movie.genre.size(); i++) {
+        newgenre.push_back(movie.genre.at(i));
+    }
 }
 
 string searchMovie::getMaturityRating()
@@ -21,14 +23,18 @@ string searchMovie::getMaturityRating()
     return movie.maturityRating;
 }
 
-string searchMovie::getActor()
+void searchMovie::getActor(vector<string> &newactor)
 {
-    return movie.actor;
+    for (int i = 0; i < movie.actor.size(); i++) {
+        newactor.push_back(movie.actor.at(i));
+    }
 }
 
-string searchMovie::getDirector()
+void searchMovie::getDirector(vector<string> &newdirector)
 {
-    return movie.director;
+    for (int i = 0; i < movie.director.size(); i++) {
+        newdirector.push_back(movie.director.at(i));
+    }
 }
 
 int searchMovie::getDate()
