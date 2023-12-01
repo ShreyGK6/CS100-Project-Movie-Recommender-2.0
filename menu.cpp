@@ -26,7 +26,7 @@ void menu::callSettings(userpass &setup, prefs &options)
 void menu::callMovieRec(prefs options)
 {
     Database db;
-    string filename = "/home/csmajs/smoha095/final-project-smoha095-ashah174-ayama039-skoth011/ movies.tsv";
+    string filename = "/home/csmajs/smoha095/final-project-smoha095-ashah174-ayama039-skoth011/movies.tsv";
     db.loadFromTSV(filename);
     cout << "Calling movie recommendator..." << endl;
     cout << endl;

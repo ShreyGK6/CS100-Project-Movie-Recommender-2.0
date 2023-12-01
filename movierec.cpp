@@ -36,7 +36,7 @@ void MovieRec::movieRecByGenre(prefs options)
     vector <string> genre;
     options.getgenre(genre);
     Database db;
-    string filename = "/home/csmajs/smoha095/final-project-smoha095-ashah174-ayama039-skoth011/ movies.tsv";
+    string filename = "/home/csmajs/smoha095/final-project-smoha095-ashah174-ayama039-skoth011/movies.tsv";
     db.loadFromTSV(filename);
     vector<Movie> genreFilteredMovies = db.getMoviesbyGenre(genre);
     sort(genreFilteredMovies.rbegin(), genreFilteredMovies.rend());

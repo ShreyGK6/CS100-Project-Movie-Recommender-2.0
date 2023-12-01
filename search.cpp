@@ -11,9 +11,11 @@ using namespace std;
 searchMovie::searchMovie()
 {}
 
-string searchMovie::getGenre()
+void searchMovie::getGenre(vector<string> &newgenre)
 {
-    return movie.genre;
+    for (int i = 0; i < movie.genre.size(); i++) {
+        newgenre.push_back(movie.genre.at(i));
+    }
 }
 
 string searchMovie::getMaturityRating()
@@ -21,14 +23,18 @@ string searchMovie::getMaturityRating()
     return movie.maturityRating;
 }
 
-string searchMovie::getActor()
+void searchMovie::getActor(vector<string> &newactor)
 {
-    return movie.actor;
+    for (int i = 0; i < movie.actor.size(); i++) {
+        newactor.push_back(movie.actor.at(i));
+    }
 }
 
-string searchMovie::getDirector()
+void searchMovie::getDirector(vector<string> &newdirector)
 {
-    return movie.director;
+    for (int i = 0; i < movie.director.size(); i++) {
+        newdirector.push_back(movie.director.at(i));
+    }
 }
 
 int searchMovie::getDate()
@@ -104,7 +110,7 @@ char searchMovie::askingForOption()
 void searchMovie::searchMain()
 {
     vector<Movie> possibleSelections;
-    string filename = "/home/csmajs/skoth011/final-project-smoha095-ashah174-ayama039-skoth011/ movies.tsv";
+    string filename = "/home/csmajs/skoth011/final-project-smoha095-ashah174-ayama039-skoth011/movies.tsv";
     Database database;
     database.loadFromTSV(filename);
     char filterLetter = askingForOption();
@@ -162,7 +168,7 @@ void searchMovie::searchMain()
     else if(filterLetter == 'r')
     {
         int releaseDate;
-        cout << endl <<  "You have decided to find movies by release date. Please type in the rating you wish to see movies on:" << endl;
+        cout << endl <<  "You have decided to find movies by release date. Please type in the release date you wish to see movies on:" << endl;
         cin >> releaseDate;
         possibleSelections = database.getMoviesbyReleaseDate(releaseDate);
         outputOrError(possibleSelections);

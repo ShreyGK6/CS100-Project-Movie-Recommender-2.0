@@ -4,46 +4,66 @@ add_subdirectory(googletest)
 
 PROJECT(MENU)
 
-ADD_EXECUTABLE(runSearchMenuOption
+ADD_EXECUTABLE(runSortingtest
+    sortSearch.cpp
+    # sortSearchmain.cpp
+    search.cpp
+    movie.cpp
     menu.cpp
     search.cpp
     menuMain.cpp
     database.cpp
-    movierec.cpp
-    movie.cpp
+    # movierec.cpp
+    # movie.cpp
     preferences.cpp
     userpass.cpp
     Instructions.cpp
     settings.cpp
+   movierec.cpp
 )
 
-ADD_EXECUTABLE(runAllTests
-    tests.cpp
-    movie.cpp
-    database.cpp
-    Instructions.cpp
-    userpass.cpp
-    preferences.cpp
-    menu.cpp
-    settings.cpp
-    movierec.cpp
-    search.cpp
-)
+TARGET_LINK_LIBRARIES(runSortingtest gtest)
+TARGET_COMPILE_DEFINITIONS(runSortingtest PRIVATE gtest_disable_pthreads=ON)
+# ADD_EXECUTABLE(runSearchMenuOption
+#     menu.cpp
+#     search.cpp
+#     menuMain.cpp
+#     database.cpp
+#     movierec.cpp
+#     movie.cpp
+#     preferences.cpp
+#     userpass.cpp
+#     Instructions.cpp
+#     settings.cpp
+# )
 
-ADD_EXECUTABLE(runMovieRecSystem
-    movie.cpp
-    database.cpp
-    Instructions.cpp
-    userpass.cpp
-    preferences.cpp
-    movie.cpp
-    menu.cpp
-    movierec.cpp
-    settings.cpp
-    search.cpp
-    main.cpp
-)
+# ADD_EXECUTABLE(runAllTests
+#     tests.cpp
+#     movie.cpp
+#     database.cpp
+#     Instructions.cpp
+#     userpass.cpp
+#     preferences.cpp
+#     menu.cpp
+#     settings.cpp
+#     movierec.cpp
+#     search.cpp
+# )
 
-TARGET_LINK_LIBRARIES(runAllTests gtest)
-TARGET_COMPILE_DEFINITIONS(runAllTests PRIVATE gtest_disable_pthreads=ON)
+# ADD_EXECUTABLE(runMovieRecSystem
+#     movie.cpp
+#     database.cpp
+#     Instructions.cpp
+#     userpass.cpp
+#     preferences.cpp
+#     movie.cpp
+#     menu.cpp
+#     movierec.cpp
+#     settings.cpp
+#     search.cpp
+#     main.cpp
+# )
+
+# TARGET_LINK_LIBRARIES(runAllTests gtest)
+# TARGET_COMPILE_DEFINITIONS(runAllTests PRIVATE gtest_disable_pthreads=ON)
 
