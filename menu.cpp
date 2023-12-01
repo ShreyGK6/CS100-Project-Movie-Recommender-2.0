@@ -6,6 +6,7 @@
 #include "userpass.h"
 #include "settings.h"
 #include "Instructions.h"
+#include "search.h"
 #include <iostream>
 #include <string>
 #include <vector>

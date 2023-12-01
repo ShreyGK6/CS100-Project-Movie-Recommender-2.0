@@ -9,7 +9,13 @@ ADD_EXECUTABLE(runSearchMenuOption
     search.cpp
     menuMain.cpp
     database.cpp
+    movierec.cpp
     movie.cpp
+    preferences.cpp
+    userpass.cpp
+    Instructions.cpp
+    settingsmain.cpp
+    settings.cpp
 )
 
 ADD_EXECUTABLE(runAllTests
@@ -22,7 +28,6 @@ ADD_EXECUTABLE(runAllTests
     menu.cpp
     settings.cpp
     movierec.cpp
-    # main.cpp
 )
 
 ADD_EXECUTABLE(runMovieRecSystem
@@ -34,7 +39,6 @@ ADD_EXECUTABLE(runMovieRecSystem
     movie.cpp
     menu.cpp
 )
-
 
 TARGET_LINK_LIBRARIES(runAllTests gtest)
 TARGET_COMPILE_DEFINITIONS(runAllTests PRIVATE gtest_disable_pthreads=ON)

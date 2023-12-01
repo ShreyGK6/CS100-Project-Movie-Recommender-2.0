@@ -6,7 +6,9 @@ using namespace std;
 int main()
 {
     menu menuObject;
-    menuObject.display();
+    userpass setup;
+    prefs options;
+    menuObject.display(setup, options);
     
     return 0;
 }
