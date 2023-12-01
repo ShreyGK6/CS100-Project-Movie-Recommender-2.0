@@ -14,7 +14,6 @@ ADD_EXECUTABLE(runSearchMenuOption
     preferences.cpp
     userpass.cpp
     Instructions.cpp
-    settingsmain.cpp
     settings.cpp
 )
 
@@ -28,6 +27,7 @@ ADD_EXECUTABLE(runAllTests
     menu.cpp
     settings.cpp
     movierec.cpp
+    search.cpp
 )
 
 ADD_EXECUTABLE(runMovieRecSystem
@@ -38,6 +38,10 @@ ADD_EXECUTABLE(runMovieRecSystem
     preferences.cpp
     movie.cpp
     menu.cpp
+    movierec.cpp
+    settings.cpp
+    search.cpp
+    main.cpp
 )
 
 TARGET_LINK_LIBRARIES(runAllTests gtest)
