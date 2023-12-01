@@ -3,6 +3,8 @@
 
 #include "settings.h"
 #include "Instructions.h"
+#include "userpass.h"
+#include "preferences.h"
 
 class menu
 {

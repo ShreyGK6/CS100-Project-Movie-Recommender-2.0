@@ -15,5 +15,6 @@ runAllTests
 run 
 test
 runMovieRecSystem
-
+runSearchMenuOption
+runSearchTest
 

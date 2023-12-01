@@ -6,6 +6,7 @@
 #include "userpass.h"
 #include "settings.h"
 #include "Instructions.h"
+#include "search.h"
 #include <iostream>
 #include <string>
 #include <vector>
@@ -52,7 +53,8 @@ void menu::callOverview()
 
 void menu::callSearch()
 {
-    cout << "Calling movie searcher..." << endl;
+    searchMovie searching;
+    searching.searchMain();
 }
 
 void menu::signOut()
