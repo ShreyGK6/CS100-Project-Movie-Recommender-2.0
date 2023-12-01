@@ -4,10 +4,16 @@ add_subdirectory(googletest)
 
 PROJECT(MENU)
 
-ADD_EXECUTABLE(run
+ADD_EXECUTABLE(runSearchMenuOption
+    menu.cpp
+    search.cpp
+    menuMain.cpp
+    database.cpp
+    movierec.cpp
+    movie.cpp
     preferences.cpp
-    settingsmain.cpp
     userpass.cpp
+    Instructions.cpp
     settings.cpp
 )
 
@@ -21,7 +27,7 @@ ADD_EXECUTABLE(runAllTests
     menu.cpp
     settings.cpp
     movierec.cpp
-    # main.cpp
+    search.cpp
 )
 
 ADD_EXECUTABLE(runMovieRecSystem
@@ -30,12 +36,14 @@ ADD_EXECUTABLE(runMovieRecSystem
     Instructions.cpp
     userpass.cpp
     preferences.cpp
+    movie.cpp
     menu.cpp
-    settings.cpp
-    main.cpp
     movierec.cpp
+    settings.cpp
+    search.cpp
+    main.cpp
 )
-
 
 TARGET_LINK_LIBRARIES(runAllTests gtest)
 TARGET_COMPILE_DEFINITIONS(runAllTests PRIVATE gtest_disable_pthreads=ON)
+
