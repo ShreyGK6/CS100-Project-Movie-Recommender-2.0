@@ -9,11 +9,15 @@ using namespace std;
 struct searching
 {
     vector<string> genre;
+    vector<string> genre;
     string maturityRating;
+    vector<string> actor;
+    vector<string> director;
     vector<string> actor;
     vector<string> director;
     int releaseDate;
     double rating;
+    searching() :maturityRating(""), releaseDate(0), rating(0.0){}
     searching() :maturityRating(""), releaseDate(0), rating(0.0){}
 };
 
@@ -32,7 +36,10 @@ class searchMovie
 
     private:
     void getGenre(vector<string> &newgenre);
+    void getGenre(vector<string> &newgenre);
     string getMaturityRating();
+    void getActor(vector<string> &newactor);
+    void getDirector(vector<string> &newdirector);
     void getActor(vector<string> &newactor);
     void getDirector(vector<string> &newdirector);
     int getDate();
