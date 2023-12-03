@@ -145,7 +145,7 @@ void searchMovie::searchMain()
     {
         vector<string> actorSelection;
         int numberOfStrings;
-        cout << endl << "You have decided to find movies by actor. Please type in the number of genres you want to input:" << endl;
+        cout << endl << "You have decided to find movies by actor. Please type in the number of actors you want to input:" << endl;
         cin >> numberOfStrings;
         cin.ignore();
         cout << "Please type in the actor(s) you wish to have movies on:" << endl;
@@ -170,7 +170,7 @@ void searchMovie::searchMain()
     else if(filterLetter == 'r')
     {
         int releaseDate;
-        cout << endl <<  "You have decided to find movies by release date. Please type in the rating you wish to see movies on:" << endl;
+        cout << endl <<  "You have decided to find movies by release date. Please type in the release date you wish to see movies on:" << endl;
         cin >> releaseDate;
         possibleSelections = database.getMoviesbyReleaseDate(releaseDate);
         outputOrError(possibleSelections);
@@ -179,7 +179,7 @@ void searchMovie::searchMain()
     {
         vector<string> directorSelection;
         int numberOfStrings;
-        cout << endl << "You have decided to find movies by director. Please type in the number of genres you want to input:" << endl;
+        cout << endl << "You have decided to find movies by director. Please type in the number of directors you want to input:" << endl;
         cin >> numberOfStrings;
         cin.ignore();
         cout << "Please type in the director(s) you wish to have movies on:" << endl;
