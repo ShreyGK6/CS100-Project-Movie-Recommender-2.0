@@ -127,6 +127,7 @@ void searchMovie::searchMain()
             string inputString;
             getline(cin, inputString);
             genreSelection.push_back(inputString);
+            movie.genre.push_back(inputString);
         }
         possibleSelections = database.getMoviesbyGenre(genreSelection);
         outputOrError(possibleSelections);
@@ -153,6 +154,7 @@ void searchMovie::searchMain()
             string inputString;
             getline(cin, inputString);
             actorSelection.push_back(inputString);
+            movie.actor.push_back(inputString);
         }
         possibleSelections = database.getMoviesbyActor(actorSelection);
         outputOrError(possibleSelections);
@@ -186,6 +188,7 @@ void searchMovie::searchMain()
             string inputString;
             getline(cin, inputString);
             directorSelection.push_back(inputString);
+            movie.director.push_back(inputString);
         }
         possibleSelections = database.getMoviesbyActor(directorSelection);
         outputOrError(possibleSelections);
