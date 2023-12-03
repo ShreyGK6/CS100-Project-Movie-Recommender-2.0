@@ -66,7 +66,7 @@ void searchMovie::displayOptions()
 {
     cout << "How do you want to search moves by? Here are the following options:" << endl;
     cout << "- g for genre" << endl;
-    cout << "- m  for maturity rating" << endl;
+    cout << "- m for maturity rating" << endl;
     cout << "- a for actor" << endl;
     cout << "- d for director" << endl;
     cout << "- n for movie rating" << endl;
