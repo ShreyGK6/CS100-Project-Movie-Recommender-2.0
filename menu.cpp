@@ -41,8 +41,11 @@ void menu::callMovieRec(prefs options)
     cout << endl;
     movierec.movieRecByGenre(options);
 
-    cout << "press -m to go back to menu" << endl;
-    cout << endl;
+    cout << "Going back to menu..." << endl << endl;
+    menu menuObject;
+    userpass setup;
+    prefs preference;
+    menuObject.display(setup, preference);
 }
 
 void menu::callOverview()
