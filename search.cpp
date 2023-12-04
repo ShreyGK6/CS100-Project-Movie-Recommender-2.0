@@ -2,7 +2,7 @@
 #include "database.h" 
 #include "search.h"
 #include "movie.h"
-#include "menu.h"
+// #include "menu.h"
 #include <string>
 #include <vector>
 #include <cstdlib>
@@ -75,27 +75,28 @@ void searchMovie::displayOptions()
 
 void searchMovie::otherPathways()
 {
-    cout << "Do you want to search again or go back to menu?" << endl;
-    cout << "- s for movie searcher" << endl;
-    cout << "- m for menu" << endl;
-    char input;
-    cin >> input;
-    if(input == 's')
-    {
-        searchMain();
-    }
-    else if(input == 'm')
-    {
-        menu menuObject;
-        userpass setup;
-        prefs options;
-        menuObject.display(setup, options);
-    }
-    else
-    {
-        cout << endl << "You have selected an invalid input. Please select again." << endl;
-        otherPathways();
-    }
+    // cout << "Do you want to search again or go back to menu?" << endl;
+    // cout << "- s for movie searcher" << endl;
+    // cout << "- m for menu" << endl;
+    // char input;
+    // cin >> input;
+    // if(input == 's')
+    // {
+    //     searchMain();
+    // }
+    // else if(input == 'm')
+    // {
+    //     menu menuObject;
+    //     userpass setup;
+    //     prefs options;
+    //     menuObject.display(setup, options);
+    // }
+    // else
+    // {
+    //     cout << endl << "You have selected an invalid input. Please select again." << endl;
+    //     otherPathways();
+    // }
+    cout << "in menu" << endl;
 }
 
 char searchMovie::askingForOption()
@@ -126,9 +127,13 @@ void searchMovie::searchMain()
         {
             string inputString;
             getline(cin, inputString);
-            genreSelection.push_back(inputString);
+            cout << inputString << endl;
         }
         possibleSelections = database.getMoviesbyGenre(genreSelection);
+        for (int i= 0; i < possibleSelections.size()-1; i++){
+            possibleSelections[i].display();
+            cout << endl;
+        }
         outputOrError(possibleSelections);
     }
     else if(filterLetter == 'm')

@@ -121,10 +121,6 @@ void MovieRec::movieRecommendationoutput(){
         cin >> answer;
     }
     while (answer != 'm');
-
-
-
-
 }
 
 

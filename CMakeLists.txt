@@ -5,17 +5,11 @@ add_subdirectory(googletest)
 
 PROJECT(MENU)
 
-ADD_EXECUTABLE(runSearchMenuOption
-    menu.cpp
-    search.cpp
-    menuMain.cpp
+ADD_EXECUTABLE(search
     database.cpp
-    movierec.cpp
+    search.cpp
     movie.cpp
-    preferences.cpp
-    userpass.cpp
-    Instructions.cpp
-    settings.cpp
+    searchMain.cpp
 )
 
 ADD_EXECUTABLE(runAllTests
