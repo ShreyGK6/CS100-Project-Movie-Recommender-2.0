@@ -93,26 +93,36 @@ void menu::display(userpass &setup, prefs &options)
     if (input == 'r')
     {
         cout << "You have selected the movie recommendations. Going there..." << endl;
+        cout << endl;
+        cout << endl;
         callMovieRec(options);
     }
     else if (input == 's')
     {
         cout << "You have selected the movie searcher. Going there..." << endl;
+        cout << endl;
+        cout << endl;
         callSearch();
     }
     else if (input == 'p')
     {
-        cout << "You have selected the profile settings. Going there..." << endl;  
+        cout << "You have selected the profile settings. Going there..." << endl;
+        cout << endl;
+        cout << endl;  
         callSettings(setup, options);
     }
     else if (input == 'o')
     {
         cout << "You have selected the overview. Going there..." << endl;
+        cout << endl;
+        cout << endl;
         callOverview();
     }
     else if (input == 'q')
     {
         cout << "You have selected to signout. Signing out..." << endl;
+        cout << endl;
+        cout << endl;
         cout << "Signed out" << endl;
     }
     else

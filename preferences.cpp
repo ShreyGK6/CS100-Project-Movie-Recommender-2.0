@@ -174,8 +174,15 @@ void prefs::setactor(){
             resetactor();
         }
         if (answer != "quit") {
-            for (int i = 0; i < answer.length(); i++ ){
-                // answer[i] = tolower(answer[i]);
+            answer[0] = toupper(answer[0]);
+            for (int i = 1; i < answer.length(); i++){
+                if (isspace(answer[i]) != 0){
+                    i= i + 1;
+                    answer[i] = toupper(answer[i]);
+                }
+                else {
+                    answer[i] = tolower(answer[i]);
+                }
             }
             person.actor.push_back(answer);
         }
@@ -200,8 +207,15 @@ void prefs::setdirector() {
             resetdirector();
         }
         if (answer != "quit") {
-            for (int i = 0; i < answer.length(); i++ ){
-                // answer[i] = tolower(answer[i]);
+            answer[0] = toupper(answer[0]);
+            for (int i = 1; i < answer.length(); i++){
+                if (isspace(answer[i]) != 0){
+                    i= i + 1;
+                    answer[i] = toupper(answer[i]);
+                }
+                else {
+                    answer[i] = tolower(answer[i]);
+                }
             }
             person.director.push_back(answer);
         }

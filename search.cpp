@@ -10,16 +10,15 @@
 #include <cmath>
 using namespace std;
 
-searchMovie::searchMovie()
-{}
+// searchMovie::searchMovie()
+// {}
 
-void searchMovie::getGenre(vector<string> &newgenre)
+void searchMovie::getGenres(vector<string> &newgenre)
 {
     cout << "in genre" << endl;
-    cout << recs.genre.size() << endl;
-    for (int i = 0; i < recs.genre.size(); i++) {
-        cout << "in for" << endl;
-        newgenre.push_back(recs.genre.at(i));
+    cout << recs.genres.size() << endl; //outputs 0
+    for (int i = 0; i < recs.genres.size(); i++) {
+        newgenre.push_back(recs.genres.at(i));
     }
 }
 
@@ -30,15 +29,15 @@ string searchMovie::getMaturityRating()
 
 void searchMovie::getActor(vector<string> &newactor)
 {
-    for (int i = 0; i < recs.actor.size(); i++) {
-        newactor.push_back(recs.actor.at(i));
+    for (int i = 0; i < recs.actors.size(); i++) {
+        newactor.push_back(recs.actors.at(i));
     }
 }
 
 void searchMovie::getDirector(vector<string> &newdirector)
 {
-    for (int i = 0; i < recs.director.size(); i++) {
-        newdirector.push_back(recs.director.at(i));
+    for (int i = 0; i < recs.directors.size(); i++) {
+        newdirector.push_back(recs.directors.at(i));
     }
 }
 
@@ -131,21 +130,24 @@ void searchMovie::searchMain()
             {
                 vector<string> genreSelection;
                 int numberOfStrings;
-                cout << endl << "You have decided to find movies by genre. Please type in the number of genres you want to input or input 0 to go back:" << endl;
-                cin >> numberOfStrings;
-                cin.ignore();
-                if (numberOfStrings != 0){
-                    cout << "Please type in the genre(s) you wish to have movies on:" << endl;
-                    for(int i = 0; i < numberOfStrings; ++i) 
-                    {
-                        string inputString;
-                        getline(cin, inputString);
-                        genreSelection.push_back(inputString);
-                        recs.genre.push_back("Drama");
+                string inputString;
+                cout << endl << "You have decided to find movies by genre." << endl;
+                do {
+                    cout << "Please type in the genre you wish to have movies on or type done when you're done:" << endl;
+                    getline(cin, inputString);
+                    inputString[0] = toupper(inputString[0]);
+                    for (int i = 1; i < inputString.length(); i++){
+                        inputString[i] = tolower(inputString[i]);
                     }
+                    genreSelection.push_back(inputString);
+                    recs.genres.push_back(inputString);
+                }
+                while (inputString != "Done");
+                if (genreSelection.size() != 0) {
                     possibleSelections = database.getMoviesbyGenre(genreSelection);
                     outputOrError(possibleSelections);
                 }
+                
             }
             else if(filterLetter == 'r')
             {
@@ -157,23 +159,32 @@ void searchMovie::searchMain()
                     possibleSelections = database.getMoviesbyMaturityRating(maturitySelection);
                     outputOrError(possibleSelections);
                 }
+                cout << endl;
             }
             else if(filterLetter == 'a')
             {
                 vector<string> actorSelection;
+                string inputString;
                 int numberOfStrings;
-                cout << endl << "You have decided to find movies by actor. Please type in the number of actors you want to input or type 0 to go back:" << endl;
-                cin >> numberOfStrings;
-                cin.ignore();
-                if (numberOfStrings != 0) {
-                    cout << "Please type in the actor(s) you wish to have movies on:" << endl;
-                    for(int i = 0; i < numberOfStrings; ++i) 
-                    {
-                        string inputString;
-                        getline(cin, inputString);
-                        actorSelection.push_back(inputString);
-                        recs.actor.push_back(inputString);
+                cout << endl << "You have decided to find movies by actor." << endl;
+                do {
+                    cout << "Please type in the actor(ess) you wish to have movies on or type done when you're done:" << endl;
+                    getline(cin, inputString);
+                    inputString[0] = toupper(inputString[0]);
+                    for (int i = 1; i < inputString.length(); i++){
+                        if (isspace(inputString[i]) != 0){
+                            i= i + 1;
+                            inputString[i] = toupper(inputString[i]);
+                        }
+                        else {
+                            inputString[i] = tolower(inputString[i]);
+                        }
                     }
+                    actorSelection.push_back(inputString);
+                    recs.actors.push_back(inputString);
+                }
+                while (inputString != "Done");
+                if (actorSelection.size() != 0) {
                     possibleSelections = database.getMoviesbyActor(actorSelection);
                     outputOrError(possibleSelections);
                 }
@@ -187,6 +198,7 @@ void searchMovie::searchMain()
                     possibleSelections = database.getMoviesbyRating(movieRating);
                     outputOrError(possibleSelections);
                 }
+                cout << endl;
             }
             else if(filterLetter == 'y')
             {
@@ -197,23 +209,31 @@ void searchMovie::searchMain()
                     possibleSelections = database.getMoviesbyReleaseDate(releaseDate);
                     outputOrError(possibleSelections);
                 }
+                cout << endl;
             }
             else if(filterLetter == 'd')
             {
                 vector<string> directorSelection;
+                string inputString;
                 int numberOfStrings;
-                cout << endl << "You have decided to find movies by director. Please type in the number of directors you want to input or type in 0 to go back:" << endl;
-                cin >> numberOfStrings;
-                cin.ignore();
-                if (numberOfStrings != 0){
-                    cout << "Please type in the director(s) you wish to have movies on:" << endl;
-                    for(int i = 0; i < numberOfStrings; ++i) 
-                    {
-                        string inputString;
-                        getline(cin, inputString);
-                        directorSelection.push_back(inputString);
-                        recs.director.push_back(inputString);
+                cout << endl << "You have decided to find movies by director." << endl;
+                do{
+                    cout << "Please type in the director you wish to have movies on or type done when you're done:" << endl;
+                    getline(cin, inputString);inputString[0] = toupper(inputString[0]);
+                    for (int i = 1; i < inputString.length(); i++){
+                        if (isspace(inputString[i]) != 0){
+                            i= i + 1;
+                            inputString[i] = toupper(inputString[i]);
+                        }
+                        else {
+                            inputString[i] = tolower(inputString[i]);
+                        }
+                    directorSelection.push_back(inputString);
+                    recs.directors.push_back(inputString);
                     }
+                }
+                while (inputString != "Done");
+                if (directorSelection.size() != 0){
                     possibleSelections = database.getMoviesbyActor(directorSelection);
                     outputOrError(possibleSelections);
                 }
@@ -222,8 +242,14 @@ void searchMovie::searchMain()
             {
                 cout << endl << "You have entered an invalid input. Please select again." << endl << endl;
             }
-            cout << endl;
+            // vector<string> newgenre;
+            //         getGenres(newgenre);
+            //         for (int i = 0; i < newgenre.size(); i ++) {
+            //             cout << newgenre.at(i) << endl;
+            //         }
+            // cout << endl;
         }
         while (filterLetter != 'm');
     }
+    cout << endl;
 }

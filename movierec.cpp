@@ -44,6 +44,11 @@ void MovieRec::movieRecByGenre(prefs options)
     if (loaded == true){
         vector <string> genre;
         options.getgenre(genre);
+
+        // for (int i = 0; i < genre.size(); i++) {
+        //     cout << genre.at(i) << endl;
+        // }
+
         vector<Movie> genreFilteredMovies = db.filter(genre, age, actor, director, options);
         sort(genreFilteredMovies.rbegin(), genreFilteredMovies.rend());
         for (int i = 0; i < min((int)genreFilteredMovies.size(), maxMovieShown); i++)
@@ -107,15 +112,24 @@ void MovieRec::movieRecommendationMaturityRating(prefs options) {
 // }
 
 void MovieRec::movieRecommendationsearch(searchMovie find, prefs options) {
-    vector<string> genre;
-    find.getGenre(genre);
+    vector<string> newgenre;
+    find.getGenres(newgenre);
     int age = options.getage();
     vector<string> actor;
     find.getActor(actor);
     vector<string> director;
     find.getDirector(director);
 
-    if (genre.size() == 0 && actor.size() == 0 && director.size() == 0) {
+    // vector<string> ng;
+    //                     getGenre (ng);
+    //                     for (int i = 0; i < ng.size(); i++){
+    //                         cout << ng.at(i) << endl;
+    //                     }
+
+    // vector <string> genre;
+    //     options.getgenre(genre);
+
+    if (newgenre.size() == 0 && actor.size() == 0 && director.size() == 0) {
         cout << "No searches yet!" << endl;
         cout << "Please use the search function to get reccomendations for this category" << endl;
     }
@@ -124,7 +138,7 @@ void MovieRec::movieRecommendationsearch(searchMovie find, prefs options) {
     string filename = "/class/classes/ayama039/final-project-smoha095-ashah174-ayama039-skoth011/ movies.tsv";
     bool loaded = db.loadFromTSV(filename);
     if (loaded == true) {
-        vector<Movie> searches = db.filter(genre, age, actor, director, options);
+        vector<Movie> searches = db.filter(newgenre, age, actor, director, options);
         sort(searches.rbegin(), searches.rend());
         for (int i = 0; i < min((int)searches.size(), maxMovieShown); i++)
         {
