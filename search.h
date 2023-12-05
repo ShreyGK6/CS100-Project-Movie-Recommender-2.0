@@ -14,19 +14,19 @@ struct searching
     vector<string> director;
     int releaseDate;
     double rating;
-    searching() :maturityRating(""), releaseDate(0), rating(0.0){}
+    searching() :maturityRating(""), releaseDate(-1), rating(-1.0){}
 };
 
 class searchMovie
 {
     public:
     friend class MovieRec;
-    searching movie;
+    searching recs;
     searchMovie();
     void displayOptions();
     void searchMain();
     char askingForOption();
-    void otherPathways();
+    // void otherPathways();
     void outputOrError(vector<Movie> possibleSelections);
 
     private:
@@ -36,6 +36,7 @@ class searchMovie
     void getDirector(vector<string> &newdirector);
     int getDate();
     double getRating();
+    vector<Movie> possibleSelections;
 };
 
 #endif

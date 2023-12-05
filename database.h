@@ -13,7 +13,7 @@ private:
     vector<Movie> movies;
 
 public:
-    void loadFromTSV(string &filename);
+    bool loadFromTSV(string &filename);
     void displayMovies();
     vector<Movie> getMoviesbyGenre(vector<string> genre);
     vector<Movie> getMoviesbyActor(vector <string> actor);

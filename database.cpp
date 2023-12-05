@@ -8,35 +8,37 @@
 #include <vector>
 using namespace std;
 
-void Database::loadFromTSV(string &filename)
+bool Database::loadFromTSV(string &filename)
 {
     ifstream file(filename);
 
     if (!file.is_open())
     {
         cout << "Error opening file: " << filename << endl;
-        return;
+        return false;
     }
-
-    string line;
-    while (getline(file, line))
-    {
-        string genre, maturityRating, actor, director, title, temp;
-        int releaseDate;
-        double rating;
-        istringstream istrings(line);
-        if (getline(istrings, title, '\t') &&
-            (istrings >> releaseDate) &&
-            (istrings >> rating) &&
-            getline(istrings, temp, '\t') &&
-            getline(istrings, maturityRating, '\t') &&
-            getline(istrings, genre, '\t') &&
-            getline(istrings, actor, '\t') &&
-            getline(istrings, director, '\t'))
+    else {
+        string line;
+        while (getline(file, line))
         {
-            Movie movie(title, releaseDate, rating, maturityRating, genre, actor, director);
-            movies.push_back(movie);
+            string genre, maturityRating, actor, director, title, temp;
+            int releaseDate;
+            double rating;
+            istringstream istrings(line);
+            if (getline(istrings, title, '\t') &&
+                (istrings >> releaseDate) &&
+                (istrings >> rating) &&
+                getline(istrings, temp, '\t') &&
+                getline(istrings, maturityRating, '\t') &&
+                getline(istrings, genre, '\t') &&
+                getline(istrings, actor, '\t') &&
+                getline(istrings, director, '\t'))
+            {
+                Movie movie(title, releaseDate, rating, maturityRating, genre, actor, director);
+                movies.push_back(movie);
+            }
         }
+        return true;
     }
 }
 
