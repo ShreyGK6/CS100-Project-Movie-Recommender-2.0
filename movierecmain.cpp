@@ -11,7 +11,8 @@
 int main (){
 
 MovieRec recs;
-recs.movieRecommendationoutput();
+prefs options;
+recs.movieRecommendationoutput(options);
 
     return 0;
 }

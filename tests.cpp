@@ -77,11 +77,12 @@ TEST_F(DatabaseTest, GetMoviesByRating)
 }
 
 TEST_F(DatabaseTest, Filter){
+    prefs options;
     vector <string> genre {"Comedy, Crime"};
     int age = 18;
     vector <string> actor {"Actor1"};
     vector <string> director {"Director1"};
-    vector<Movie> filteredMovies = db.filter(genre, age, actor, director);
+    vector<Movie> filteredMovies = db.filter(genre, age, actor, director, options);
     ASSERT_EQ(filteredMovies.size(), 1);
 }
 
@@ -230,11 +231,11 @@ TEST(functionsWorking, callSearch)
     EXPECT_NO_THROW(menuObject.callSearch());
 }
 
-TEST(functionsWorking, signOut)
-{
-    menu menuObject;
-    EXPECT_NO_THROW(menuObject.signOut());
-}
+// TEST(functionsWorking, signOut)
+// {
+//     menu menuObject;
+//     EXPECT_NO_THROW(menuObject.signOut());
+// }
 
 TEST(workingFunction, searchDisplay)
 {

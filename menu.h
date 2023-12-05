@@ -19,7 +19,7 @@ class menu
     void callMovieRec(prefs options);
     void callSearch();
     void callOverview();
-    void signOut();
+    // void signOut();
 };
 
 #endif

@@ -4,6 +4,7 @@
 #include <string>
 #include <iostream>
 #include "movie.h"
+#include "preferences.h"
 using namespace std;
 
 class Database
@@ -21,7 +22,7 @@ public:
     vector<Movie> getMoviesbyReleaseDate(int releaseDate);
     vector<Movie> getMoviesbyRating(double rating);
     void insert(Movie movie);
-    vector<Movie> filter(vector <string> genre, int age, vector <string> actor, vector <string> director);
+    vector<Movie> filter(vector <string> genre, int age, vector <string> actor, vector <string> director, prefs options);
 };
 
 #endif

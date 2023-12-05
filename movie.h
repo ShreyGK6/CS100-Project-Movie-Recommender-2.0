@@ -2,6 +2,7 @@
 #define __MOVIE_H
 #include <iostream>
 #include <vector>
+#include "preferences.h"
 using namespace std;
 
 class Movie
@@ -23,8 +24,9 @@ public:
     string getMaturityRating();
     int getReleaseDate();
     double getRating();
-    bool isValidForAge(int age);
+    bool isValidForAge(int age, prefs options);
     bool operator<(Movie other);
+    void setMaturity(prefs options);
 };
 
 #endif

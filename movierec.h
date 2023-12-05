@@ -11,7 +11,7 @@ using namespace std;
 class MovieRec
 {
 public:
-    void movieRecommendationoutput();
+    void movieRecommendationoutput(prefs options);
     const int maxMovieShown = 5;
     void movieRecommendationOverall(prefs pref);
     void movieRecByGenre(prefs pref);

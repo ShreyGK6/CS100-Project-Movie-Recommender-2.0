@@ -23,7 +23,7 @@ void MovieRec::movieRecommendationOverall(prefs options)
     string filename = "/class/classes/ayama039/final-project-smoha095-ashah174-ayama039-skoth011/ movies.tsv";
     db.loadFromTSV(filename);
     // cout << "read from db" << endl;
-    vector<Movie> filteredMovies = db.filter(genre, age, actor, director);
+    vector<Movie> filteredMovies = db.filter(genre, age, actor, director, options);
     sort(filteredMovies.rbegin(), filteredMovies.rend());
     for (int i = 0; i < min((int)filteredMovies.size(), maxMovieShown); i++)
     {
@@ -33,23 +33,27 @@ void MovieRec::movieRecommendationOverall(prefs options)
 
 void MovieRec::movieRecByGenre(prefs options)
 {
-    vector <string> genre;
-    options.getgenre(genre);
-    Database db;
-    string filename = "/class/classes/ayama039/final-project-smoha095-ashah174-ayama039-skoth011/ movies.tsv";
-    db.loadFromTSV(filename);
-    vector<Movie> genreFilteredMovies = db.getMoviesbyGenre(genre);
-    sort(genreFilteredMovies.rbegin(), genreFilteredMovies.rend());
-    for (int i = 0; i < min((int)genreFilteredMovies.size(), maxMovieShown); i++)
-    {
-        genreFilteredMovies[i].display();
-    }
+        vector<string> actor;
+        vector<string> director;
+        int age = options.getage();
+
+        Database db;
+        string filename = "/class/classes/ayama039/final-project-smoha095-ashah174-ayama039-skoth011/ movies.tsv";
+        db.loadFromTSV(filename);
+        vector <string> genre;
+        options.getgenre(genre);
+        vector<Movie> genreFilteredMovies = db.filter(genre, age, actor, director, options);
+        sort(genreFilteredMovies.rbegin(), genreFilteredMovies.rend());
+        for (int i = 0; i < min((int)genreFilteredMovies.size(), maxMovieShown); i++)
+        {
+            genreFilteredMovies[i].display();
+        }
 }
 
 void MovieRec::movieRecommendationMaturityRating(prefs options) {
     int age = options.getage();
     Movie movie;
-    bool valid = movie.isValidForAge(age);
+    bool valid = movie.isValidForAge(age, options);
     string maturityrating= movie.getMaturityRating();
     if (valid == true){
         Database db;
@@ -64,8 +68,38 @@ void MovieRec::movieRecommendationMaturityRating(prefs options) {
     }
     else {
         cout << "We couldn't find any movies for your age range." << endl;
+        cout << endl;
     }
 }
+
+// string MovieRec::maturityrating(prefs options){
+//     if (age > 0 && age < 10)
+//     {
+//         if (maturityRating == "G")
+//         {
+//             return true;
+//         }
+//     }
+//     else if (age >= 10 && age < 13)
+//     {
+//         if (maturityRating == "G" or maturityRating == "PG")
+//         {
+//             return true;
+//         }
+//     }
+//     else if (age >= 13 && age < 18)
+//     {
+//         if (maturityRating == "G" or maturityRating == "PG" or maturityRating == "PG-13")
+//         {
+//             return true;
+//         }
+//     }
+//     else
+//     {
+//         return true;
+//     }
+//     return false;
+// }
 
 void MovieRec::movieRecommendationsearch(searchMovie find, prefs options) {
     vector<string> genre;
@@ -76,7 +110,7 @@ void MovieRec::movieRecommendationsearch(searchMovie find, prefs options) {
     vector<string> director;
     find.getDirector(director);
 
-    if (genre.size() == 0 && age == -1 && actor.size() == 0 && director.size() == 0) {
+    if (genre.size() == 0 && actor.size() == 0 && director.size() == 0) {
         cout << "No searches yet!" << endl;
         cout << "Please use the search function to get reccomendations for this category" << endl;
     }
@@ -84,22 +118,22 @@ void MovieRec::movieRecommendationsearch(searchMovie find, prefs options) {
     Database db;
     string filename = "/class/classes/ayama039/final-project-smoha095-ashah174-ayama039-skoth011/ movies.tsv";
     db.loadFromTSV(filename);
-    vector<Movie> searches = db.filter(genre, age, actor, director);
+    vector<Movie> searches = db.filter(genre, age, actor, director, options);
     sort(searches.rbegin(), searches.rend());
     for (int i = 0; i < min((int)searches.size(), maxMovieShown); i++)
     {
+        cout << "in here" << endl;
         searches[i].display();
     }
     }
 }
 
-void MovieRec::movieRecommendationoutput(){
+void MovieRec::movieRecommendationoutput(prefs options){
     Database db;
     string filename = "/class/classes/ayama039/final-project-smoha095-ashah174-ayama039-skoth011/ movies.tsv";
     db.loadFromTSV(filename);
 
     char answer;
-    prefs options;
     searchMovie find;
     int checker = 0;
 
@@ -112,6 +146,7 @@ void MovieRec::movieRecommendationoutput(){
         movieRecommendationMaturityRating(options);
         cout << "---------- SEARCHES ---------" << endl;
         movieRecommendationsearch(find, options);
+        cout << endl;
         cout << endl;
         cout << "If you would like to go back to the menu, please press m." << endl;
         if (answer != 'm' && checker >= 1) {
