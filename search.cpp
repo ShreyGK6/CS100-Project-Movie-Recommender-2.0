@@ -139,8 +139,10 @@ void searchMovie::searchMain()
                     for (int i = 1; i < inputString.length(); i++){
                         inputString[i] = tolower(inputString[i]);
                     }
-                    genreSelection.push_back(inputString);
-                    recs.genres.push_back(inputString);
+                    if (inputString != "Done"){
+                        genreSelection.push_back(inputString);
+                        recs.genres.push_back(inputString);
+                    }
                 }
                 while (inputString != "Done");
                 if (genreSelection.size() != 0) {
@@ -180,8 +182,10 @@ void searchMovie::searchMain()
                             inputString[i] = tolower(inputString[i]);
                         }
                     }
-                    actorSelection.push_back(inputString);
-                    recs.actors.push_back(inputString);
+                    if (inputString != "Done") {
+                        actorSelection.push_back(inputString);
+                        recs.actors.push_back(inputString);
+                    }
                 }
                 while (inputString != "Done");
                 if (actorSelection.size() != 0) {
@@ -228,8 +232,10 @@ void searchMovie::searchMain()
                         else {
                             inputString[i] = tolower(inputString[i]);
                         }
-                    directorSelection.push_back(inputString);
-                    recs.directors.push_back(inputString);
+                    }
+                    if (inputString != "Done") {
+                        directorSelection.push_back(inputString);
+                        recs.directors.push_back(inputString);
                     }
                 }
                 while (inputString != "Done");
