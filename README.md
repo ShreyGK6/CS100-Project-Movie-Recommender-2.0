@@ -90,7 +90,17 @@ The Interface Segregation Principle has been applied to the preferences function
  > * Make sure your README file and Project board are up-to-date reflecting the current status of your project (e.g. any changes that you have made during the project such as changes to your class diagram). Previous versions should still be visible through your commit history. 
  
  ## Screenshots
- > Screenshots of the input/output after running your application
+ ![start](https://github.com/cs100/final-project-smoha095-ashah174-ayama039-skoth011/assets/35586951/b1df70a2-dd10-4e2f-aed1-8424a5311011)
+![image (1)](https://github.com/cs100/final-project-smoha095-ashah174-ayama039-skoth011/assets/35586951/5df7ed48-58c6-41cc-a7f8-c690ae70bd1e)
+![image (2)](https://github.com/cs100/final-project-smoha095-ashah174-ayama039-skoth011/assets/35586951/17e26a6b-1b93-4c8a-86c5-68536f5cffbf)
+![image (3)](https://github.com/cs100/final-project-smoha095-ashah174-ayama039-skoth011/assets/35586951/9705534c-cbf7-42fd-aa14-661229bf20ce)
+![image (4)](https://github.com/cs100/final-project-smoha095-ashah174-ayama039-skoth011/assets/35586951/73c9dc13-ea46-499a-8d38-19582c75873a)
+![image (5)](https://github.com/cs100/final-project-smoha095-ashah174-ayama039-skoth011/assets/35586951/19a529d0-a805-423f-a652-169a8486d605)
+![image (6)](https://github.com/cs100/final-project-smoha095-ashah174-ayama039-skoth011/assets/35586951/9deee94c-45f9-4f54-9359-145b0b3cf7d1)
+![image (7)](https://github.com/cs100/final-project-smoha095-ashah174-ayama039-skoth011/assets/35586951/0246849c-cc90-4679-b456-f7fe15dcae45)
+![image (8)](https://github.com/cs100/final-project-smoha095-ashah174-ayama039-skoth011/assets/35586951/843261fd-d697-435b-b8c8-cb793139f86b)
+![image (14)](https://github.com/cs100/final-project-smoha095-ashah174-ayama039-skoth011/assets/35586951/63c1bbf6-6b07-4722-a4ab-e69663cf80f9)
+
  ## Installation/Usage
 To install our movie recommendation program, the user should clone this repository in their favorite IDE, preferably VS Code. Once they have cloned it the user should run cmake . and make which will create the executable. The executable name will be ./runMovieRecSystem. Once that executable is run, the user will be prompted a series of questions to create and account, sign in, create their profile. The a menu page will show where the user will type certain commands to go to pages they would like such as the movie recommendation, search, and settings. When the user wants to quit out of the system they will type "q" and the program will log them out. This program commands are based on keyboard inputs as it is terminal based. 
  ## Testing
