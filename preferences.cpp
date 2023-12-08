@@ -1,4 +1,3 @@
-// #include "settings.h"
 #include <iostream>
 #include <vector>
 using namespace std;
@@ -11,7 +10,6 @@ void prefs::setprefs() {
     char answer;
 
     setgenre(1);
-    cout << endl;
     setage();
     cout << endl;
     
@@ -137,7 +135,7 @@ void prefs::setgenre(int num) {
             checker = 0;
         }
         else if (answer != 'q') {
-            cout << "not a valid response. Please give a valid response: " << endl;
+            cout << "Not a valid response. Please give a valid response: " << endl;
             cout << endl;
         }
         else if (answer == 'q') {
@@ -175,8 +173,15 @@ void prefs::setactor(){
             resetactor();
         }
         if (answer != "quit") {
-            for (int i = 0; i < answer.length(); i++ ){
-                // answer[i] = tolower(answer[i]);
+            answer[0] = toupper(answer[0]);
+            for (int i = 1; i < answer.length(); i++){
+                if (isspace(answer[i]) != 0){
+                    i= i + 1;
+                    answer[i] = toupper(answer[i]);
+                }
+                else {
+                    answer[i] = tolower(answer[i]);
+                }
             }
             person.actor.push_back(answer);
         }
@@ -201,8 +206,15 @@ void prefs::setdirector() {
             resetdirector();
         }
         if (answer != "quit") {
-            for (int i = 0; i < answer.length(); i++ ){
-                // answer[i] = tolower(answer[i]);
+            answer[0] = toupper(answer[0]);
+            for (int i = 1; i < answer.length(); i++){
+                if (isspace(answer[i]) != 0){
+                    i= i + 1;
+                    answer[i] = toupper(answer[i]);
+                }
+                else {
+                    answer[i] = tolower(answer[i]);
+                }
             }
             person.director.push_back(answer);
         }

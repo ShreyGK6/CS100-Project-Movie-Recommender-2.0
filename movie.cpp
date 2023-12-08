@@ -1,5 +1,6 @@
 #include <iostream>
 #include "movie.h"
+#include "preferences.h"
 #include <vector>
 #include <sstream>
 using namespace std;
@@ -86,8 +87,38 @@ double Movie::getRating()
     return rating;
 }
 
-bool Movie::isValidForAge(int age)
+void Movie::setMaturity(prefs options) {
+    int age = options.getage();
+    if (age > 0 && age < 10)
+    {
+        if (maturityRating != "G")
+        {
+            maturityRating = "G";
+        }
+    }
+    else if (age >= 10 && age < 13)
+    {
+        if (maturityRating != "PG")
+        {
+            maturityRating = "PG";
+        }
+    }
+    else if (age >= 13 && age < 18)
+    {
+        if (maturityRating != "PG-13")
+        {
+            maturityRating = "PG-13";
+        }
+    }
+    else if (age > 18)
+    {
+        maturityRating = "R";
+    }
+}
+
+bool Movie::isValidForAge(int age, prefs options)
 {
+    setMaturity(options);
     if (age > 0 && age < 10)
     {
         if (maturityRating == "G")

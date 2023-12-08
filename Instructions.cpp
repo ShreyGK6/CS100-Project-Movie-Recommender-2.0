@@ -1,5 +1,4 @@
 #include "Instructions.h"
-//#include "Instructions.cpp"
 #include <iostream>
 #include <string>
 using namespace std;
@@ -19,7 +18,6 @@ void instructions::display(){
     cout << "You can then sort these by release date and movie rating." << endl;
     cout << "Type m to go to menu and get movie recommendations!" << endl;
 
-    // Menu is here. Will be added once merges happenn
     char userkey;
     cin >> userkey;
     while (userkey != 'm') {

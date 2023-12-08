@@ -14,12 +14,14 @@ using namespace std;
 TEST (setup2, startup2){
     userpass setup;
     prefs options;
+    searchMovie find;
     EXPECT_NO_THROW(setup.startup(options));
 }
 
 TEST (settings, changeprefs){
     userpass setup;
     prefs options;
+    searchMovie find;
     Settings profile;
     EXPECT_NO_THROW(profile.changeprefs(setup, options));
 }
@@ -77,11 +79,13 @@ TEST_F(DatabaseTest, GetMoviesByRating)
 }
 
 TEST_F(DatabaseTest, Filter){
+    prefs options;
+    searchMovie find;
     vector <string> genre {"Comedy, Crime"};
     int age = 18;
     vector <string> actor {"Actor1"};
     vector <string> director {"Director1"};
-    vector<Movie> filteredMovies = db.filter(genre, age, actor, director);
+    vector<Movie> filteredMovies = db.filter(genre, age, actor, director, options);
     ASSERT_EQ(filteredMovies.size(), 1);
 }
 
@@ -194,7 +198,8 @@ TEST(functionsWorking, display)
     menu menuObject;
     userpass setup;
     prefs options;
-    EXPECT_NO_THROW(menuObject.display(setup, options));
+    searchMovie find;
+    EXPECT_NO_THROW(menuObject.display(setup, options,find));
 }
 
 TEST(functionsWorking, options)
@@ -208,6 +213,7 @@ TEST(functionsWorking, callSettings)
     menu menuObject;
     userpass setup;
     prefs options;
+    searchMovie find;
     EXPECT_NO_THROW(menuObject.callSettings(setup, options));
 }
 
@@ -215,7 +221,8 @@ TEST(functionsWorking, callMovieRec)
 {
     menu menuObject;
     prefs options;
-    EXPECT_NO_THROW(menuObject.callMovieRec(options));
+    searchMovie find;
+    EXPECT_NO_THROW(menuObject.callMovieRec(options, find));
 }
 
 TEST(functionsWorking, callOverview)
@@ -227,13 +234,8 @@ TEST(functionsWorking, callOverview)
 TEST(functionsWorking, callSearch)
 {
     menu menuObject;
-    EXPECT_NO_THROW(menuObject.callSearch());
-}
-
-TEST(functionsWorking, signOut)
-{
-    menu menuObject;
-    EXPECT_NO_THROW(menuObject.signOut());
+    searchMovie find;
+    EXPECT_NO_THROW(menuObject.callSearch(find));
 }
 
 TEST(workingFunction, searchDisplay)

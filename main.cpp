@@ -24,7 +24,8 @@ int main () {
     cout << endl << endl;
 
     menu menuObject;
-    menuObject.display(setup, options);
+    searchMovie find;
+    menuObject.display(setup, options, find);
 
     return 0;
 }

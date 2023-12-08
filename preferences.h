@@ -16,10 +16,14 @@ struct preferences {
 class prefs {
     friend class Settings;
     friend class MovieRec;
-    
+
     public:
     preferences person;
     void setprefs();
+    void getgenre(vector<string> &newgenre);
+    int getage();
+    void getactor(vector<string> &newactor);
+    void getdirector(vector<string> &newdirector);
 
     private:
     void setage();
@@ -30,10 +34,6 @@ class prefs {
     void resetactor();
     void resetage();
     void resetdirector();
-    void getgenre(vector<string> &newgenre);
-    int getage();
-    void getactor(vector<string> &newactor);
-    void getdirector(vector<string> &newdirector);
     
 };
 

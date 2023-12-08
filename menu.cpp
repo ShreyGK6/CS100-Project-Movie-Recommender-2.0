@@ -20,32 +20,12 @@ void menu::callSettings(userpass &setup, prefs &options)
 {
     Settings profile;
     profile.changeprefs(setup, options);
-    display(setup, options);
 }
 
-void menu::callMovieRec(prefs options)
+void menu::callMovieRec(prefs options, searchMovie find)
 {
-    Database db;
-    string filename = "/home/csmajs/smoha095/final-project-smoha095-ashah174-ayama039-skoth011/ movies.tsv";
-    db.loadFromTSV(filename);
-    cout << "Calling movie recommendator..." << endl;
-    cout << endl;
-    MovieRec movierec;
-    cout << "Top Movies Based on Your Profile Selections: " << endl;
-    cout << endl;
-    movierec.movieRecommendationOverall(options);
-    cout << endl;
-    cout << endl;
-    cout << "-----------------------------------------------------------------------------" << endl;
-    cout << "Top Movies Based on Your Selected Genre: " << endl;
-    cout << endl;
-    movierec.movieRecByGenre(options);
-
-    cout << "Going back to menu..." << endl << endl;
-    menu menuObject;
-    userpass setup;
-    prefs preference;
-    menuObject.display(setup, preference);
+    MovieRec recs;
+    recs.movieRecommendationoutput(options, find);
 }
 
 void menu::callOverview()
@@ -54,15 +34,9 @@ void menu::callOverview()
     instructionsPage.display();
 }
 
-void menu::callSearch()
+void menu::callSearch(searchMovie& find)
 {
-    searchMovie searching;
-    searching.searchMain();
-}
-
-void menu::signOut()
-{
-    cout << "Signed out" << endl;
+    find.searchMain(find);
 }
 
 void menu::options()
@@ -83,37 +57,52 @@ char menu::askingForInput()
     return userInput;
 }
 
-void menu::display(userpass &setup, prefs &options)
-{
-    char input = askingForInput();
+void menu::display(userpass &setup, prefs &options, searchMovie &find)
+{   
+    char input;
+    do {
+    input = askingForInput();
     if (input == 'r')
     {
         cout << "You have selected the movie recommendations. Going there..." << endl;
-        callMovieRec(options);
+        cout << endl;
+        cout << endl;
+        callMovieRec(options, find);
     }
     else if (input == 's')
     {
         cout << "You have selected the movie searcher. Going there..." << endl;
-        callSearch();
+        cout << endl;
+        cout << endl;
+        callSearch(find);
     }
     else if (input == 'p')
     {
-        cout << "You have selected the profile settings. Going there..." << endl;  
+        cout << "You have selected the profile settings. Going there..." << endl;
+        cout << endl;
+        cout << endl;  
         callSettings(setup, options);
     }
     else if (input == 'o')
     {
         cout << "You have selected the overview. Going there..." << endl;
+        cout << endl;
+        cout << endl;
         callOverview();
     }
     else if (input == 'q')
     {
         cout << "You have selected to signout. Signing out..." << endl;
-        signOut();
+        cout << endl;
+        cout << endl;
+        cout << "Signed out" << endl;
     }
     else
     {
         cout << "You have entered an invalid input." << endl << endl;
-        display(setup, options);
+        display(setup, options, find);
     }
+    }
+    while (input != 'q');
 }
+

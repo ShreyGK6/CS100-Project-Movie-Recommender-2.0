@@ -1,41 +1,44 @@
 #include <iostream>
 #include "database.h"
 #include "movie.h"
+#include "preferences.h"
 #include <fstream>
 #include <sstream>
 #include <algorithm>
 #include <vector>
 using namespace std;
 
-void Database::loadFromTSV(string &filename)
+bool Database::loadFromTSV(string &filename)
 {
     ifstream file(filename);
 
     if (!file.is_open())
     {
         cout << "Error opening file: " << filename << endl;
-        return;
+        return false;
     }
-
-    string line;
-    while (getline(file, line))
-    {
-        string genre, maturityRating, actor, director, title, temp;
-        int releaseDate;
-        double rating;
-        istringstream istrings(line);
-        if (getline(istrings, title, '\t') &&
-            (istrings >> releaseDate) &&
-            (istrings >> rating) &&
-            getline(istrings, temp, '\t') &&
-            getline(istrings, maturityRating, '\t') &&
-            getline(istrings, genre, '\t') &&
-            getline(istrings, actor, '\t') &&
-            getline(istrings, director, '\t'))
+    else {
+        string line;
+        while (getline(file, line))
         {
-            Movie movie(title, releaseDate, rating, maturityRating, genre, actor, director);
-            movies.push_back(movie);
+            string genre, maturityRating, actor, director, title, temp;
+            int releaseDate;
+            double rating;
+            istringstream istrings(line);
+            if (getline(istrings, title, '\t') &&
+                (istrings >> releaseDate) &&
+                (istrings >> rating) &&
+                getline(istrings, temp, '\t') &&
+                getline(istrings, maturityRating, '\t') &&
+                getline(istrings, genre, '\t') &&
+                getline(istrings, actor, '\t') &&
+                getline(istrings, director, '\t'))
+            {
+                Movie movie(title, releaseDate, rating, maturityRating, genre, actor, director);
+                movies.push_back(movie);
+            }
         }
+        return true;
     }
 }
 
@@ -142,48 +145,64 @@ void Database::insert(Movie movie)
     movies.push_back(movie);
 }
 
-vector<Movie> Database::filter(vector <string> genre, int age, vector <string> actor, vector <string> director)
+vector<Movie> Database::filter(vector <string> genre, int age, vector <string> actor, vector <string> director, prefs options)
 {
     vector<Movie> filteredMovies;
     for (int i = 0; i < movies.size(); i++)
     {
         int matched = 0;
-        if (movies[i].isValidForAge(age) == false)
-        {
-            continue;
-        }
-        vector<string> genres = movies[i].getGenre();
-        for (string eachGenre : genres)
-        {
-            // if (eachGenre == genre)
-            if (find(genre.begin(), genre.end(), eachGenre) != genre.end())
+        if (movies[i].isValidForAge(age, options) == true)
+        {        
+            vector<string> genres = movies[i].getGenre();
+            for (string eachGenre : genres)
             {
-                matched++;
+                // if (eachGenre == genre)
+                if (find(genre.begin(), genre.end(), eachGenre) != genre.end())
+                {
+                    matched++;
+                }
             }
-        }
-        vector<string> actors = movies[i].getActor();
-        for (string eachActor : actors)
-        {
-            // if (eachActor == actor)
-            if (find(actor.begin(), actor.end(), eachActor) != actor.end())
-            {
-                matched++;
+            if (actor.size() != 0) {
+                vector<string> actors = movies[i].getActor();
+                for (string eachActor : actors)
+                {
+                    // if (eachActor == actor)
+                    if (find(actor.begin(), actor.end(), eachActor) != actor.end())
+                    {
+                        matched++;
+                    }
+                }
             }
+            if (director.size() != 0) {
+                vector<string> directors = movies[i].getDirector();
+                for (string eachDirector : directors)
+                {
+                    // if (eachDirector == director)
+                    if (find(director.begin(), director.end(), eachDirector) != director.end())
+                    {
+                        matched++;
+                    }
+                }
+            }
+            if (actor.size()==0 && director.size()==0) {
+                if (matched == 1) {
+                    filteredMovies.push_back(movies[i]);
+                }
+            }
+            else if (actor.size()==0 || director.size()==0) {
+                if (matched == 2) {
+                    filteredMovies.push_back(movies[i]);
+                }
+            }
+            else if (actor.size() > 0 && director.size() > 0){
+                if (matched >= 2)
+                {
+                    filteredMovies.push_back(movies[i]);
+                }
+            }
+        
         }
 
-        vector<string> directors = movies[i].getDirector();
-        for (string eachDirector : directors)
-        {
-            // if (eachDirector == director)
-            if (find(director.begin(), director.end(), eachDirector) != director.end())
-            {
-                matched++;
-            }
-        }
-        if (matched >= 2)
-        {
-            filteredMovies.push_back(movies[i]);
-        }
     }
     return filteredMovies;
 }

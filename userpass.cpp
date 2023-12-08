@@ -21,8 +21,7 @@ void userpass::startup(prefs &pref) {
             cout << "------------- CREATE ACCOUNT -----------" << endl;
             setuser();
             setpass();
-            checkuserandpass(pref); //kind of a useless function bc it doesn't save anyways
-                                //have a "q" in main in order to quit the program (for sake of demo) ?
+            checkuserandpass(pref); 
             pref.setprefs();
             checker = 1;
         }

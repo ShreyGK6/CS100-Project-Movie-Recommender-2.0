@@ -162,9 +162,13 @@ void Settings::changeprefs(userpass &setup, prefs &options) {
                 }
             }
         }
-        cout << "----------- PROFILE PAGE ------------" << endl;
-        cout << "Press m to got to menu or pick an option to change: " << endl;
-        cout << "genre (g) \t age (y) \t actor (a) \t director (d) \t username and password (u)" << endl;
+        else if (answer != 'm'){
+            cout << "Not a valid input. Please provide a valid input." << endl;
+        }
+        if (answer != 'm') {
+            cout << "Press m to got to menu or pick an option to change: " << endl;
+            cout << "genre (g) \t age (y) \t actor (a) \t director (d) \t username and password (u)" << endl;
+        }
 
     }
     while (answer != 'm');
