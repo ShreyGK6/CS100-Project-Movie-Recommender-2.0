@@ -32,6 +32,8 @@ class searchMovie
     string getMaturityRating();
     void getActor(vector<string> &newactor);
     void getDirector(vector<string> &newdirector);
+    void getActor(vector<string> &newactor);
+    void getDirector(vector<string> &newdirector);
     int getDate();
     double getRating();
     vector<Movie> possibleSelections;

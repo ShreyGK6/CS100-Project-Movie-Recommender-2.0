@@ -116,6 +116,7 @@ vector<Movie> Database::getMoviesbyMaturityRating(string maturityRating)
 
 vector<Movie> Database::getMoviesbyReleaseDate(int releaseDate)
 {
+    cout<<movies.size()<<endl;
     vector<Movie> releaseDateSpecificMovie;
     for (int i = 0; i < movies.size(); i++)
     {
