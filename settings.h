@@ -3,9 +3,14 @@
 
 #include "preferences.h"
 #include "userpass.h"
-// #include <iostream>
-// #include <string>
-// using namespace std;
+#include <iostream>
+#include <string>
+#include "settings.h"
+#include "preferences.h"
+#include "userpass.h"
+using namespace std;
+
+
 
 class userpass;
 class prefs;
@@ -13,8 +18,6 @@ class prefs;
 class Settings
 {
 public:
-    // Settings();
     void changeprefs(userpass &setup, prefs &options);
-    // void ex();
 };
 #endif // __SETTINGS_H__

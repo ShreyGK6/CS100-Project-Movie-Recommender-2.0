@@ -1,4 +1,3 @@
-// #include "settings.h"
 #include <iostream>
 #include <vector>
 using namespace std;

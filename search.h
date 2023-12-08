@@ -22,11 +22,9 @@ class searchMovie
     friend class MovieRec;
     public:
     searching recs;
-    // searchMovie();
     void displayOptions();
-    void searchMain();
+    void searchMain(searchMovie &find);
     char askingForOption();
-    // void otherPathways();
     void outputOrError(vector<Movie> possibleSelections);
 
     private:

@@ -2,7 +2,6 @@
 #include "database.h" 
 #include "search.h"
 #include "movie.h"
-#include "menu.h"
 #include <string>
 #include <vector>
 #include <cstdlib>
@@ -10,13 +9,9 @@
 #include <cmath>
 using namespace std;
 
-// searchMovie::searchMovie()
-// {}
 
 void searchMovie::getGenres(vector<string> &newgenre)
 {
-    cout << "in genre" << endl;
-    cout << recs.genres.size() << endl; //outputs 0
     for (int i = 0; i < recs.genres.size(); i++) {
         newgenre.push_back(recs.genres.at(i));
     }
@@ -64,10 +59,6 @@ void searchMovie::outputOrError(vector<Movie> possibleSelections)
         {
             possibleSelections[i].display();
         }
-        // for(int i = 0; i < possibleSelections.size(); i++)
-        // {
-        //     possibleSelections[i].display();
-        // }
     }
 }
 
@@ -83,31 +74,6 @@ void searchMovie::displayOptions()
     cout << "- m to back to the menu" << endl;
 }
 
-// void searchMovie::otherPathways()
-// {
-//     cout << "Do you want to search again or go back to menu?" << endl;
-//     cout << "- s for movie searcher" << endl;
-//     cout << "- m for menu" << endl;
-//     char input;
-//     cin >> input;
-//     if(input == 's')
-//     {
-//         searchMain();
-//     }
-//     else if(input == 'm')
-//     {
-//         menu menuObject;
-//         userpass setup;
-//         prefs options;
-//         menuObject.display(setup, options);
-//     }
-//     else
-//     {
-//         cout << endl << "You have selected an invalid input. Please select again." << endl;
-//         otherPathways();
-//     }
-// }
-
 char searchMovie::askingForOption()
 {
     char userInput;
@@ -117,7 +83,7 @@ char searchMovie::askingForOption()
     return userInput;
 }
 
-void searchMovie::searchMain()
+void searchMovie::searchMain(searchMovie &find)
 {
     string filename = "/class/classes/ayama039/final-project-smoha095-ashah174-ayama039-skoth011/ movies.tsv";
     Database database;
@@ -135,6 +101,7 @@ void searchMovie::searchMain()
                 do {
                     cout << "Please type in the genre you wish to have movies on or type done when you're done:" << endl;
                     getline(cin, inputString);
+                    cout << endl;
                     inputString[0] = toupper(inputString[0]);
                     for (int i = 1; i < inputString.length(); i++){
                         inputString[i] = tolower(inputString[i]);
@@ -172,6 +139,7 @@ void searchMovie::searchMain()
                 do {
                     cout << "Please type in the actor(ess) you wish to have movies on or type done when you're done:" << endl;
                     getline(cin, inputString);
+                    cout << endl;
                     inputString[0] = toupper(inputString[0]);
                     for (int i = 1; i < inputString.length(); i++){
                         if (isspace(inputString[i]) != 0){
@@ -223,7 +191,9 @@ void searchMovie::searchMain()
                 cout << endl << "You have decided to find movies by director." << endl;
                 do{
                     cout << "Please type in the director you wish to have movies on or type done when you're done:" << endl;
-                    getline(cin, inputString);inputString[0] = toupper(inputString[0]);
+                    getline(cin, inputString);
+                    cout << endl;
+                    inputString[0] = toupper(inputString[0]);
                     for (int i = 1; i < inputString.length(); i++){
                         if (isspace(inputString[i]) != 0){
                             i= i + 1;
@@ -248,14 +218,7 @@ void searchMovie::searchMain()
             {
                 cout << endl << "You have entered an invalid input. Please select again." << endl << endl;
             }
-            // vector<string> newgenre;
-            //         getGenres(newgenre);
-            //         for (int i = 0; i < newgenre.size(); i ++) {
-            //             cout << newgenre.at(i) << endl;
-            //         }
-            // cout << endl;
         }
         while (filterLetter != 'm');
     }
-    cout << endl;
 }

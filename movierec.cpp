@@ -45,10 +45,6 @@ void MovieRec::movieRecByGenre(prefs options)
         vector <string> genre;
         options.getgenre(genre);
 
-        // for (int i = 0; i < genre.size(); i++) {
-        //     cout << genre.at(i) << endl;
-        // }
-
         vector<Movie> genreFilteredMovies = db.filter(genre, age, actor, director, options);
         sort(genreFilteredMovies.rbegin(), genreFilteredMovies.rend());
         for (int i = 0; i < min((int)genreFilteredMovies.size(), maxMovieShown); i++)
@@ -82,35 +78,6 @@ void MovieRec::movieRecommendationMaturityRating(prefs options) {
     }
 }
 
-// string MovieRec::maturityrating(prefs options){
-//     if (age > 0 && age < 10)
-//     {
-//         if (maturityRating == "G")
-//         {
-//             return true;
-//         }
-//     }
-//     else if (age >= 10 && age < 13)
-//     {
-//         if (maturityRating == "G" or maturityRating == "PG")
-//         {
-//             return true;
-//         }
-//     }
-//     else if (age >= 13 && age < 18)
-//     {
-//         if (maturityRating == "G" or maturityRating == "PG" or maturityRating == "PG-13")
-//         {
-//             return true;
-//         }
-//     }
-//     else
-//     {
-//         return true;
-//     }
-//     return false;
-// }
-
 void MovieRec::movieRecommendationsearch(searchMovie find, prefs options) {
     vector<string> newgenre;
     find.getGenres(newgenre);
@@ -120,15 +87,6 @@ void MovieRec::movieRecommendationsearch(searchMovie find, prefs options) {
     vector<string> director;
     find.getDirector(director);
 
-    // vector<string> ng;
-    //                     getGenre (ng);
-    //                     for (int i = 0; i < ng.size(); i++){
-    //                         cout << ng.at(i) << endl;
-    //                     }
-
-    // vector <string> genre;
-    //     options.getgenre(genre);
-
     if (newgenre.size() == 0 && actor.size() == 0 && director.size() == 0) {
         cout << "No searches yet!" << endl;
         cout << "Please use the search function to get reccomendations for this category" << endl;
@@ -137,24 +95,26 @@ void MovieRec::movieRecommendationsearch(searchMovie find, prefs options) {
     Database db;
     string filename = "/class/classes/ayama039/final-project-smoha095-ashah174-ayama039-skoth011/ movies.tsv";
     bool loaded = db.loadFromTSV(filename);
-    if (loaded == true) {
-        vector<Movie> searches = db.filter(newgenre, age, actor, director, options);
-        sort(searches.rbegin(), searches.rend());
-        for (int i = 0; i < min((int)searches.size(), maxMovieShown); i++)
-        {
-            searches[i].display();
-        }
+        if (loaded == true) {
+            vector<Movie> searches = db.filter(newgenre, age, actor, director, options);
+            sort(searches.rbegin(), searches.rend());
+            for (int i = 0; i < min((int)searches.size(), maxMovieShown); i++)
+            {
+                searches[i].display();
+            }
+            if (searches.size() == 0) {
+                cout << "We couldn't find any movies from that match your search history." << endl;
+            }
         }
     }
 }
 
-void MovieRec::movieRecommendationoutput(prefs options){
+void MovieRec::movieRecommendationoutput(prefs options, searchMovie find){
     Database db;
     string filename = "/class/classes/ayama039/final-project-smoha095-ashah174-ayama039-skoth011/ movies.tsv";
     bool loaded = db.loadFromTSV(filename);
     if (loaded == true) {
         char answer;
-        searchMovie find;
         int checker = 0;
 
         do {
@@ -178,30 +138,3 @@ void MovieRec::movieRecommendationoutput(prefs options){
         while (answer != 'm');
     }
 }
-
-
-
-// void MovieRec::backToMenu()
-// {
-//     cout << "Do you want to go back to menu?" << endl;
-//     cout << "- m for menu" << endl;
-//     char input;
-//     cin >> input;
-//     if(input == 'r')
-//     {
-//         struct preferences preference;
-//         movieRecommendationOverall(preference);
-//         string genre;
-//         movieRecByGenre(genre);
-//     }
-//     else if(input == 'm')
-//     {
-//         menu menuObject;
-//         menuObject.display();
-//     }
-//     else
-//     {
-//         cout << endl << "You have selected an invalid input. Please select again." << endl;
-//         backToMenu();
-//     }
-// }

@@ -11,13 +11,12 @@ using namespace std;
 class MovieRec
 {
 public:
-    void movieRecommendationoutput(prefs options);
+    void movieRecommendationoutput(prefs options, searchMovie find);
     const int maxMovieShown = 5;
     void movieRecommendationOverall(prefs pref);
     void movieRecByGenre(prefs pref);
     void movieRecommendationMaturityRating(prefs pref);
-    void movieRecommendationsearch(searchMovie search, prefs pref);
-    // void backToMenu();
+    void movieRecommendationsearch(searchMovie find, prefs pref);
 };
 
 #endif
